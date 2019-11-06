@@ -1,0 +1,19 @@
+
+.modal-child-signup {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 550px;
+    height: 800px;
+    background-color: #FFFEF2;
+}
+
+.signup-form {
+    width: 450px;
+    height: 450px;
+    background-color: inherit;
+    margin: 50px auto;
+    font-family: 'Open Sans';
+}

@@ -1,0 +1,86 @@
+
+
+.toggle-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    // free space distributed between elements from top to bottom since we specified "space-between"
+    height: 24px;
+    width: 36px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.toggle-button-line {
+    width: 30px;
+    height: 1px;
+    background: rgb(99, 99, 84);
+}
+
+// side-drawer styling
+
+
+.side-drawer {
+    height: 100%;
+    background: #FFFEF2;
+    box-shadow: 1px 0px 10px rgba(0,0,0,0.5);
+    // (1) to the right (2) bottom (3) blur 
+    position: fixed;
+    // don't want to scroll wiith the page, should always be there / overlap the page
+    top: 0;
+    left: 0;
+    width: 70%;
+    max-width: 400px;
+    z-index: 200;
+    // above the backdrop
+    transform: translateX(-110%);
+    //  -- move it to left by its full width
+    transition: transform 0.5s ease-out;
+    // animation -- specify with properties you want to animate
+
+    ul {
+        height: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    li {
+        margin: 0.5rem 1rem;
+    }
+
+    a {
+        color: #333333;
+        text-decoration: none;
+        font-size: 1.65rem;
+        font-weight: 400;
+    }
+
+}
+
+.side-drawer.open {
+    transform: translateX(0);
+    // move it left/right from original position - 0 - normal default position
+}
+
+
+// backdrop styling for sidebar
+
+.backdrop {
+    position: fixed;
+    // can't scroll it away
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 100;
+}

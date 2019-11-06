@@ -1,0 +1,71 @@
+
+.outsideModal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child-login {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    width: 550px;
+    height: 650px;
+    transform: translate(-50%, -50%);
+    display: block;
+    background-color: #FFFEF2;
+}
+
+.login-form {
+    width: 450px;
+    height: 450px;
+    background-color: inherit;
+    margin: 50px auto;
+    font-family: 'Open Sans';
+}
+
+.modal-headingWrap {
+    padding-bottom: 30px;
+}
+
+.modal-title {
+    font-size: 27px;
+    padding: 40px 0px 20px;
+    width: 100%;
+    font-weight: 400;
+}
+
+.modal-subtitle {
+    font-size: 16px;
+    color: #666666;
+}
+
+.formText {
+    padding: 30px 10px 0px;
+    margin: 0px 0px 30px;
+
+    input {
+        padding: 8px 0px;
+        width: 414px;
+        font-size: 20px;
+        font-weight: 300;
+        border: none;
+        border-bottom: 1px solid #c9c1c1;
+        background-color: #FFFEF2;
+    }
+}
+
+.formText-submit {
+    width: 414px;
+    height: 60px;
+    background-color: #999999;
+    padding: 21px 23px;
+    margin: 24px 0px 0px;
+    color: white;
+    font-size: 14px;
+}
+
