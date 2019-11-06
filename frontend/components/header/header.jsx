@@ -3,15 +3,13 @@ import React from "react";
 const Header = (props) => {
     const welcomeMessage = props.currentUser ? (
         <div>
-            <h3> Hi, { props.currentUser.first_name } </h3>
+            <h3> {props.currentUser.first_name + " " +props.currentUser.last_name  } </h3>
         </div>) : (
-            <div>
-                <h3>Hello New User,
-                </h3>
-                <div>
-                    <button onClick={() => props.openModal("login")}>Sign In</button>
-                    <div>or</div>
-                    <button onClick={() => props.openModal("signup")}>Register</button>
+            <div className="header-user" >
+                <div className="header-user-auth" >
+                    <button onClick={() => props.openModal("login")} className="signin-button">Login</button>
+                    <p>or</p>
+                    <button onClick={() => props.openModal("signup")} className="register-button" >Register</button>
                 </div>
             </div>
         );

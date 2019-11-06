@@ -17,10 +17,8 @@ const App = () => (
     <div style={{height: '100%'}}>
         <Toolbar />
         <main style={{marginTop: '64px'}} ></main>
-        <HeaderContainer />
-        <h1>Aesop!!</h1>
         <Modal />
-        
+
         <Switch>
             <Route exact path={"/"} component={ Home } />
             <Redirect to="/" />

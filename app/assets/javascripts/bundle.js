@@ -291,7 +291,7 @@ var App = function App() {
     style: {
       marginTop: '64px'
     }
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Aesop!!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
     component: _home__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -495,14 +495,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Header = function Header(props) {
-  var welcomeMessage = props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Hi, ", props.currentUser.first_name, " ")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Hello New User,"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  var welcomeMessage = props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " ", props.currentUser.first_name + " " + props.currentUser.last_name, " ")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header-user"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header-user-auth"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
       return props.openModal("login");
-    }
-  }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "or"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    },
+    className: "signin-button"
+  }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "or"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
       return props.openModal("signup");
-    }
+    },
+    className: "register-button"
   }, "Register")));
   var signout = props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: props.logout
@@ -1263,6 +1269,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _side_drawer_drawer_toggle_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../side_drawer/drawer_toggle_button */ "./frontend/components/side_drawer/drawer_toggle_button.jsx");
 /* harmony import */ var _side_drawer_side_drawer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../side_drawer/side_drawer */ "./frontend/components/side_drawer/side_drawer.jsx");
 /* harmony import */ var _backdrop_backdrop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../backdrop/backdrop */ "./frontend/components/backdrop/backdrop.jsx");
+/* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1280,6 +1287,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1352,13 +1360,13 @@ function (_React$Component) {
         href: "/"
       }, "Search")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "spacer"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_side_drawer_side_drawer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        show: this.state.sideDrawerOpen
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, backdrop)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "toolbar-logo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
-      }, "AESOP")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_side_drawer_side_drawer__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        show: this.state.sideDrawerOpen
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, backdrop)));
+      }, "AESOP")));
     }
   }]);
 

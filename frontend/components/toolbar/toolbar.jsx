@@ -1,9 +1,9 @@
 
-
 import React from 'react';
 import DrawerToggleButton from '../side_drawer/drawer_toggle_button';
 import SideDrawer from '../side_drawer/side_drawer';
 import Backdrop from '../backdrop/backdrop';
+import HeaderContainer from '../header/header_container';
 
 class Toolbar extends React.Component  {
 
@@ -50,7 +50,9 @@ class Toolbar extends React.Component  {
                         </ul>
                     </div>
                     <div className="spacer" ></div>
-                    <div className="toolbar-logo" ><a href="/">AESOP</a></div>
+                    <div>
+                        <HeaderContainer />
+                    </div>
                     <div>
                         <SideDrawer show={ this.state.sideDrawerOpen } />
                     </div>
@@ -58,6 +60,7 @@ class Toolbar extends React.Component  {
                         { backdrop }
                     </div>
                 </nav>
+                <div className="toolbar-logo" ><a href="/">AESOP</a></div>
             </header>
         )
     }
