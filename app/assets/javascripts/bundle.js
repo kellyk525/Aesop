@@ -115,6 +115,55 @@ var closeModal = function closeModal() {
 
 /***/ }),
 
+/***/ "./frontend/actions/product_actions.js":
+/*!*********************************************!*\
+  !*** ./frontend/actions/product_actions.js ***!
+  \*********************************************/
+/*! exports provided: RECEIVE_PRODUCTS, RECEIVE_ONE_PRODUCT, fetchProducts, fetchProduct */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PRODUCTS", function() { return RECEIVE_PRODUCTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ONE_PRODUCT", function() { return RECEIVE_ONE_PRODUCT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProducts", function() { return fetchProducts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProduct", function() { return fetchProduct; });
+/* harmony import */ var _util_product_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/product_api_util */ "./frontend/util/product_api_util.js");
+
+var RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
+var RECEIVE_ONE_PRODUCT = 'RECEIVE_ONE_PRODUCT';
+
+var receiveProducts = function receiveProducts(products) {
+  return {
+    type: RECEIVE_PRODUCTS,
+    products: products
+  };
+};
+
+var receiveOneProduct = function receiveOneProduct(product) {
+  return {
+    type: RECEIVE_ONE_PRODUCT,
+    product: product
+  };
+};
+
+var fetchProducts = function fetchProducts() {
+  return function (dispatch) {
+    return _util_product_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProducts"]().then(function (products) {
+      return dispatch(receiveProducts(products));
+    });
+  };
+};
+var fetchProduct = function fetchProduct(productId) {
+  return function (dispatch) {
+    return _util_product_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProduct"](productId).then(function (product) {
+      return dispatch(receiveOneProduct(product));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -210,7 +259,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_Root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Root */ "./frontend/components/Root.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/product_actions */ "./frontend/actions/product_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -238,6 +289,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchProducts = _actions_product_actions__WEBPACK_IMPORTED_MODULE_5__["fetchProducts"];
+  window.fetchProduct = _actions_product_actions__WEBPACK_IMPORTED_MODULE_5__["fetchProduct"];
   window.signup = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["signup"];
   window.login = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["login"];
   window.logout = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["logout"];
@@ -620,6 +673,7 @@ var Home = function Home(state) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aesop_product_index_item */ "./frontend/components/main/aesop_product_index_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -640,6 +694,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var AesopProductIndex =
 /*#__PURE__*/
 function (_React$Component) {
@@ -652,11 +707,22 @@ function (_React$Component) {
   }
 
   _createClass(AesopProductIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchProducts();
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var products = this.props.products;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-1"
-      }, "This is Aesop Main Page");
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Products:"), products.map(function (product) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          product: product,
+          key: product.id
+        });
+      }));
     }
   }]);
 
@@ -664,6 +730,65 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (AesopProductIndex);
+
+/***/ }),
+
+/***/ "./frontend/components/main/aesop_product_index_item.jsx":
+/*!***************************************************************!*\
+  !*** ./frontend/components/main/aesop_product_index_item.jsx ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var AesopProductIndexItem =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(AesopProductIndexItem, _React$Component);
+
+  function AesopProductIndexItem(props) {
+    _classCallCheck(this, AesopProductIndexItem);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AesopProductIndexItem).call(this, props));
+  }
+
+  _createClass(AesopProductIndexItem, [{
+    key: "render",
+    value: function render() {
+      var name = this.props.product.name;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", name, " "), "HELLO!");
+    }
+  }]);
+
+  return AesopProductIndexItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (AesopProductIndexItem);
 
 /***/ }),
 
@@ -1196,7 +1321,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var drawerToggleButton = function drawerToggleButton(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "toggle-button",
     onClick: props.click
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1205,7 +1330,7 @@ var drawerToggleButton = function drawerToggleButton(props) {
     className: "toggle-button-line"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "toggle-button-line"
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (drawerToggleButton);
@@ -1388,10 +1513,13 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
+/* harmony import */ var _products_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./products_reducer */ "./frontend/reducers/products_reducer.js");
+
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  products: _products_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1447,6 +1575,41 @@ var modalReducer = function modalReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modalReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/products_reducer.js":
+/*!***********************************************!*\
+  !*** ./frontend/reducers/products_reducer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/product_actions */ "./frontend/actions/product_actions.js");
+
+
+var productsReducer = function productsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PRODUCTS"]:
+      return action.products;
+
+    case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ONE_PRODUCT"]:
+      newState[action.product.id] = action.product;
+      return newState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (productsReducer);
 
 /***/ }),
 
@@ -1630,6 +1793,32 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/product_api_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/util/product_api_util.js ***!
+  \*******************************************/
+/*! exports provided: fetchProducts, fetchProduct */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProducts", function() { return fetchProducts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProduct", function() { return fetchProduct; });
+var fetchProducts = function fetchProducts() {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/products'
+  });
+};
+var fetchProduct = function fetchProduct(productId) {
+  return $.ajax({
+    method: 'GET',
+    url: "api/products/".concat(productId)
+  });
+};
 
 /***/ }),
 

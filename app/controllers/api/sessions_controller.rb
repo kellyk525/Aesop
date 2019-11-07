@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render 'api/users/show'
     else
-      render json: ['We\'re sorry, there is an error with your email and/or password. Remember passwords are 4 to 12 characters (letters or numbers) long. Please try again.'], status: 401
+      render json: ['Your email and password did not match. Please try again.'], status: 401
     end
   end
 
