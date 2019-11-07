@@ -8,10 +8,11 @@ class AesopProductIndexItem extends React.Component {
     }
 
     render() {
-        const { name } = this.props.product
+        const { name, description } = this.props.product
         return (
             <div>
                 <div> { name } </div>
+                <div> { description }</div>
                 HELLO!
             </div>
         )

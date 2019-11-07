@@ -1,5 +1,4 @@
 
-
 import { RECEIVE_PRODUCTS, RECEIVE_ONE_PRODUCT } from '../actions/product_actions';
 
 

@@ -648,14 +648,14 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _main_aesop_product_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main/aesop_product_index */ "./frontend/components/main/aesop_product_index.jsx");
+/* harmony import */ var _main_aesop_product_index_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main/aesop_product_index_container */ "./frontend/components/main/aesop_product_index_container.js");
 
 
 
 var Home = function Home(state) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "homepage"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_aesop_product_index__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_aesop_product_index_container__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
@@ -714,10 +714,23 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var products = this.props.products;
+      var _this$props = this.props,
+          skinProducts = _this$props.skinProducts,
+          bodyProducts = _this$props.bodyProducts;
+      var categoryAll = [];
+      skinProducts.forEach(function (product) {
+        if (!categoryAll.includes(product.category)) {
+          categoryAll.push(product.category);
+        }
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-1"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Products:"), products.map(function (product) {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Skin Products"), skinProducts.map(function (product) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          product: product,
+          key: product.id
+        });
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Body Products"), bodyProducts.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           key: product.id
@@ -729,7 +742,50 @@ function (_React$Component) {
   return AesopProductIndex;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (AesopProductIndex);
+/* harmony default export */ __webpack_exports__["default"] = (AesopProductIndex); // {
+//     categoryAll.map((category) => {
+//         return <div>{category}</div>
+//     })
+// }
+
+/***/ }),
+
+/***/ "./frontend/components/main/aesop_product_index_container.js":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/main/aesop_product_index_container.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _aesop_product_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aesop_product_index */ "./frontend/components/main/aesop_product_index.jsx");
+/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _selectors_skin_selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../selectors/skin_selector */ "./frontend/components/selectors/skin_selector.js");
+/* harmony import */ var _selectors_body_selector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../selectors/body_selector */ "./frontend/components/selectors/body_selector.js");
+
+
+
+
+
+
+var mSTP = function mSTP(state) {
+  return {
+    skinProducts: Object(_selectors_skin_selector__WEBPACK_IMPORTED_MODULE_3__["allSkinProducts"])(state),
+    bodyProducts: Object(_selectors_body_selector__WEBPACK_IMPORTED_MODULE_4__["allBodyProducts"])(state)
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchProducts: function fetchProducts() {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_aesop_product_index__WEBPACK_IMPORTED_MODULE_1__["default"])); // products: Object.values(state.entities.products)
 
 /***/ }),
 
@@ -780,8 +836,10 @@ function (_React$Component) {
   _createClass(AesopProductIndexItem, [{
     key: "render",
     value: function render() {
-      var name = this.props.product.name;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", name, " "), "HELLO!");
+      var _this$props$product = this.props.product,
+          name = _this$props$product.name,
+          description = _this$props$product.description;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", description), "HELLO!");
     }
   }]);
 
@@ -893,6 +951,42 @@ var mDTP = function mDTP(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(Modal));
+
+/***/ }),
+
+/***/ "./frontend/components/selectors/body_selector.js":
+/*!********************************************************!*\
+  !*** ./frontend/components/selectors/body_selector.js ***!
+  \********************************************************/
+/*! exports provided: allBodyProducts */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allBodyProducts", function() { return allBodyProducts; });
+var allBodyProducts = function allBodyProducts(state) {
+  return Object.values(state.entities.products).filter(function (product) {
+    return product.category === "Body";
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/components/selectors/skin_selector.js":
+/*!********************************************************!*\
+  !*** ./frontend/components/selectors/skin_selector.js ***!
+  \********************************************************/
+/*! exports provided: allSkinProducts */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allSkinProducts", function() { return allSkinProducts; });
+var allSkinProducts = function allSkinProducts(state) {
+  return Object.values(state.entities.products).filter(function (product) {
+    return product.category === "Skincare";
+  });
+};
 
 /***/ }),
 

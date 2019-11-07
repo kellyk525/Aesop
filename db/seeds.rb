@@ -7,14 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create!(email: 'demo@aesop.com', first_name: 'Demo', last_name: 'User', password: 'password')
-
+User.create!(email: 'demodemo@aesop.com', first_name: 'Demo', last_name: 'User', password: 'password')
+# Change user email -- already exists
 
 Product.create!(
     name: "Hydrating Lotion",
     size: ["0.18 oz", "5.12 ml"],
     price: 37.00,
     category: "Body",
+    description: "hydrates your skin",
     key_ingredients: "A lot of ingredients",
     how_to_use: "A lot of instructions",
     dosage: "little",
@@ -27,6 +28,7 @@ Product.create!(
     size: ["0.20 oz", "7.12 ml"],
     price: 52.00,
     category: "Skincare",
+    description: "balances your skin complextion",
     key_ingredients: "A lot of ingredients",
     how_to_use: "A lot of instructions",
     dosage: "little",

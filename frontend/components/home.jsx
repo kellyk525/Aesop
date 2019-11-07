@@ -1,9 +1,9 @@
 import React from 'react';
-import AesopProductIndex from './main/aesop_product_index'
+import AesopProductIndexContainer from './main/aesop_product_index_container'
 
 const Home = (state) => (
     <div className="homepage" >
-        < AesopProductIndex />
+        < AesopProductIndexContainer />
     </div>
 )
 
