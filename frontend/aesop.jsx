@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import Root from './components/Root';
+import Root from './components/root';
 import * as sessionActions from './actions/session_actions';
 import * as productActions from './actions/product_actions';
 
