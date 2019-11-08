@@ -21,6 +21,8 @@ class LoginForm extends React.Component {
         };
     }
 
+
+
     handleSubmit(e) {
         return (e) => {
             e.preventDefault();
@@ -29,11 +31,28 @@ class LoginForm extends React.Component {
         };
     }
 
+    handleDemoLogin(email, password) {
+        if (email.length > 0) {
+            this.setState({ email: this.state.email += email.shift() },
+                () => setTimeout(() => this.handleDemoLogin(email, password), 50 )
+            )
+        } else if (password.length > 0) {
+            this.setState({ password: this.state.password += password.shift() },
+                () => setTimeout(() => this.handleDemoLogin(email, password), 50 )
+            )
+        } else {
+            this.props.login(this.state).then(this.props.closeModal);
+        }
+    }
+
     handleDemoUser(e) {
         return (e) => {
             e.preventDefault();
-            let user = { email: 'demo@aesop.com', password: 'password' };
-            this.props.login(user).then(this.props.closeModal);
+            let email = 'demo@aesop.com'.split("");
+            let password = 'password'.split("");
+            this.handleDemoLogin(email, password)
+            // let user = { email: 'demo@aesop.com', password: 'password' };
+            // this.props.login(user).then(this.props.closeModal);
         };
     }
 
@@ -60,7 +79,7 @@ class LoginForm extends React.Component {
                                 <input type="password" value={password} onChange={ this.update("password") } placeholder="Password" />
                             </label>
                         </div>
-                        <input className="formText-submit" type="submit" value="Login"/>
+                        <input className="formText-submit" type="submit" value="Login" />
                         <button className="formText-submit" onClick={this.handleDemoUser()} >Demo Sign In</button>
                     </form>
                 </div>
@@ -69,6 +88,12 @@ class LoginForm extends React.Component {
 }
 
 export default LoginForm;
+
+// onChange listener -- checking if all input values are filed in
+// remove Attribute -- "disabled" 
+// handleEnableInput -- document.getElementById("login-user").setAttribute("disabled")
+
+
 
 
 

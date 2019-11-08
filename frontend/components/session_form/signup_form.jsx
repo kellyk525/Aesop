@@ -31,13 +31,28 @@ class SignupForm extends React.Component {
         };
     }
 
+
+    handleEnableInput(e) {
+
+        return (e) => {
+            e.preventDefault();
+            let email = this.state.email;
+            let password = this.state.password;
+
+            if (email && password) {
+                document.getElementById("login-user").removeAttribute("disabled")
+            }
+        };
+
+    }
+
     render() {
         let { email, password, firstName , lastName } = this.state;
         let error = this.props.errors.map((error, i) => <div key={i} className="signin-error">{error}</div>);
 
         return (
             <div className="modal-child-signup" onClick={e => e.stopPropagation()} >
-                <form onSubmit={this.handleSubmit()} className="signup-form" >
+                <form onSubmit={this.handleSubmit()} className="signup-form" onChange={this.handleEnableInput()}  >
                     <div className="modal-headingWrap">
                         <div className="modal-title" >It seems you are new to us. Welcome to Aesop</div>
                         <div className="modal-subtitle" >To create an account, please enter your details below</div>
@@ -65,7 +80,7 @@ class SignupForm extends React.Component {
                         </label>
                     </div>
     
-                    <input type="submit" value="Register" className="formText-submit" />
+                    <input type="submit" value="Register" className="formText-submit" id="login-user" disabled  />
                 </form>
             </div>
         )

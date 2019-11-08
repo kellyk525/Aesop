@@ -32,7 +32,6 @@ const Header = (props) => {
     return (
         <div className="header">
             <div>
-                {console.log(props)}
                 {welcomeMessage}
                 {dropdown}
             </div>

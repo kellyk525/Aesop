@@ -189,7 +189,6 @@ var RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 var CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
-  // debugger
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser: currentUser
@@ -233,7 +232,6 @@ var logout = function logout() {
 var signup = function signup(user) {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (currentUser) {
-      // debugger
       return dispatch(receiveCurrentUser(currentUser));
     }, function (errors) {
       return dispatch(receiveErrors(errors.responseJSON));
@@ -569,7 +567,7 @@ var Header = function Header(props) {
   var dropdown = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, signout);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, console.log(props), welcomeMessage, dropdown));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, welcomeMessage, dropdown));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -725,16 +723,24 @@ function (_React$Component) {
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-1"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Skin Products"), skinProducts.map(function (product) {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-products"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Skin Products"), skinProducts.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           key: product.id
         });
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Body Products"), bodyProducts.map(function (product) {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-skin-product-image"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-products"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Body Products"), bodyProducts.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           key: product.id
         });
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-body-product-image"
       }));
     }
   }]);
@@ -1068,18 +1074,43 @@ function (_React$Component) {
       };
     }
   }, {
+    key: "handleDemoLogin",
+    value: function handleDemoLogin(email, password) {
+      var _this4 = this;
+
+      if (email.length > 0) {
+        this.setState({
+          email: this.state.email += email.shift()
+        }, function () {
+          return setTimeout(function () {
+            return _this4.handleDemoLogin(email, password);
+          }, 50);
+        });
+      } else if (password.length > 0) {
+        this.setState({
+          password: this.state.password += password.shift()
+        }, function () {
+          return setTimeout(function () {
+            return _this4.handleDemoLogin(email, password);
+          }, 50);
+        });
+      } else {
+        this.props.login(this.state).then(this.props.closeModal);
+      }
+    }
+  }, {
     key: "handleDemoUser",
     value: function handleDemoUser(e) {
-      var _this4 = this;
+      var _this5 = this;
 
       return function (e) {
         e.preventDefault();
-        var user = {
-          email: 'demo@aesop.com',
-          password: 'password'
-        };
+        var email = 'demo@aesop.com'.split("");
+        var password = 'password'.split("");
 
-        _this4.props.login(user).then(_this4.props.closeModal);
+        _this5.handleDemoLogin(email, password); // let user = { email: 'demo@aesop.com', password: 'password' };
+        // this.props.login(user).then(this.props.closeModal);
+
       };
     }
   }, {
@@ -1136,7 +1167,9 @@ function (_React$Component) {
   return LoginForm;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (LoginForm);
+/* harmony default export */ __webpack_exports__["default"] = (LoginForm); // onChange listener -- checking if all input values are filed in
+// remove Attribute -- "disabled" 
+// handleEnableInput -- document.getElementById("login-user").setAttribute("disabled")
 
 /***/ }),
 
@@ -1276,6 +1309,21 @@ function (_React$Component) {
       };
     }
   }, {
+    key: "handleEnableInput",
+    value: function handleEnableInput(e) {
+      var _this4 = this;
+
+      return function (e) {
+        e.preventDefault();
+        var email = _this4.state.email;
+        var password = _this4.state.password;
+
+        if (email && password) {
+          document.getElementById("login-user").removeAttribute("disabled");
+        }
+      };
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$state = this.state,
@@ -1296,7 +1344,8 @@ function (_React$Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit(),
-        className: "signup-form"
+        className: "signup-form",
+        onChange: this.handleEnableInput()
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-headingWrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1334,7 +1383,9 @@ function (_React$Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Register",
-        className: "formText-submit"
+        className: "formText-submit",
+        id: "login-user",
+        disabled: true
       })));
     }
   }]);
