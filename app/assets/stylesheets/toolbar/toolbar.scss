@@ -5,21 +5,27 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #DBCBAF;
-    height: 68px;
+    // background: rgb(126, 102, 85);
+    // // #907D6C
+    background: rgb(100,74,50);
+    background: linear-gradient(98deg, rgba(100,74,50,1) 0%, rgba(122,97,75,1) 50%, rgba(147,131,116,1) 100%);
+    height: 76px;
     font-family: 'Open Sans';
+    border-top: 4px solid black;
 }
+
 
 .toolbar-navigation {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 1rem;
-    font-size: 0.9rem;
+    padding: 0 1.5rem;
+    font-size: 14px;
 }
 
 .toolbar-logo {
     margin-left: 1rem;
+    background-image: url(aesop_logo.jpg);
 }
 
 .toolbar-logo a {
@@ -42,21 +48,48 @@
 }
 
 .toolbar-navigation-items li {
-    padding: 0 0.5rem;
+    padding: 0 0.7rem;
 }
 
 
 .toolbar-navigation-items a {
     color: black;
     text-decoration: none;
-
+    position: relative;
 }
 
-.toolbar-navigation-items a:hover,
-.toolbar-navigation-items a:active {
-    border-bottom: 1px solid black;
+.toolbar-navigation-items a:hover {
+  color: inherit;
 }
 
+.toolbar-navigation-items a:focus {
+    outline: none;
+}
+
+.toolbar-navigation-items a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: transform 500ms ease-in-out;
+    transition: transform 500ms ease-in-out;
+    transform-origin:100% 50%;
+    -webkit-transform-origin: 100% 50%;
+}
+
+.toolbar-navigation-items a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  transform-origin: 0 50%;
+  -webkit-transform-origin: 0 50%;
+}
 
 .header-user {
     display: flex;

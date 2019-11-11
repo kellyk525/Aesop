@@ -8,11 +8,12 @@ class AesopProductIndexItem extends React.Component {
     }
 
     render() {
-        const { name, description } = this.props.product
+        const { name, description, photoUrl } = this.props.product
         return (
             <div>
                 <div> { name } </div>
                 <div> { description }</div>
+                <img src={ photoUrl } />
                 HELLO!
             </div>
         )

@@ -12,15 +12,12 @@ class AesopProductIndex extends React.Component {
     render() {
         const { skinProducts, bodyProducts  } = this.props
         let categoryAll = []
-        skinProducts.forEach((product) => {
-            if (!categoryAll.includes(product.category)) {
-                categoryAll.push(product.category)
-            }
-        })
 
         return (
             <div>
-                <div className="splash-1"></div>
+                <div className="main-splash">
+                    <div className="splash-1"></div>
+                </div>
                 <div className="main-products" >
                     <div>Skin Products</div>
                     {skinProducts.map((product) => {
@@ -35,6 +32,14 @@ class AesopProductIndex extends React.Component {
                     })}
                 </div>
                 <div className="main-body-product-image"></div>
+
+                <div className="slider">
+                    <div>Slide #1</div>
+                    <div>Slide #2</div>
+                    <div>Slide #3</div>
+                    <div>Slide #4</div>
+                    <div>Slide #5</div>
+                </div>
             </div>
         )
     }
@@ -48,3 +53,10 @@ export default AesopProductIndex;
 //         return <div>{category}</div>
 //     })
 // }
+
+
+        // skinProducts.forEach((product) => {
+        //     if (!categoryAll.includes(product.category)) {
+        //         categoryAll.push(product.category)
+        //     }
+        // })

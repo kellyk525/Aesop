@@ -24,7 +24,7 @@ class Toolbar extends React.Component  {
     };
 
     backdropClickHandler() {
-        this.setState({ sideDrawerOpen: false })
+        this.seState({ sideDrawerOpen: false })
     }
 
     render () {
@@ -60,7 +60,7 @@ class Toolbar extends React.Component  {
                         { backdrop }
                     </div>
                 </nav>
-                <div className="toolbar-logo" ><a href="/">AESOP</a></div>
+                <div className="toolbar-logo" ><a href="/"></a></div>
             </header>
         )
     }

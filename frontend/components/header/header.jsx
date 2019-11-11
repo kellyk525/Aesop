@@ -1,9 +1,11 @@
+
+
 import React from "react";
 
 const Header = (props) => {
     const welcomeMessage = props.currentUser ? (
         <div>
-            <h3> {props.currentUser.first_name + " " +props.currentUser.last_name  } </h3>
+            <h3> {props.currentUser.first_name + " " + props.currentUser.last_name} </h3>
         </div>) : (
             <div className="header-user" >
                 <div className="header-user-auth" >
@@ -34,9 +36,13 @@ const Header = (props) => {
             <div>
                 {welcomeMessage}
                 {dropdown}
+                <button onClick={() => props.openSide("first")} className="register-button" >Kelly</button>
             </div>
         </div>
     );
 }
 
 export default Header;
+
+
+

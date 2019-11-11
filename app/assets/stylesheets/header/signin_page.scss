@@ -7,17 +7,41 @@
   left: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
+  
 }
 
 .modal-child-login {
     position: absolute;
-    top: 44%;
+    top: 50%;
     left: 50%;
     width: 550px;
     height: 650px;
     transform: translate(-50%, -50%);
     display: block;
     background-color: #FFFEF2;
+
+    -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 .login-form {
@@ -37,12 +61,30 @@
     padding: 40px 0px 20px;
     width: 100%;
     font-weight: 400;
+    position: relative;
 }
+
+.x-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 21px;
+    color: black;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.x-button:focus {
+    outline: none;
+}
+
 
 .modal-subtitle {
     font-size: 16px;
     color: #666666;
 }
+
 
 .formText {
     padding: 30px 10px 0px;
@@ -57,7 +99,35 @@
         border-bottom: 1px solid #c9c1c1;
         background-color: #FFFEF2;
     }
+
+    input:focus {
+        outline: none;
+    }
 }
+
+.formText-name {
+    padding: 30px 10px 0px;
+    margin: 0px 0px 30px;
+
+    input {
+        padding: 8px 0px;
+        width: 200px;
+        font-size: 20px;
+        font-weight: 300;
+        border: none;
+        border-bottom: 1px solid #c9c1c1;
+        background-color: #FFFEF2;
+    }
+
+    input:focus {
+        outline: none;
+    }
+}
+
+.name {
+    display: flex;
+}
+
 
 .formText-submit {
     width: 414px;

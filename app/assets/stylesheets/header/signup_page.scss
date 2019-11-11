@@ -1,13 +1,44 @@
 
 .modal-child-signup {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: block;
     width: 550px;
-    height: 800px;
+    height: 700px;
     background-color: #FFFEF2;
+    -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.modal-title-signup {
+    font-size: 27px;
+    padding: 40px 0px 20px;
+    width: 100%;
+    font-weight: 400;
+    position: relative;
+    line-height: 38px;
 }
 
 .signup-form {

@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create!(email: 'demodemo@aesop.com', first_name: 'Demo', last_name: 'User', password: 'password')
+User.create!(email: 'demo@aesop.com', first_name: 'Demo', last_name: 'User', password: 'password')
 # Change user email -- already exists
 
 Product.create!(

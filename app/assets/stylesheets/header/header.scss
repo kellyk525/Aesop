@@ -3,32 +3,112 @@
 
 .header-user-auth {
     display: flex;
+    padding-right: 14px;
 
     p {
-        padding-top: 2px;
+        padding-top: 5px;
+        padding-left: 4px;
+        padding-right: 4px;
     }
 }
 
+
 .signin-button {
-    padding: 0; 
+    padding: 3px 0; 
     margin: 0;
     border: none;
     background-color: transparent;
     font-size: 0.9rem;
     padding-right: 6px;
     cursor: pointer;
+    // for underline
+    position: relative;
+    color: #000;
+    text-decoration: none;
 }
 
+.signin-button:hover {
+  color: inherit;
+}
+
+.signin-button:focus {
+    outline: none;
+}
+
+.signin-button:before {
+    content: "";
+    position: absolute;
+    width: 88%;
+    height: 0.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+    transform-origin: 100% 50%;
+    -webkit-transform-origin: 100% 50%;
+}
+
+.signin-button:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  transform-origin: 0 50%;
+  -webkit-transform-origin: 0 50%;
+}
+
+
 .register-button {
-    padding: 0; 
+    padding: 3px 0;
     margin: 0;
     border: none;
     background-color: transparent;
     font-size: 0.9rem;
     padding-left: 6px;
     cursor: pointer;
+    // for underline
+    position: relative;
+    color: #000;
+    text-decoration: none;
 }
 
+
+.register-button:focus {
+    outline: none;
+}
+
+.register-button:hover {
+  color: inherit;
+}
+
+
+.register-button:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 6px;
+    width: 90%;
+    height: 1px;
+    background-color: #000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+    transform-origin:100% 50%;
+    -webkit-transform-origin: 100% 50%;
+}
+
+.register-button:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  transform-origin: 0 50%;
+  -webkit-transform-origin: 0 50%;
+}
 
 
 

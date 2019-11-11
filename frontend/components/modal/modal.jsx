@@ -9,12 +9,12 @@ class Modal extends React.Component {
         super(props);
 
     }
+
     render () {
         const { modal, closeModal } = this.props
         if (!modal) {
             return null;
         }
-
         let component;
         switch (modal) {
             case 'login':

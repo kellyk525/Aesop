@@ -1,7 +1,10 @@
+
+
 import { connect } from "react-redux";
 import Header from './header';
 import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
+import { openSide } from '../../actions/side_actions';
 
 
 // const mSTP = ({ session, entities: { users } }) => {
@@ -19,13 +22,12 @@ const mSTP = state => ({
 const mDTP = (dispatch) => (
     {
         logout: () => dispatch(logout()),
-        openModal: (modal) => dispatch(openModal(modal))
+        openModal: (modal) => dispatch(openModal(modal)),
+        openSide: (side) => dispatch(openSide(side))
     }
 );
 
 export default connect(mSTP, mDTP)(Header);
-
-
 
 
 

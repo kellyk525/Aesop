@@ -21,8 +21,6 @@ class LoginForm extends React.Component {
         };
     }
 
-
-
     handleSubmit(e) {
         return (e) => {
             e.preventDefault();
@@ -65,7 +63,10 @@ class LoginForm extends React.Component {
             <div className="modal-child-login" onClick={e => e.stopPropagation()} >
                     <form onSubmit={this.handleSubmit()} className="login-form" >
                         <div className="modal-headingWrap">
-                            <div className="modal-title">Welcome Back to Aesop.</ div>
+                            <div className="modal-title">
+                                <button className="x-button" onClick={this.props.closeModal}>X</button>
+                                Welcome Back to Aesop.
+                            </ div>
                             <div className="modal-subtitle">Please confirm your password</div>
                         </div>
                         { error }

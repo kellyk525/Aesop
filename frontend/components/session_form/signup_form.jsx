@@ -54,7 +54,10 @@ class SignupForm extends React.Component {
             <div className="modal-child-signup" onClick={e => e.stopPropagation()} >
                 <form onSubmit={this.handleSubmit()} className="signup-form" onChange={this.handleEnableInput()}  >
                     <div className="modal-headingWrap">
-                        <div className="modal-title" >It seems you are new to us. Welcome to Aesop</div>
+                        <div className="modal-title-signup" >
+                            <button className="x-button" onClick={this.props.closeModal}>X</button>
+                            It seems you are new to us. Welcome to Aesop
+                        </div>
                         <div className="modal-subtitle" >To create an account, please enter your details below</div>
                     </div>
                     { error }
@@ -68,16 +71,18 @@ class SignupForm extends React.Component {
                             <input type="password" value={password} onChange={ this.update("password") } placeholder="Password" />
                         </label>
                     </div>
-
-                    <div className="formText">
-                        <label>
-                            <input type="text" value={firstName} onChange={this.update("first_name")} placeholder="First Name" />
-                        </label>
-                    </div>
-                    <div className="formText">
-                        <label>
-                            <input type="text" value={lastName} onChange={this.update("last_name")} placeholder="Last Name" />
-                        </label>
+                    
+                    <div className="name">
+                        <div className="formText-name">
+                            <label>
+                                <input type="text" value={firstName} onChange={this.update("first_name")} placeholder="First Name" />
+                            </label>
+                        </div>
+                        <div className="formText-name">
+                            <label>
+                                <input type="text" value={lastName} onChange={this.update("last_name")} placeholder="Last Name" />
+                            </label>
+                        </div>
                     </div>
     
                     <input type="submit" value="Register" className="formText-submit" id="login-user" disabled  />

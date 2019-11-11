@@ -1,12 +1,40 @@
 
 
-
+.main-splash {
+    background: rgb(100,74,50);
+    background: linear-gradient(98deg, rgba(100,74,50,1) 0%, rgba(122,97,75,1) 50%, rgba(147,131,116,1) 100%);
+    z-index:200;
+}
 .splash-1 {
     background: image-url('main-image-aesop.jpg');
     height: 1000px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+// FIX THE LOADING PART // FADING TAKES TOO LONG
+
+@keyframes fadein {
+    from { opacity: 0.8; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0.8; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0.8; }
+    to   { opacity: 1; }
 }
 
 .main-products {
@@ -15,6 +43,9 @@
     height: 400px;
     background-color: #FFFEF2;
     border-bottom: 2px solid black;
+    background: rgb(100,74,50);
+    background: linear-gradient(98deg, rgba(100,74,50,1) 0%, rgba(122,97,75,1) 50%, rgba(147,131,116,1) 100%);
+    z-index:200;
 }
 
 .main-skin-product-image {
@@ -25,5 +56,22 @@
     background-position: center;
     background-size: contain;
 }
+
+// .slider {
+//   /* line them up horizontally */
+//   display: flex;
+
+//   /* allow for scrolling */
+//   overflow-x: auto;
+
+//   /* make it smooth on iOS */
+//   -webkit-overflow-scrolling: touch;
+// }
+// .slider > div {
+//   /* make sure the width is honored */
+//   flex-shrink: 0;
+//   width: 300px;
+//   height: 300px;
+// }
 
 
