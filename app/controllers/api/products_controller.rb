@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
 
     def index
-        @products = Product.all
+        @products = Product.with_attached_photos.all
     end
 
     def show

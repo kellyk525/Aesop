@@ -8,7 +8,7 @@ import { allSkinProducts } from '../selectors/skin_selector';
 
 const mSTP = (state) => ({
     skinProducts: allSkinProducts(state),
-    mainCategory: "skincare"
+    mainCategory: "Skin"
 });
 
 const mDTP = (dispatch) => ({

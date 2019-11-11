@@ -869,10 +869,12 @@ function (_React$Component) {
       var _this$props$product = this.props.product,
           name = _this$props$product.name,
           description = _this$props$product.description,
-          photoUrl = _this$props$product.photoUrl;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: photoUrl
-      }), "HELLO!");
+          photoUrls = _this$props$product.photoUrls;
+      debugger;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: photoUrls[0],
+        alt: "Photo"
+      })), "HELLO!");
     }
   }]);
 
@@ -1124,7 +1126,7 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state) {
   return {
     skinProducts: Object(_selectors_skin_selector__WEBPACK_IMPORTED_MODULE_3__["allSkinProducts"])(state),
-    mainCategory: "skincare"
+    mainCategory: "Skin"
   };
 };
 
@@ -1270,7 +1272,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allSkinProducts", function() { return allSkinProducts; });
 var allSkinProducts = function allSkinProducts(state) {
   return Object.values(state.entities.products).filter(function (product) {
-    return product.category === "Skincare";
+    return product.category === "Skin";
   });
 };
 
@@ -2552,7 +2554,7 @@ function (_React$Component) {
         className: "toolbar-logo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
-      }, "AESOP")));
+      })));
     }
   }]);
 

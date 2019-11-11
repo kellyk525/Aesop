@@ -3,8 +3,13 @@
 @products.each do |product|
   json.set! product.id do
     json.partial! 'api/products/product', product: product
-    json.photoUrl url_for(product.photos) 
+
+    if product.photos.attached?
+      json.photoUrls product.photos.map { |file| url_for(file) }  
+    end
+        
   end
 end
+
 
 
