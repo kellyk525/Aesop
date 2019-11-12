@@ -18,7 +18,7 @@ import SkinProductContainer from './products/skin_products/skin_products_contain
 const App = () => (
     <div style={{height: '100%'}}>
         <Toolbar />
-        <main style={{ marginTop: '76px'}} ></main>
+        <main style={{ marginTop: '64px'}} ></main>
         <Modal />
         <Side />
 

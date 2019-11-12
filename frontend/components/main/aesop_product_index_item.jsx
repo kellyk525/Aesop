@@ -8,16 +8,22 @@ class AesopProductIndexItem extends React.Component {
     }
 
     render() {
-        const { name, description, photoUrls } = this.props.product
-        debugger
+        const { name, skin_feel , photoUrls } = this.props.product
+        
         return (
             <div>
-                <div> { name } </div>
-                <div> { description }</div>
-                <figure>
-                    <img src={photoUrls[0]} alt="Photo" />
-                </figure>
-                HELLO!
+                <div className="main-index-item">
+                    <div className="main-item-photo">
+                        <div className="photo-contain">
+                            <img src={photoUrls[0]} alt="Photo" />
+                        </div>
+                    </div>
+                    <div className="text">
+                        <h1>{name}</h1>
+                        <p>{skin_feel}</p>
+                    </div>
+                </div>
+    
             </div>
         )
     }

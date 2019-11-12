@@ -373,7 +373,7 @@ var App = function App() {
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_toolbar_toolbar__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
     style: {
-      marginTop: '76px'
+      marginTop: '64px'
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_side__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
@@ -742,25 +742,42 @@ function (_React$Component) {
         className: "splash-1"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Skin Products"), skinProducts.map(function (product) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          product: product,
-          key: product.id
-        });
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-products-contain"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Of Replenishing Character"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-skin-product-image"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main-products"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Body Products"), bodyProducts.map(function (product) {
+      }, skinProducts.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           key: product.id
         });
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main-body-product-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "slider"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Slide #1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Slide #2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Slide #3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Slide #4"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Slide #5")));
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-products-second"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-products-contain-second"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-main-second-test.png",
+        alt: ""
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-products"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-products-contain"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Of Replenishing Character"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-skin-product-image"
+      }, skinProducts.map(function (product) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          product: product,
+          key: product.id
+        });
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "quote"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "quote-contain"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u2018This world is but canvas to our imaginations.\u2019"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer-bottom"
+      })));
     }
   }]);
 
@@ -868,13 +885,20 @@ function (_React$Component) {
     value: function render() {
       var _this$props$product = this.props.product,
           name = _this$props$product.name,
-          description = _this$props$product.description,
+          skin_feel = _this$props$product.skin_feel,
           photoUrls = _this$props$product.photoUrls;
-      debugger;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-index-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-item-photo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photo-contain"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: photoUrls[0],
         alt: "Photo"
-      })), "HELLO!");
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, skin_feel))));
     }
   }]);
 
