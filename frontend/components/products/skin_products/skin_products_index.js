@@ -23,4 +23,4 @@ class SkinProductsIndex extends React.Component {
     }
 }
 
-export default SkinProductsIndex;
+// export default SkinProductsIndex;

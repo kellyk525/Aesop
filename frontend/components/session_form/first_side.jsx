@@ -20,10 +20,15 @@ class FirstSide extends React.Component {
 
         return (
             <div className="first-drawer" onClick={e => e.stopPropagation()} >
-                <button className="x-button" onClick={this.props.closeSide}>X</button>
+                <div className="first-drawer-contain" >
+                    <button className="x-button" onClick={this.props.closeSide}>X</button>
+                    <button onClick={() => this.props.openSide("second")} className="register-button" >Register</button>
+                </div>
 
-                <button onClick={() => this.props.openSide("second")} className="register-button" >Register</button>
-                
+                <div className="container">
+                    <button type="button" className="slide-in">Slide In</button>
+                </div>
+
             </div>
         )
     }

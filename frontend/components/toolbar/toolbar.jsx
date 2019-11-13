@@ -38,9 +38,7 @@ class Toolbar extends React.Component  {
         return (
             <header className="toolbar">
                 <nav className="toolbar-navigation">
-                    <div>
-                        <DrawerToggleButton click={ this.drawerToggleClickHandler } />
-                    </div>
+                    <button onClick={() => this.props.openSide("first")} className="register-button" >Shop</button>
                     <div className="toolbar-navigation-items" >
                         <ul>
                             <li><a href="/">Shop</a></li>
