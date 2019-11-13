@@ -10,7 +10,7 @@ class ProductShowDetailSecond extends React.Component {
     render() {
         return (
             <div>
-                
+                <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Second.png" alt="Second-Photo"/>
             </div>
         )
     }

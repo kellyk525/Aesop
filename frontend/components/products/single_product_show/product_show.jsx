@@ -39,9 +39,9 @@ class ProductShow extends React.Component {
                     <div className="detail">
                         <ProductShowDetail product={this.props.product} />
                     </div>
-                    <div>
-                        <ProductShowDetailSecond product={this.props.product} />
-                    </div>
+                </div>
+                <div>
+                    <ProductShowDetailSecond product={this.props.product} />
                 </div>
             </div>
         )

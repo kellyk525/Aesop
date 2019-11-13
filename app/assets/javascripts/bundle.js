@@ -1479,9 +1479,9 @@ function (_React$Component) {
         className: "detail"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_show_detail__WEBPACK_IMPORTED_MODULE_1__["default"], {
         product: this.props.product
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_show_detail_second__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_show_detail_second__WEBPACK_IMPORTED_MODULE_2__["default"], {
         product: this.props.product
-      }))));
+      })));
     }
   }]);
 
@@ -1650,7 +1650,10 @@ function (_React$Component) {
   _createClass(ProductShowDetailSecond, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://aesop-dev.s3-us-west-1.amazonaws.com/Second.png",
+        alt: "Second-Photo"
+      }));
     }
   }]);
 
