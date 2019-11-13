@@ -1721,14 +1721,18 @@ function (_React$Component) {
         src: "https://aesop-dev.s3-us-west-1.amazonaws.com/Second.png",
         alt: "Second-Photo"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second-detail-wrap-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "second-detail"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "How to use"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, how_to_use), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second-detail-first"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "How to use"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, how_to_use)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "second-detail-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Dosage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, dosage)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "second-detail-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Texture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, texture)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "second-detail-wrap"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Aroma"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, aroma)))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Aroma"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, aroma))))));
     }
   }]);
 
