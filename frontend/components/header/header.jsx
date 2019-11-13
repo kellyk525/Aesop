@@ -36,13 +36,9 @@ const Header = (props) => {
             <div>
                 {welcomeMessage}
                 {dropdown}
-                <button onClick={() => props.openSide("first")} className="register-button" >Kelly</button>
             </div>
         </div>
     );
 }
 
 export default Header;
-
-
-

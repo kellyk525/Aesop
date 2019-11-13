@@ -10,7 +10,7 @@ import { fetchProduct } from '../../../actions/product_actions';
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+
     return ({
         product: state.entities.products[ownProps.match.params.productId]
     })

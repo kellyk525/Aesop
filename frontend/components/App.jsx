@@ -20,7 +20,7 @@ import ProductShowContainer from './products/single_product_show/product_show_co
 const App = () => (
     <div style={{height: '100%'}}>
         <ToolbarContainer />
-        <main style={{ marginTop: '64px'}} ></main>
+        {/* <main style={{ marginTop: '64px'}} ></main> */}
         <Modal />
         <Side />
 

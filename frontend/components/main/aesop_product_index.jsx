@@ -12,7 +12,7 @@ class AesopProductIndex extends React.Component {
     render() {
         const { skinProducts, bodyProducts  } = this.props
         let categoryAll = []
-        debugger
+    
         return (
             <div>
                 <div className="main-splash">

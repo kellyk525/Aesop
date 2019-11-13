@@ -7,7 +7,7 @@ import FirstSide from './first_side';
 
 
 const mSTP = (state) => {
-    debugger
+
     return ({
         products: state.entities.products
     });

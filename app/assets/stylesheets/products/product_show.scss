@@ -1,0 +1,207 @@
+
+
+.wrap {
+    width: 100%;
+    background-color: #FFFEF2;
+}
+
+.show-picture-description-wrap {
+    display: flex;
+    width: 91%;
+    margin: 0 auto;
+    height: 600px;
+    // background-color: rgb(190, 187, 154);
+    padding-top: 5%;
+    padding-left: 2%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+
+    .logo-image-wrap {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        height: 100%;
+        // background-color: rgb(40, 94, 40);
+
+
+        .image-and-detail {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 100%;
+            // background-color: orange;
+
+            p {
+                text-align: center;
+                font-weight: bold;
+                font-size: 14px;
+                font-family: Open Sans;
+                color: #333333;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .logo {
+            font-family: Open Sans;
+            font-size: 35px;
+            font-weight: 400;
+            color: #333333;
+            height: 30px;
+            width: 90px;
+            // background-color: red;
+            position: relative;
+
+            p {
+                display: block;
+                height: 60px;
+                // background-color: purple;
+                position: absolute;
+                top: -11px;
+            }
+        }
+    }
+}
+
+.detail {
+    display: block;
+    // background-color: red;
+    width: 31%;
+    height: 100%;
+    font-family: Open Sans;
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s, details 0.7s ease-in;
+}
+
+// FIX THE LOADING PART // FADING TAKES TOO LONG
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes details {
+    0%{
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
+.first-detail-wrap {
+    display: flex;
+    flex-direction: column;
+    // background-color: yellow;
+    height: 207px;
+    border-bottom: 2px solid #333333;
+
+
+    .first-detail {
+        display: flex;
+        flex-direction: row;
+        // background-color: purple;
+        padding-top: 2px;
+        padding-left: 1px;
+    }
+
+    h1 {
+        font-size: 30px;
+        font-weight: 400;
+        margin: auto 0;
+    }
+
+    .description {
+        font-size: 14px;
+        padding-bottom: 14px;
+        line-height: 23px;
+    }
+}
+
+.second-detail-wrap {
+    height: 50px;
+    // background-color: skyblue;
+    padding-top: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #D6D5CB;
+
+    p {
+        font-size: 14px;
+        color: #6E6E6E;
+    }
+
+    p:first-of-type {
+        padding-bottom: 12px;
+        font-weight: bold;
+        color: #333333;
+    }
+
+}
+
+.add-to-cart {
+    height: 59px;
+    background-color: #333333;
+    font-size: 14px;
+    color: white;
+    font-weight: 400;
+
+    p {
+        text-align: center;
+        padding-top: 20.5px;
+    }
+}
+
+.image-and-detail {
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s, image 0.7s ease-in;
+}
+
+// FIX THE LOADING PART // FADING TAKES TOO LONG
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes image {
+    0%{
+        transform: translateX(30px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
