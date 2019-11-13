@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
 
 class AesopProductIndexItem extends React.Component {
@@ -8,10 +9,11 @@ class AesopProductIndexItem extends React.Component {
     }
 
     render() {
-        const { name, skin_feel , photoUrls } = this.props.product
+        const { name, skin_feel , photoUrls, id } = this.props.product
         
         return (
             <div>
+                <Link to={`/products/${name}~${id}`} className="link-product">
                 <div className="main-index-item">
                     <div className="main-item-photo">
                         <div className="photo-contain">
@@ -23,7 +25,7 @@ class AesopProductIndexItem extends React.Component {
                         <p>{skin_feel}</p>
                     </div>
                 </div>
-    
+                </Link>
             </div>
         )
     }

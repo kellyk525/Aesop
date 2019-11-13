@@ -728,6 +728,12 @@ function (_React$Component) {
       this.props.fetchProducts();
     }
   }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.scrollTo(0, 0);
+    } // This is not working
+
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -735,10 +741,13 @@ function (_React$Component) {
           bodyProducts = _this$props.bodyProducts;
       var categoryAll = [];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main-splash"
+        className: "main-products-second"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-1"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-products-contain-second"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-main-second-test.png",
+        alt: ""
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products-contain"
@@ -792,6 +801,8 @@ function (_React$Component) {
 //         categoryAll.push(product.category)
 //     }
 // })
+//  className="main-splash"
+//  className="splash-1"
 
 /***/ }),
 
@@ -867,6 +878,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var AesopProductIndexItem =
 /*#__PURE__*/
 function (_React$Component) {
@@ -884,8 +896,12 @@ function (_React$Component) {
       var _this$props$product = this.props.product,
           name = _this$props$product.name,
           skin_feel = _this$props$product.skin_feel,
-          photoUrls = _this$props$product.photoUrls;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          photoUrls = _this$props$product.photoUrls,
+          id = _this$props$product.id;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/products/".concat(name, "~").concat(id),
+        className: "link-product"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-index-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-item-photo"
@@ -896,7 +912,7 @@ function (_React$Component) {
         alt: "Photo"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, skin_feel))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, skin_feel)))));
     }
   }]);
 
@@ -1650,10 +1666,27 @@ function (_React$Component) {
   _createClass(ProductShowDetailSecond, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      var _this$props$product = this.props.product,
+          how_to_use = _this$props$product.how_to_use,
+          dosage = _this$props$product.dosage,
+          texture = _this$props$product.texture,
+          aroma = _this$props$product.aroma;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second-wrap-comp"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://aesop-dev.s3-us-west-1.amazonaws.com/Second.png",
         alt: "Second-Photo"
-      }));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second-detail"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "How to use"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, how_to_use), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second-detail-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Dosage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, dosage)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second-detail-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Texture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, texture)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second-detail-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Aroma"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, aroma)))));
     }
   }]);
 

@@ -8,6 +8,11 @@ class AesopProductIndex extends React.Component {
         this.props.fetchProducts();
     }
 
+    componentWillUnmount() {
+        window.scrollTo(0, 0);
+    }
+    // This is not working
+
 
     render() {
         const { skinProducts, bodyProducts  } = this.props
@@ -15,8 +20,10 @@ class AesopProductIndex extends React.Component {
     
         return (
             <div>
-                <div className="main-splash">
-                    <div className="splash-1"></div>
+                <div className="main-products-second" >
+                    <div className="main-products-contain-second">
+                        <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-main-second-test.png" alt="" />
+                    </div>
                 </div>
                 <div className="main-products" >
                     <div className="main-products-contain">
@@ -76,3 +83,6 @@ export default AesopProductIndex;
         //         categoryAll.push(product.category)
         //     }
         // })
+
+//  className="main-splash"
+//  className="splash-1"

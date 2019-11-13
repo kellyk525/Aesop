@@ -1,0 +1,23 @@
+
+
+.second-wrap {
+    width: 100%;
+    background-color: red;
+
+    .second-wrap-comp {
+        display: flex;
+        flex-direction: row;
+        background-color: yellow;
+
+        img {
+            max-width: 50%;
+        }
+
+        .second-detail {
+            max-width: 50%;
+            background-color: green;
+        }
+        
+    }
+}
+
