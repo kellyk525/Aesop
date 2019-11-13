@@ -2,6 +2,7 @@
 
 import React from 'react';
 import SkinProductsIndexItem from './skin_products_index_item';
+import { Link } from 'react-router-dom';
 
 class SkinProductsIndex extends React.Component {
 
@@ -23,6 +24,9 @@ class SkinProductsIndex extends React.Component {
         return (
             <div>
                 <div className="products-header">
+                    <Link to="/" className="logo-main">
+                        <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
+                    </Link>
                     <p>Skin</p>
                 </div>
                 <div className="products" >

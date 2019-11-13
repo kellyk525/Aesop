@@ -2,6 +2,7 @@
 import React from 'react';
 import ProductShowDetail from './product_show_detail';
 import ProductShowDetailSecond from './product_show_detail_second';
+import SkinProductsIndexItem from '../product_show/skin_products_index_item';
 
 class ProductShow extends React.Component {
 
@@ -11,7 +12,7 @@ class ProductShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.productId);
-        console.log(this.props)
+        this.props.fetchProducts();
     }
 
     render() {
@@ -42,6 +43,30 @@ class ProductShow extends React.Component {
                 </div>
                 <div>
                     <ProductShowDetailSecond product={this.props.product} />
+                </div>
+                <div className="products" >
+                    <div className="products-contain">
+                        <div className="products-image">
+                            <div className="main-index-item">
+                                <div className="product-item-photo">
+                                    <div className="photo-contain-first">
+                                        <div className="sub" >
+                                            <h2>Accompany With</h2>
+                                            <p>
+                                                Cleansing skin of daily grime, sweat and other impurities forms the foundation of an intelligent skin care regimen.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {this.props.skinProducts.map((product) => {
+                                return <SkinProductsIndexItem product={product} key={product.id} />
+                            })}
+                        </div>
+                    </div>
+                </div>
+                <div className="footer">
+                    <div className="footer-bottom"></div>
                 </div>
             </div>
         )

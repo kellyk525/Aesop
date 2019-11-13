@@ -1,6 +1,7 @@
 
 import React from 'react';
 import AesopProductIndexItem from './aesop_product_index_item';
+import { Link } from 'react-router-dom';
 
 class AesopProductIndex extends React.Component {
 
@@ -22,7 +23,7 @@ class AesopProductIndex extends React.Component {
             <div>
                 <div className="main-products-second" >
                     <div className="main-products-contain-second">
-                        <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-main-second-test.png" alt="" />
+                        <img className="top-image" src="https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-main-second-test.png" alt="" />
                     </div>
                 </div>
                 <div className="main-products" >

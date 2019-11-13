@@ -1,13 +1,22 @@
+
+
+
 .products-header {
     height: 271px;
     width: 100%;
     background-color: #FFFEF2;
     position: relative;
 
+    .logo-main {
+        position: absolute;
+        top: 41%;
+        left: 22px;
+    }
+
     p {
         position: absolute;
         bottom: 15%;
-        left: 28px;
+        left: 34px;
         font-size: 25px;
         font-family: Open Sans;
         font-weight: 400;
