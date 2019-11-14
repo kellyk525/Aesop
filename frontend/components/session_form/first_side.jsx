@@ -32,7 +32,7 @@ class FirstSide extends React.Component {
                 <div className="first-drawer-contain" >
                     <div className="first-drawer-detail">
                         <div className="first-drawer-detail-image" >
-                            <Link to="/" className="logo-main">
+                            <Link to="/" className="logo-main" onClick={this.props.closeSide} >
                                 <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
                             </Link>
                         </div>

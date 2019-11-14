@@ -62,6 +62,45 @@ class AesopProductIndex extends React.Component {
                     </div>
                 </div>
                 <div className="footer">
+                        <div className="email">
+                            <p>I would like to receive communications about Aesop products, services, stores, events and matters of cultural interest.</p>
+                            <label>
+                                <input type="text"/>
+                            </label>
+                        </div>
+                        <div className="contact">
+                            <div>
+                                <ul>
+                                    <li><a href="/">Contact Us</a></li>
+                                    <li><a href="/">FAQs</a></li>
+                                    <li><a href="/"></a></li>
+                                    <li><a href="/"></a></li>
+                                    <li><a href="/"></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="about">
+                            <div>
+                                <ul>
+                                    <li><a href="/"></a></li>
+                                    <li><a href="/"></a></li>
+                                    <li><a href="/"></a></li>
+                                    <li><a href="/"></a></li>
+                                    <li><a href="/"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="social">
+                            <div>
+                                <ul>
+                                    <li><a href="/"></a></li>
+                                    <li><a href="/"></a></li>
+                                    <li><a href="/"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
                     <div className="footer-bottom"></div>
                 </div>
             </div>
