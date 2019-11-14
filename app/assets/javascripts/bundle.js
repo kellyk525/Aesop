@@ -245,7 +245,7 @@ var signup = function signup(user) {
 /*!******************************************!*\
   !*** ./frontend/actions/side_actions.js ***!
   \******************************************/
-/*! exports provided: OPEN_SIDE, CLOSE_SIDE, HOVER_PRODUCT, openSide, closeSide, hoverProduct */
+/*! exports provided: OPEN_SIDE, CLOSE_SIDE, HOVER_PRODUCT, HOVER_CATEGORY, openSide, closeSide, hoverProduct, hoverCategory */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -253,12 +253,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OPEN_SIDE", function() { return OPEN_SIDE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLOSE_SIDE", function() { return CLOSE_SIDE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOVER_PRODUCT", function() { return HOVER_PRODUCT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOVER_CATEGORY", function() { return HOVER_CATEGORY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openSide", function() { return openSide; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeSide", function() { return closeSide; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hoverProduct", function() { return hoverProduct; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hoverCategory", function() { return hoverCategory; });
 var OPEN_SIDE = 'OPEN_SIDE';
 var CLOSE_SIDE = 'CLOSE_SIDE';
 var HOVER_PRODUCT = 'HOVER_PRODUCT';
+var HOVER_CATEGORY = 'HOVER_CATEGORY';
 var openSide = function openSide(side) {
   return {
     type: OPEN_SIDE,
@@ -274,6 +277,12 @@ var hoverProduct = function hoverProduct(productId) {
   return {
     type: HOVER_PRODUCT,
     productId: productId
+  };
+};
+var hoverCategory = function hoverCategory(category) {
+  return {
+    type: HOVER_CATEGORY,
+    category: category
   };
 };
 
@@ -1772,13 +1781,15 @@ function (_React$Component) {
     }
   }, {
     key: "handleMouseOver",
-    value: function handleMouseOver(e) {
+    value: function handleMouseOver(category) {
       var _this2 = this;
 
       return function (e) {
         e.preventDefault();
 
         _this2.props.openSide("second");
+
+        _this2.props.hoverCategory(category);
       };
     }
   }, {
@@ -1798,7 +1809,7 @@ function (_React$Component) {
         src: "https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png",
         alt: "Logo"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onMouseEnter: this.handleMouseOver(),
+        onMouseEnter: this.handleMouseOver("Skin"),
         className: "register-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/products/skin"
@@ -2186,10 +2197,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
+  debugger;
   return {
-    products: Object(_selectors_selectors__WEBPACK_IMPORTED_MODULE_5__["filterProductsByCategory"])(state, "Skin")
+    products: Object(_selectors_selectors__WEBPACK_IMPORTED_MODULE_5__["filterProductsByCategory"])(state, state.ui.sideCategory)
   };
-};
+}; // state.ui.sideCategory
+
 
 var mDTP = function mDTP(dispatch) {
   return {
@@ -2226,6 +2239,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _actions_side_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/side_actions */ "./frontend/actions/side_actions.js");
 /* harmony import */ var _first_side__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./first_side */ "./frontend/components/session_form/first_side.jsx");
+/* harmony import */ var _selectors_selectors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../selectors/selectors */ "./frontend/components/selectors/selectors.js");
+
 
 
 
@@ -2233,7 +2248,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state) {
   return {
-    products: state.entities.products
+    skinCategory: Object(_selectors_selectors__WEBPACK_IMPORTED_MODULE_4__["filterProductsByCategory"])(state, "Skin"),
+    bodyCategory: Object(_selectors_selectors__WEBPACK_IMPORTED_MODULE_4__["filterProductsByCategory"])(state, "Body")
   };
 };
 
@@ -2244,6 +2260,9 @@ var mDTP = function mDTP(dispatch) {
     },
     openSide: function openSide(side) {
       return dispatch(Object(_actions_side_actions__WEBPACK_IMPORTED_MODULE_2__["openSide"])(side));
+    },
+    hoverCategory: function hoverCategory(category) {
+      return dispatch(Object(_actions_side_actions__WEBPACK_IMPORTED_MODULE_2__["hoverCategory"])(category));
     }
   };
 };
@@ -3322,6 +3341,36 @@ var sessionReducer = function sessionReducer() {
 
 /***/ }),
 
+/***/ "./frontend/reducers/side_category_reducer.js":
+/*!****************************************************!*\
+  !*** ./frontend/reducers/side_category_reducer.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_side_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/side_actions */ "./frontend/actions/side_actions.js");
+
+
+var sideCategoryReducer = function sideCategoryReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_side_actions__WEBPACK_IMPORTED_MODULE_0__["HOVER_CATEGORY"]:
+      return action.category;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (sideCategoryReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/side_product_reducer.js":
 /*!***************************************************!*\
   !*** ./frontend/reducers/side_product_reducer.js ***!
@@ -3402,6 +3451,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal_reducer */ "./frontend/reducers/modal_reducer.js");
 /* harmony import */ var _side_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./side_reducer */ "./frontend/reducers/side_reducer.js");
 /* harmony import */ var _side_product_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./side_product_reducer */ "./frontend/reducers/side_product_reducer.js");
+/* harmony import */ var _side_category_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./side_category_reducer */ "./frontend/reducers/side_category_reducer.js");
+
 
 
 
@@ -3409,7 +3460,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   modal: _modal_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   side: _side_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  sideProduct: _side_product_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  sideProduct: _side_product_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  sideCategory: _side_category_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 }));
 
 /***/ }),

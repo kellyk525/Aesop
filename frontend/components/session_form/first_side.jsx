@@ -16,10 +16,11 @@ class FirstSide extends React.Component {
         };
     }
 
-    handleMouseOver(e) {
+    handleMouseOver(category) {
         return (e) => {
             e.preventDefault();
-            this.props.openSide("second")
+            this.props.openSide("second");
+            this.props.hoverCategory(category);
         }
     }
 
@@ -34,11 +35,13 @@ class FirstSide extends React.Component {
                             <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
                         </Link>
                     </div>
-                    <button onMouseEnter={this.handleMouseOver()} className="register-button" >
+                    <button onMouseEnter={this.handleMouseOver("Skin")} className="register-button" >
                         <Link to="/products/skin" >
                             Skin
                         </Link>
                     </button>
+
+
                 </div>
 
                 <div className="container">

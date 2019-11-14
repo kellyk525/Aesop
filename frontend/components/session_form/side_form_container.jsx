@@ -2,21 +2,24 @@
 
 import { connect } from 'react-redux';
 import React from 'react';
-import { openSide, closeSide } from '../../actions/side_actions';
+import { openSide, closeSide, hoverCategory } from '../../actions/side_actions';
 import FirstSide from './first_side';
+import { filterProductsByCategory } from '../selectors/selectors';
+ 
 
 
 const mSTP = (state) => {
-
     return ({
-        products: state.entities.products
+        skinCategory: filterProductsByCategory(state, "Skin"),
+        bodyCategory: filterProductsByCategory(state, "Body")
     });
 };
 
 const mDTP = dispatch => {
     return ({
         closeSide: () => dispatch(closeSide()),
-        openSide: (side) => dispatch(openSide(side))
+        openSide: (side) => dispatch(openSide(side)),
+        hoverCategory: (category) => dispatch(hoverCategory(category))
     });
 };
 

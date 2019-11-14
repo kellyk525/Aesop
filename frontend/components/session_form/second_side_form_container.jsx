@@ -9,10 +9,14 @@ import { filterProductsByCategory } from '../selectors/selectors';
 
 
 const mSTP = (state) => {
+    debugger
     return ({
-        products: filterProductsByCategory(state, "Skin"), 
+        products: filterProductsByCategory(state, state.ui.sideCategory), 
+
     });
 };
+
+// state.ui.sideCategory
 
 const mDTP = dispatch => {
     return ({
