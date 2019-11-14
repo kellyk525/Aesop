@@ -73,6 +73,7 @@
     align-content: center;
     padding-top: 150px;
     padding-left: 100px;
+    padding-right: 100px; 
     height: 750px;
     background-color: #FFFEF2;
 
@@ -265,5 +266,14 @@
 //     }
 
 // }
+
+
+
+.slide-container {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+
 
 

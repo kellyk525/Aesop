@@ -31,7 +31,7 @@ class AesopProductIndex extends React.Component {
                         <p>
                             Of Replenishing Character
                         </p>
-                        <div className="main-skin-product-image">
+                        <div className="main-skin-product-image slide-container">
                             {skinProducts.map((product) => {
                                 return <AesopProductIndexItem product={product} key={product.id} />
                             })}
@@ -49,7 +49,7 @@ class AesopProductIndex extends React.Component {
                         <p>
                             Of Replenishing Character
                         </p>
-                        <div className="main-skin-product-image">
+                        <div className="main-skin-product-image slide-container">
                             {skinProducts.map((product) => {
                                 return <AesopProductIndexItem product={product} key={product.id} />
                             })}

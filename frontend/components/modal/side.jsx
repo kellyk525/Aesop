@@ -9,7 +9,10 @@ import ThirdSideFormContainer from '../session_form/third_side_form_container';
 class Side extends React.Component {
     constructor(props) {
         super(props);
+    }
 
+    updateHoveredProduct (product) {
+        this.setState({ hoveredProduct: product })
     }
 
     render() {
@@ -21,6 +24,7 @@ class Side extends React.Component {
         let component
         let nextComponent;
         let thirdComponent;
+        
         switch (side) {
             case 'first':
                 component = <SideFormContainer />;
@@ -37,7 +41,6 @@ class Side extends React.Component {
             default:
                 return null;
         }
-        debugger
         return (
             <div className="outsideModal" onClick={closeSide}>
                 {component}

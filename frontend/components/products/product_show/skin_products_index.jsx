@@ -22,7 +22,7 @@ class SkinProductsIndex extends React.Component {
         const exfoliate = skinProducts.filter((product) => product.sub_category === "Exfoliate" )
 
         return (
-            <div>
+            <div className="all-products" >
                 <div className="products-header">
                     <Link to="/" className="logo-main">
                         <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />

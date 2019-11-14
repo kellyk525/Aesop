@@ -7,7 +7,7 @@
     .second-wrap-comp {
         display: flex;
         flex-direction: row;
-        background-color: yellow;
+        // background-color: yellow;
 
         img {
             max-width: 50%;
@@ -16,24 +16,51 @@
         .second-detail-wrap-main {
             max-width: 50%;
             padding: 128px;
-            background-color: green;
+            // background-color: green;
 
             .second-detail {
-                background-color: purple;
+                // background-color: purple;
                 padding-top: 117px;
                 padding-bottom: 117px;
 
 
                 .second-detail-first {
 
+                    :first-child {
+                        font-family: Open Sans;
+                        font-size: 14px;
+                        // background-color: red;
+                        padding-bottom: 19px;
+                    }
+
                     :nth-of-type(2n) {
-                        background-color: blue;
+                        // background-color: blue;
                         font-size: 30px;
                         border-bottom: 2px solid black;
                         font-family: Cormorant Garamond;
                         line-height: 40px;
                         font-weight: 300;
                         padding-bottom: 17px;
+                    }
+                }
+
+                .second-detail-wrap {
+                    height: 50px;
+                    // background-color: skyblue;
+                    padding-top: 18px;
+                    padding-bottom: 14px;
+                    border-bottom: 1px solid #D6D5CB;
+                    font-family: Open Sans;
+    
+                    p {
+                        font-size: 14px;
+                        color: #6E6E6E;
+                    }
+    
+                    p:first-of-type {
+                        padding-bottom: 12px;
+                        font-weight: bold;
+                        color: #333333;
                     }
                 }
             }
@@ -45,24 +72,6 @@
 }
 
 
-
-
-                // .second-detail-wrap {
-                //     height: 50px;
-                //     // background-color: skyblue;
-                //     padding-top: 18px;
-                //     padding-bottom: 14px;
-                //     border-bottom: 1px solid #D6D5CB;
-    
-                //     p {
-                //         font-size: 14px;
-                //         color: #6E6E6E;
-                //     }
-    
-                //     p:first-of-type {
-                //         padding-bottom: 12px;
-                //         font-weight: bold;
-                //         color: #333333;
-                //     }
-    
-                // }
+.second-wrap {
+    background-color: #FFFEF2;
+}

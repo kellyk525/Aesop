@@ -124,11 +124,18 @@
         // background-color: purple;
         padding-top: 2px;
         padding-left: 1px;
+        font-weight: 400;
+        color: #363636;
+        font-size: 14px;
+
+        .middle {
+            padding: 0 10px;
+        }
     }
 
     h1 {
         font-size: 30px;
-        font-weight: 400;
+        font-weight: 300;
         margin: auto 0;
     }
 
@@ -136,6 +143,7 @@
         font-size: 14px;
         padding-bottom: 14px;
         line-height: 23px;
+        color: #363636;
     }
 }
 
@@ -154,7 +162,7 @@
     p:first-of-type {
         padding-bottom: 12px;
         font-weight: bold;
-        color: #333333;
+        color: #444343;
     }
 
 }

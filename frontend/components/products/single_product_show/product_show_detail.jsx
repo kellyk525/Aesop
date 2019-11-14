@@ -13,7 +13,7 @@ class ProductShowDetail extends React.Component {
                 <div className="first-detail-wrap">
                     <div className="first-detail">
                         <p>{category}</p>
-                        <div>-</div>
+                        <div className="middle">-</div>
                         <p>{sub_category}</p>
                     </div>
                     <h1>{name}</h1>

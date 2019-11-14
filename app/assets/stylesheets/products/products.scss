@@ -1,6 +1,53 @@
 
 
 
+.all-products {
+
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s, details-products 0.7s ease-in;
+}
+
+// FIX THE LOADING PART // FADING TAKES TOO LONG
+
+@keyframes fadein {
+    from { opacity: 0.8; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0.8; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0.8; }
+    to   { opacity: 1; }
+}
+
+// @keyframes details-products {
+//     0%{
+//         transform: translateY(-30px);
+//     }
+//     100% {
+//         transform: translateY(0px);
+//     }
+// }
+@keyframes details-products {
+    0%{
+        transform: translateX(30px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+
+
 .products-header {
     height: 271px;
     width: 100%;

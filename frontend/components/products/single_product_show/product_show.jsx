@@ -46,7 +46,7 @@ class ProductShow extends React.Component {
                 </div>
                 <div className="products" >
                     <div className="products-contain">
-                        <div className="products-image">
+                        <div className="products-image slide-container">
                             <div className="main-index-item">
                                 <div className="product-item-photo">
                                     <div className="photo-contain-first">

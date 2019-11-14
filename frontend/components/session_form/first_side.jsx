@@ -2,6 +2,7 @@
 
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class FirstSide extends React.Component {
     constructor(props) {
@@ -15,14 +16,29 @@ class FirstSide extends React.Component {
         };
     }
 
-    render() {
-    
+    handleMouseOver(e) {
+        return (e) => {
+            e.preventDefault();
+            this.props.openSide("second")
+        }
+    }
 
+    render() {
+        
         return (
+
             <div className="first-drawer" onClick={e => e.stopPropagation()} >
                 <div className="first-drawer-contain" >
-                    <button className="x-button" onClick={this.props.closeSide}>X</button>
-                    <button onClick={() => this.props.openSide("second")} className="register-button" >Register</button>
+                    <div>
+                        <Link to="/" className="logo-main">
+                            <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
+                        </Link>
+                    </div>
+                    <button onMouseEnter={this.handleMouseOver()} className="register-button" >
+                        <Link to="/products/skin" >
+                            Skin
+                        </Link>
+                    </button>
                 </div>
 
                 <div className="container">

@@ -273,22 +273,23 @@
     border: 0;
     border-radius: 0.1em;
     animation: contain 0.7s ease-in;
-    background-color: rgba(165, 42, 42, 0.253);
+    background-color: #FFFEF2;
 }
 
-@keyframes contain {
-    0%{
-        transform: translateX(-500px);
-    }
-    100% {
-        transform: translateX(0px);
-    }
-}
+// @keyframes contain {
+//     0%{
+//         transform: translateX(-500px);
+//     }
+//     100% {
+//         transform: translateX(0px);
+//     }
+// }
 
 .second-drawer {
     text-align: center;
     width: 33.33%;
     height: 1000px;
+
 }
 
 .second-drawer-contain {
@@ -304,14 +305,14 @@
     background-color: rgba(42, 71, 165, 0.671);
 }
 
-@keyframes second {
-    0%{
-        transform: translateX(-500px);
-    }
-    100% {
-        transform: translateX(0px);
-    }
-}
+// @keyframes second {
+//     0%{
+//         transform: translateX(-500px);
+//     }
+//     100% {
+//         transform: translateX(0px);
+//     }
+// }
 
 
 .third-drawer {
@@ -333,14 +334,14 @@
     background-color: rgba(52, 165, 42, 0.671);
 }
 
-@keyframes second {
-    0%{
-        transform: translateX(-1000px);
-    }
-    100% {
-        transform: translateX(0px);
-    }
-}
+// @keyframes second {
+//     0%{
+//         transform: translateX(-1000px);
+//     }
+//     100% {
+//         transform: translateX(0px);
+//     }
+// }
 
 
 // Separate Container

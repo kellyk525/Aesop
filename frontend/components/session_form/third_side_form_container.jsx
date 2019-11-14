@@ -7,9 +7,8 @@ import ThirdSide from './third_side';
 
 
 const mSTP = (state) => {
-    debugger
     return ({
-        products: state.entities.products
+        product: state.entities.products[state.ui.sideProduct]
     });
 };
 

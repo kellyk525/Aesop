@@ -19,4 +19,14 @@ export default sideReducer;
 
 
 
+// 1. make another reducer
+// 2. mouse over -- api call -- fetch all the products
+// 3. mouse out -- clear out the state 
+
+// -- nothing on the state -- undefined 
+// -- return null
+
+
+
+
 
