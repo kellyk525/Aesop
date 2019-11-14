@@ -43,7 +43,7 @@ class SecondSide extends React.Component {
                         { this.props.products.map((product) => {
                             return (
                                 <div className="single-product">
-                                    <Link to={`/products/${product.name}~${product.id}`} className="link-product">
+                                    <Link to={`/products/${product.name}~${product.id}`} className="link-product" onClick={this.props.closeSide}>
                                         <li onMouseEnter={this.handleMouseEnter(product.id)}>
                                             <p>{product.name}</p>
                                             <p>{product.size} / ${product.price}</p>

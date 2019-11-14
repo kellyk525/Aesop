@@ -447,7 +447,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Header = function Header(props) {
-  var welcomeMessage = props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " ", props.currentUser.first_name + " " + props.currentUser.last_name, " ")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  var welcomeMessage = props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "first-text"
+  }, props.currentUser.first_name + " " + props.currentUser.last_name) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header-user"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header-user-auth"
@@ -462,13 +464,16 @@ var Header = function Header(props) {
     },
     className: "register-button"
   }, "Register")));
-  var signout = props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: props.logout
+  var signout = props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: props.logout,
+    className: "register-button"
   }, "Logout")) : null;
   var dropdown = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, signout);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, welcomeMessage, dropdown));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "logout"
+  }, welcomeMessage, dropdown));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -1740,6 +1745,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1815,14 +1822,18 @@ function (_React$Component) {
         alt: "Logo"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/products/skin",
-        className: "first-link"
+        className: "first-link",
+        onClick: this.props.closeSide
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        onMouseEnter: this.handleMouseOver("Skin")
-      }, "Skin")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        onMouseEnter: this.handleMouseOver("Skin"),
+        className: "second-line"
+      }, "Skin")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], _defineProperty({
         to: "/products/skin",
-        className: "first-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        onMouseEnter: this.handleMouseOver("bodyandhand")
+        className: "first-link",
+        onClick: this.props.closeSide
+      }, "className", "bottom"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        onMouseEnter: this.handleMouseOver("bodyandhand"),
+        className: "second-line"
       }, "Body")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -2176,7 +2187,8 @@ function (_React$Component) {
           className: "single-product"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/products/".concat(product.name, "~").concat(product.id),
-          className: "link-product"
+          className: "link-product",
+          onClick: _this4.props.closeSide
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           onMouseEnter: _this4.handleMouseEnter(product.id)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, product.size, " / $", product.price))));
@@ -2215,7 +2227,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
-  debugger;
   return {
     products: Object(_selectors_selectors__WEBPACK_IMPORTED_MODULE_5__["filterProductsByCategory"])(state, state.ui.sideCategory)
   };
@@ -2265,7 +2276,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
-  debugger;
   return {
     skinCategory: Object(_selectors_selectors__WEBPACK_IMPORTED_MODULE_4__["filterProductsByCategory"])(state, "Skin"),
     bodyCategory: Object(_selectors_selectors__WEBPACK_IMPORTED_MODULE_4__["filterProductsByCategory"])(state, "bodyandhand")
@@ -2530,6 +2540,7 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2547,6 +2558,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -2582,10 +2594,7 @@ function (_React$Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "third-drawer-contain"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "x-button",
-        onClick: this.props.closeSide
-      }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "third-contain-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "third-contain-image"
@@ -2594,7 +2603,15 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.product.photoUrls[0],
         alt: "Photo"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "third-contain-text text-line"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/products/".concat(this.props.product.name, "~").concat(this.props.product.id),
+        className: "link-product",
+        onClick: this.props.closeSide
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.product.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.product.size)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "third-contain-text-second"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.product.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "add-to-cart"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Add to your cart  -  $", this.props.product.price)))));
     }
@@ -2647,348 +2664,6 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/side_drawer/drawer_toggle_button.jsx":
-/*!******************************************************************!*\
-  !*** ./frontend/components/side_drawer/drawer_toggle_button.jsx ***!
-  \******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var drawerToggleButton = function drawerToggleButton(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "toggle-button",
-    onClick: props.click
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "toggle-button-line"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "toggle-button-line"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "toggle-button-line"
-  })));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (drawerToggleButton);
-
-/***/ }),
-
-/***/ "./frontend/components/side_drawer/next_drawer_toggle.jsx":
-/*!****************************************************************!*\
-  !*** ./frontend/components/side_drawer/next_drawer_toggle.jsx ***!
-  \****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-
-
-
-var nextDrawerToggle = function nextDrawerToggle(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/",
-    className: "link",
-    onClick: function onClick() {
-      return props.nextClick();
-    }
-  }, "Skin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/",
-    className: "link",
-    onClick: props.nextClick
-  }, "Hair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/",
-    className: "link",
-    onClick: props.nextClick
-  }, "Body Hand"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (nextDrawerToggle); // <Link to="/" className="link" onClick={props.click} >Fragrance</Link>
-//     <Link to="/products/skin" className="link" onClick={props.click} >Home</Link>
-//     <Link to="/products/skin" className="link" onClick={props.click} >Kits Travel</Link>
-//     <Link to="/products/skin" className="link" onClick={props.click} >Gifts</Link>
-
-/***/ }),
-
-/***/ "./frontend/components/side_drawer/next_side_drawer.jsx":
-/*!**************************************************************!*\
-  !*** ./frontend/components/side_drawer/next_side_drawer.jsx ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-
-
-
-var nextSideDrawer = function nextSideDrawer(props) {
-  var nextDrawerClasses = ["next-side-drawer"];
-
-  if (props.show) {
-    nextDrawerClasses = ["next-side-drawer open"];
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    className: nextDrawerClasses
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/",
-    className: "link",
-    onClick: props.nextClick
-  }, "Kelly"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/",
-    className: "link",
-    onClick: props.nextClick
-  }, "Kelly"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/",
-    className: "link",
-    onClick: props.nextClick
-  }, "Kelly"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/",
-    className: "link",
-    onClick: props.nextClick
-  }, "Kelly")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (nextSideDrawer);
-
-/***/ }),
-
-/***/ "./frontend/components/side_drawer/side_drawer.jsx":
-/*!*********************************************************!*\
-  !*** ./frontend/components/side_drawer/side_drawer.jsx ***!
-  \*********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _side_drawer_next_side_drawer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../side_drawer/next_side_drawer */ "./frontend/components/side_drawer/next_side_drawer.jsx");
-/* harmony import */ var _side_drawer_next_drawer_toggle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../side_drawer/next_drawer_toggle */ "./frontend/components/side_drawer/next_drawer_toggle.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _backdrop_backdrop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../backdrop/backdrop */ "./frontend/components/backdrop/backdrop.jsx");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-
-var sideDrawer =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(sideDrawer, _React$Component);
-
-  function sideDrawer(props) {
-    var _this;
-
-    _classCallCheck(this, sideDrawer);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(sideDrawer).call(this, props));
-    _this.state = {
-      nextSideDrawerOpen: false
-    };
-    _this.nextDrawerToggleClickHandler = _this.nextDrawerToggleClickHandler.bind(_assertThisInitialized(_this));
-    _this.nextbackdropClickHandler = _this.nextbackdropClickHandler.bind(_assertThisInitialized(_this));
-    return _this;
-  } // oneToggle() {
-  //     this.setState(() => ({two : this.state.two}))
-  // }
-  // twoToggle() {
-  //     this.setState(() => ({ three: this.state.three }))
-  // }
-
-
-  _createClass(sideDrawer, [{
-    key: "nextbackdropClickHandler",
-    value: function nextbackdropClickHandler() {
-      this.setState({
-        nextSideDrawerOpen: false
-      });
-    }
-  }, {
-    key: "nextDrawerToggleClickHandler",
-    value: function nextDrawerToggleClickHandler() {
-      this.setState(function (prevState) {
-        return {
-          nextSideDrawerOpen: !prevState.nextSideDrawerOpen
-        };
-      });
-    }
-  }, {
-    key: "render",
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.nextSideDrawerOpen !== this.props.nextSideDrawerOpen) {
-    //         debugger
-    //     }
-    // }
-    value: function render() {
-      var drawerClasses = ["side-drawer"];
-
-      if (this.props.show) {
-        drawerClasses = ["side-drawer open"];
-      }
-
-      var nextBackdrop;
-
-      if (this.state.nextSideDrawerOpen) {
-        debugger;
-        nextBackdrop = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_backdrop_backdrop__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          nextClick: this.nextbackdropClickHandler
-        });
-      }
-
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: drawerClasses
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "/products/skin",
-        className: "link"
-      }, "Skin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "/products/skin",
-        className: "link"
-      }, "Hair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "/products/skin",
-        className: "link"
-      }, "Body Hand"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "/products/skin",
-        className: "link"
-      }, "Fragrance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "/products/skin",
-        className: "link"
-      }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "/products/skin",
-        className: "link"
-      }, "Kits Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "/products/skin",
-        className: "link"
-      }, "Gifts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_side_drawer_next_drawer_toggle__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        nextClick: this.nextDrawerToggleClickHandler
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_side_drawer_next_side_drawer__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        show: this.state.nextSideDrawerOpen,
-        nextClick: this.nextDrawerToggleClickHandler
-      })), nextBackdrop);
-    }
-  }]);
-
-  return sideDrawer;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (sideDrawer); // ///////////////////////////////////
-// import React from 'react';
-// import DrawerToggleButton from '../side_drawer/drawer_toggle_button';
-// import SideDrawer from '../side_drawer/side_drawer';
-// import Backdrop from '../backdrop/backdrop';
-// import HeaderContainer from '../header/header_container';
-// class Toolbar extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             sideDrawerOpen: false
-//         }
-//         this.drawerToggleClickHandler = this.drawerToggleClickHandler.bind(this);
-//         this.backdropClickHandler = this.backdropClickHandler.bind(this);
-//     }
-//     drawerToggleClickHandler() {
-//         this.setState((prevState) => {
-//             return { sideDrawerOpen: !prevState.sideDrawerOpen }
-//         });
-//     };
-//     backdropClickHandler() {
-//         this.setState({ sideDrawerOpen: false })
-//     }
-//     render() {
-//         let sideDrawer;
-//         let backdrop;
-//         if (this.state.sideDrawerOpen) {
-//             // sideDrawer = <SideDrawer />;
-//             backdrop = <Backdrop click={this.backdropClickHandler} />;
-//         }
-//         return (
-//             <header className="toolbar">
-//                 <nav className="toolbar-navigation">
-//                     <div>
-//                         <DrawerToggleButton click={this.drawerToggleClickHandler} />
-//                     </div>
-//                     <div className="toolbar-navigation-items" >
-//                         <ul>
-//                             <li><a href="/">Shop</a></li>
-//                             <li><a href="/">Read</a></li>
-//                             <li><a href="/">Stores</a></li>
-//                             <li><a href="/">Search</a></li>
-//                         </ul>
-//                     </div>
-//                     <div className="spacer" ></div>
-//                     <div>
-//                         <HeaderContainer />
-//                     </div>
-//                     <div>
-//                         <SideDrawer show={this.state.sideDrawerOpen} />
-//                     </div>
-//                     <div>
-//                         {backdrop}
-//                     </div>
-//                 </nav>
-//                 <div className="toolbar-logo" ><a href="/">AESOP</a></div>
-//             </header>
-//         )
-//     }
-// }
-// export default Toolbar;
-// ///////////////////////////////////
-// import React from 'react';
-// import { Link } from 'react-router-dom'
-// const sideDrawer = props => {
-//     let drawerClasses = ["side-drawer"];
-//     if (props.show) {
-//         drawerClasses = ["side-drawer open"]
-//     }
-//     return (
-//         <nav className={drawerClasses}>
-//             <ul>
-//                 <Link to="/products/skin" className="link" onClick={props.click} >Skin</Link>
-//                 <Link to="/products/skin" className="link" onClick={props.click} >Hair</Link>
-//                 <Link to="/products/skin" className="link" onClick={props.click} >Body Hand</Link>
-//                 <Link to="/products/skin" className="link" onClick={props.click} >Fragrance</Link>
-//                 <Link to="/products/skin" className="link" onClick={props.click} >Home</Link>
-//                 <Link to="/products/skin" className="link" onClick={props.click} >Kits Travel</Link>
-//                 <Link to="/products/skin" className="link" onClick={props.click} >Gifts</Link>
-//             </ul>
-//         </nav>
-//     )
-// }
-// export default sideDrawer;
-
-/***/ }),
-
 /***/ "./frontend/components/toolbar/toolbar.jsx":
 /*!*************************************************!*\
   !*** ./frontend/components/toolbar/toolbar.jsx ***!
@@ -3000,10 +2675,8 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _side_drawer_drawer_toggle_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../side_drawer/drawer_toggle_button */ "./frontend/components/side_drawer/drawer_toggle_button.jsx");
-/* harmony import */ var _side_drawer_side_drawer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../side_drawer/side_drawer */ "./frontend/components/side_drawer/side_drawer.jsx");
-/* harmony import */ var _backdrop_backdrop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../backdrop/backdrop */ "./frontend/components/backdrop/backdrop.jsx");
-/* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.jsx");
+/* harmony import */ var _backdrop_backdrop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../backdrop/backdrop */ "./frontend/components/backdrop/backdrop.jsx");
+/* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3022,8 +2695,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-
-
+ // import DrawerToggleButton from '../side_drawer/drawer_toggle_button';
 
 
 
@@ -3073,7 +2745,7 @@ function (_React$Component) {
 
       if (this.state.sideDrawerOpen) {
         // sideDrawer = <SideDrawer />;
-        backdrop = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_backdrop_backdrop__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        backdrop = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_backdrop_backdrop__WEBPACK_IMPORTED_MODULE_1__["default"], {
           click: this.backdropClickHandler
         });
       }
@@ -3082,26 +2754,27 @@ function (_React$Component) {
         className: "toolbar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "toolbar-navigation"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "toolbar-navigation-items"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: function onClick() {
           return _this2.props.openSide("first");
-        },
-        className: "register-button"
-      }, "Shop"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "toolbar-navigation-items"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/"
-      }, "Shop")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/"
-      }, "Read")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/"
-      }, "Stores")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/"
-      }, "Search")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }
+      }, "Shop"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        onClick: function onClick() {
+          return _this2.props.openSide("first");
+        }
+      }, "Read"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        onClick: function onClick() {
+          return _this2.props.openSide("first");
+        }
+      }, "Stores"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        onClick: function onClick() {
+          return _this2.props.openSide("first");
+        }
+      }, "Search"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "spacer"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_side_drawer_side_drawer__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        show: this.state.sideDrawerOpen
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, backdrop)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, backdrop)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "toolbar-logo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"

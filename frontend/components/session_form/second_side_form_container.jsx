@@ -9,7 +9,7 @@ import { filterProductsByCategory } from '../selectors/selectors';
 
 
 const mSTP = (state) => {
-    debugger
+
     return ({
         products: filterProductsByCategory(state, state.ui.sideCategory), 
 

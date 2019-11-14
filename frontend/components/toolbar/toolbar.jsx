@@ -1,7 +1,6 @@
 
 import React from 'react';
-import DrawerToggleButton from '../side_drawer/drawer_toggle_button';
-import SideDrawer from '../side_drawer/side_drawer';
+// import DrawerToggleButton from '../side_drawer/drawer_toggle_button';
 import Backdrop from '../backdrop/backdrop';
 import HeaderContainer from '../header/header_container';
 
@@ -38,21 +37,17 @@ class Toolbar extends React.Component  {
         return (
             <header className="toolbar">
                 <nav className="toolbar-navigation">
-                    <button onClick={() => this.props.openSide("first")} className="register-button" >Shop</button>
                     <div className="toolbar-navigation-items" >
                         <ul>
-                            <li><a href="/">Shop</a></li>
-                            <li><a href="/">Read</a></li>
-                            <li><a href="/">Stores</a></li>
-                            <li><a href="/">Search</a></li>
+                            <li onClick={() => this.props.openSide("first")} >Shop</li>
+                            <li onClick={() => this.props.openSide("first")}>Read</li>
+                            <li onClick={() => this.props.openSide("first")}>Stores</li>
+                            <li onClick={() => this.props.openSide("first")}>Search</li>
                         </ul>
                     </div>
                     <div className="spacer" ></div>
                     <div>
                         <HeaderContainer />
-                    </div>
-                    <div>
-                        <SideDrawer show={ this.state.sideDrawerOpen } />
                     </div>
                     <div>
                         { backdrop }

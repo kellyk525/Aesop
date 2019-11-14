@@ -4,9 +4,9 @@ import React from "react";
 
 const Header = (props) => {
     const welcomeMessage = props.currentUser ? (
-        <div>
-            <h3> {props.currentUser.first_name + " " + props.currentUser.last_name} </h3>
-        </div>) : (
+        <p className="first-text" >
+            {props.currentUser.first_name + " " + props.currentUser.last_name}
+        </p>) : (
             <div className="header-user" >
                 <div className="header-user-auth" >
                     <button onClick={() => props.openModal("login")} className="signin-button">Login</button>
@@ -18,8 +18,7 @@ const Header = (props) => {
 
     const signout = props.currentUser ? (
         <div>
-            <div />
-            <button onClick={props.logout}>Logout</button>
+            <button onClick={props.logout} className="register-button" >Logout</button>
         </div>
     ) : (
             null
@@ -33,7 +32,7 @@ const Header = (props) => {
 
     return (
         <div className="header">
-            <div>
+            <div className="logout" >
                 {welcomeMessage}
                 {dropdown}
             </div>

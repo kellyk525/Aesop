@@ -1,34 +1,41 @@
 
 
 
+
+
+
 .header-user-auth {
     display: flex;
     padding-right: 14px;
-
+    font-size: 14px;
+    
     p {
-        padding-top: 5px;
+        padding-top: 7px;
         padding-left: 4px;
         padding-right: 4px;
+        color: #333333;
     }
 }
 
 
 .signin-button {
-    padding: 3px 0; 
+    padding-top: 6px;
     margin: 0;
     border: none;
     background-color: transparent;
-    font-size: 0.9rem;
     padding-right: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    
     cursor: pointer;
     // for underline
     position: relative;
-    color: #000;
+    color: #333333;
     text-decoration: none;
 }
 
 .signin-button:hover {
-  color: inherit;
+  color: #80807b;
 }
 
 .signin-button:focus {
@@ -38,11 +45,11 @@
 .signin-button:before {
     content: "";
     position: absolute;
-    width: 88%;
+    width: 85%;
     height: 0.5px;
-    bottom: 0;
-    left: 0;
-    background-color: #000;
+    bottom: -3px;
+    left: 6px;
+    background-color: #80807b;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -62,16 +69,17 @@
 
 
 .register-button {
-    padding: 3px 0;
+    padding-top: 6px;
     margin: 0;
     border: none;
     background-color: transparent;
-    font-size: 0.9rem;
     padding-left: 6px;
+    font-size: 14px;
+    
     cursor: pointer;
     // for underline
     position: relative;
-    color: #000;
+    color: #333333;
     text-decoration: none;
 }
 
@@ -81,18 +89,19 @@
 }
 
 .register-button:hover {
-  color: inherit;
+  color: #80807b;
+  cursor: pointer;
 }
 
 
 .register-button:before {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 6px;
-    width: 90%;
+    bottom: -3px;
+    left: 5px;
+    width: 85%;
     height: 1px;
-    background-color: #000;
+    background-color: #80807b;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -109,6 +118,28 @@
   transform-origin: 0 50%;
   -webkit-transform-origin: 0 50%;
 }
+
+
+
+.logout {
+  display: flex;
+  flex-direction: row;
+  // background-color: red;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+
+  .first-text {
+    padding: 0 10px;
+    padding-top: 9px;
+  }
+
+  .register-button {
+    padding-bottom: 0px;
+  }
+}
+
+
 
 
 

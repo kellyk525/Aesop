@@ -47,11 +47,11 @@ class FirstSide extends React.Component {
                             </Link>
                         </button> */}
 
-                        <Link to="/products/skin" className="first-link" >
-                            <p onMouseEnter={this.handleMouseOver("Skin")}>Skin</p>
+                        <Link to="/products/skin" className="first-link" onClick={this.props.closeSide} >
+                            <p onMouseEnter={this.handleMouseOver("Skin")} className="second-line">Skin</p>
                         </Link>
-                        <Link to="/products/skin" className="first-link" >
-                            <p onMouseEnter={this.handleMouseOver("bodyandhand")}>Body</p>
+                        <Link to="/products/skin" className="first-link" onClick={this.props.closeSide} className="bottom" >
+                            <p onMouseEnter={this.handleMouseOver("bodyandhand")}  className="second-line">Body</p>
                         </Link>
                     </div>
 

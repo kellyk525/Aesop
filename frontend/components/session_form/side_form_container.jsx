@@ -9,7 +9,7 @@ import { filterProductsByCategory } from '../selectors/selectors';
 
 
 const mSTP = (state) => {
-    debugger
+    
     return ({
         skinCategory: filterProductsByCategory(state, "Skin"),
         bodyCategory: filterProductsByCategory(state, "bodyandhand")
