@@ -248,41 +248,45 @@ purifying_facial_exfoliant_paste.photos.attach(io: purifying_facial_exfoliant_pa
 #//////////////// Body
 
 
-# rind_concentrate_body_balm =  Product.create!(
-#     name: "Rind Concentrate Body Balm",
-#     category: "bodyandhand",
-#     sub_category: "Body",
-#     description: "A citrus-based formulation with oils of Orange and Lemon Rind to cool and refresh the skin, and nut oil extracts to soften and lightly hydrate.",
-#     size: "4.2 oz",
-#     price: 35.00,
-#     key_ingredients: "Pink Grapefruit, Orange Rind, Lemon Rind",
-#     how_to_use: "Massage into freshly cleansed skin from neck to toe, particularly after sun exposure. Store in refrigerator through summer for boosted sensory pleasure.",
-#     dosage: "Desired amount",
-#     texture: "Medium-weight cream",
-#     aroma: "Citrus, fresh",
-#     skin_feel: "Swiftly absorbed, lightly hydrated"
-# )
+rind_concentrate_body_balm =  Product.create!(
+    name: "Rind Concentrate Body Balm",
+    category: "bodyandhand",
+    sub_category: "Body",
+    description: "A citrus-based formulation with oils of Orange and Lemon Rind to cool and refresh the skin, and nut oil extracts to soften and lightly hydrate.",
+    size: "4.2 oz",
+    price: 35.00,
+    key_ingredients: "Pink Grapefruit, Orange Rind, Lemon Rind",
+    how_to_use: "Massage into freshly cleansed skin from neck to toe, particularly after sun exposure. Store in refrigerator through summer for boosted sensory pleasure.",
+    dosage: "Desired amount",
+    texture: "Medium-weight cream",
+    aroma: "Citrus, fresh",
+    skin_feel: "Swiftly absorbed, lightly hydrated"
+)
 
+rind_concentrate_body_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Treat-Control-again.png");
+rind_concentrate_body_balm.photos.attach(io: rind_concentrate_body_balm_attachment, filename: "Treat-Control-again.png");
 # rind_concentrate_body_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Body-Concentrate-again.png");
 # rind_concentrate_body_balm.photos.attach(io: rind_concentrate_body_balm_attachment, filename: "Body-Concentrate-again.png");
 
 
 
-# geranium_leaf_body_balm =  Product.create!(
-#     name: "Geranium Leaf Body Balm",
-#     category: "bodyandhand",
-#     sub_category: "Body",
-#     description: "A rich blend of nourishing nut oils, skin-softening ingredients and Geranium Leaf and Citrus extracts to provide exceptional hydration.",
-#     size: "4.2 oz",
-#     price: 35.00,
-#     key_ingredients: "Geranium Leaf, Mandarin Rind, Bergamot Rind",
-#     how_to_use: "Morning and evening, massage into freshly cleansed skin from neck to toe, concentrating on dry areas such as elbows, knees and feet.",
-#     dosage: "Desired amount",
-#     texture: "Medium-weight cream",
-#     aroma: "Green, citrus, fresh",
-#     skin_feel: "Supple, soft, hydrated"
-# )
+geranium_leaf_body_balm =  Product.create!(
+    name: "Geranium Leaf Body Balm",
+    category: "bodyandhand",
+    sub_category: "Body",
+    description: "A rich blend of nourishing nut oils, skin-softening ingredients and Geranium Leaf and Citrus extracts to provide exceptional hydration.",
+    size: "4.2 oz",
+    price: 35.00,
+    key_ingredients: "Geranium Leaf, Mandarin Rind, Bergamot Rind",
+    how_to_use: "Morning and evening, massage into freshly cleansed skin from neck to toe, concentrating on dry areas such as elbows, knees and feet.",
+    dosage: "Desired amount",
+    texture: "Medium-weight cream",
+    aroma: "Green, citrus, fresh",
+    skin_feel: "Supple, soft, hydrated"
+)
 
+geranium_leaf_body_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Treat-Control-again.png");
+geranium_leaf_body_balm.photos.attach(io: geranium_leaf_body_balm_attachment, filename: "Treat-Control-again.png");
 # geranium_leaf_body_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Body-Balm-again.png");
 # geranium_leaf_body_balm.photos.attach(io: geranium_leaf_body_balm_attachment, filename: "Body-Balm-again.png");
 

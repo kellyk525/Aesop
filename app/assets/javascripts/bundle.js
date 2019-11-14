@@ -1380,9 +1380,10 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // if (!this.props.photoUrls) {
-      //     return null;
-      // }
+      if (!this.props.product) {
+        return null;
+      }
+
       var _this$props$product = this.props.product,
           photoUrls = _this$props$product.photoUrls,
           size = _this$props$product.size;
@@ -1813,7 +1814,12 @@ function (_React$Component) {
         className: "register-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/products/skin"
-      }, "Skin"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Skin")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onMouseEnter: this.handleMouseOver("bodyandhand"),
+        className: "register-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/products/skin"
+      }, "Body"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
@@ -2247,9 +2253,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
+  debugger;
   return {
     skinCategory: Object(_selectors_selectors__WEBPACK_IMPORTED_MODULE_4__["filterProductsByCategory"])(state, "Skin"),
-    bodyCategory: Object(_selectors_selectors__WEBPACK_IMPORTED_MODULE_4__["filterProductsByCategory"])(state, "Body")
+    bodyCategory: Object(_selectors_selectors__WEBPACK_IMPORTED_MODULE_4__["filterProductsByCategory"])(state, "bodyandhand")
   };
 };
 

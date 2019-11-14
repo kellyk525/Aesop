@@ -16,9 +16,9 @@ class ProductShow extends React.Component {
     }
 
     render() {
-        // if (!this.props.photoUrls) {
-        //     return null;
-        // }
+        if (!this.props.product) {
+            return null;
+        }
 
         const { photoUrls, size } = this.props.product
         

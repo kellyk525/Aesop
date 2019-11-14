@@ -40,14 +40,22 @@ class FirstSide extends React.Component {
                             Skin
                         </Link>
                     </button>
-
+                    <button onMouseEnter={this.handleMouseOver("bodyandhand")} className="register-button" >
+                        <Link to="/products/skin">
+                            Body
+                        </Link>
+                    </button>
 
                 </div>
 
                 <div className="container">
                     <button type="button" className="slide-in">Slide In</button>
                 </div>
-
+                {/* { this.props.bodyProducts.map((product) => {
+                    return (
+                        <div>{product.name}</div>
+                    )
+                })} */}
             </div>
         )
     }
