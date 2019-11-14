@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { openSide } from '../../actions/side_actions';
+import { Link } from 'react-router-dom';
 
 class SecondSide extends React.Component {
     constructor(props) {
@@ -32,19 +33,26 @@ class SecondSide extends React.Component {
 
     render() {
 
-        const { category } = this.props
-
         return (
             <div className="second-drawer" onClick={e => e.stopPropagation()} >
                 <div className="second-drawer-contain" >
                     <button className="x-button" onClick={this.props.closeSide}>X</button>
-                    { category }
+
                     {/* <button onClick={() => this.props.openSide("third")} className="register-button" >Register</button> */}
-                    { this.props.products.map((product) => {
-                        return (
-                            <div onMouseEnter={this.handleMouseEnter(product.id)} >{product.name}</div>
-                        )
-                    })}
+                    <ul className="second-drawer-list">
+                        { this.props.products.map((product) => {
+                            return (
+                                <div className="single-product">
+                                    <Link to={`/products/${product.name}~${product.id}`} className="link-product">
+                                        <li onMouseEnter={this.handleMouseEnter(product.id)}>
+                                            <p>{product.name}</p>
+                                            <p>{product.size} / ${product.price}</p>
+                                        </li>
+                                    </Link>
+                                </div>
+                            )
+                        })}
+                    </ul>
 
                 </div>
             </div>

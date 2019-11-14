@@ -30,21 +30,30 @@ class FirstSide extends React.Component {
 
             <div className="first-drawer" onClick={e => e.stopPropagation()} >
                 <div className="first-drawer-contain" >
-                    <div>
-                        <Link to="/" className="logo-main">
-                            <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
+                    <div className="first-drawer-detail">
+                        <div className="first-drawer-detail-image" >
+                            <Link to="/" className="logo-main">
+                                <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
+                            </Link>
+                        </div>
+                        {/* <button onMouseEnter={this.handleMouseOver("Skin")}>
+                            <Link to="/products/skin" >
+                                Skin
+                            </Link>
+                        </button>
+                        <button onMouseEnter={this.handleMouseOver("bodyandhand")}>
+                            <Link to="/products/skin">
+                                Body
+                            </Link>
+                        </button> */}
+
+                        <Link to="/products/skin" className="first-link" >
+                            <p onMouseEnter={this.handleMouseOver("Skin")}>Skin</p>
+                        </Link>
+                        <Link to="/products/skin" className="first-link" >
+                            <p onMouseEnter={this.handleMouseOver("bodyandhand")}>Body</p>
                         </Link>
                     </div>
-                    <button onMouseEnter={this.handleMouseOver("Skin")} className="register-button" >
-                        <Link to="/products/skin" >
-                            Skin
-                        </Link>
-                    </button>
-                    <button onMouseEnter={this.handleMouseOver("bodyandhand")} className="register-button" >
-                        <Link to="/products/skin">
-                            Body
-                        </Link>
-                    </button>
 
                 </div>
 
