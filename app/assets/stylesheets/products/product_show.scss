@@ -134,9 +134,10 @@
     }
 
     h1 {
-        font-size: 30px;
+        font-size: 28px;
         font-weight: 300;
         margin: auto 0;
+        line-height: 40px
     }
 
     .description {
@@ -226,9 +227,13 @@
         display: inline-block;
     }
 
+    
     .products-contain {
         background:#FFFEF2;
-
+        
+        :hover {
+            background:#FFFEF2 !important;
+        }
 
 
     }
@@ -239,6 +244,7 @@
     flex-direction: row;
     width: 95%;
     margin: 0 auto;
+
 }
 
 .accomp-container {
@@ -258,6 +264,7 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     height: 200px;
+    
     // p {
     //     width: 100%;
     //     height: 200px;

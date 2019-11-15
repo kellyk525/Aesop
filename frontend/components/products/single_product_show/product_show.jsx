@@ -3,7 +3,8 @@ import React from 'react';
 import ProductShowDetail from './product_show_detail';
 import ProductShowDetailSecond from './product_show_detail_second';
 import SkinProductsIndexItem from '../product_show/skin_products_index_item';
-
+import {Link} from 'react-router-dom';
+ 
 class ProductShow extends React.Component {
 
     constructor(props) {
@@ -27,11 +28,10 @@ class ProductShow extends React.Component {
             <div className="wrap">
                 <div className="show-picture-description-wrap">
                     <div className="logo-image-wrap">
-                        <div className="logo">
-                            <p>
-                                Aesop
-                            </p>
-                        </div>
+
+                        <Link to="/" className="logo-main">
+                            <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
+                        </Link>
                         <div className="image-and-detail" >
                             <img className="show-image" src={photoUrls[0]} alt="Photo"/>
                             <p>{size}</p>
@@ -130,6 +130,8 @@ class ProductShow extends React.Component {
                     <div className="footer-bottom"></div>
 
                 </div>
+
+ */}
             </div>
         )
     }

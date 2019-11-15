@@ -1440,6 +1440,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product_show_detail__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_show_detail */ "./frontend/components/products/single_product_show/product_show_detail.jsx");
 /* harmony import */ var _product_show_detail_second__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product_show_detail_second */ "./frontend/components/products/single_product_show/product_show_detail_second.jsx");
 /* harmony import */ var _product_show_skin_products_index_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../product_show/skin_products_index_item */ "./frontend/components/products/product_show/skin_products_index_item.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1457,6 +1458,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1496,9 +1498,13 @@ function (_React$Component) {
         className: "show-picture-description-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logo-image-wrap"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "logo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Aesop")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+        to: "/",
+        className: "logo-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png",
+        alt: "Logo"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "image-and-detail"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "show-image",
@@ -1575,7 +1581,7 @@ function (_React$Component) {
         className: "footer-actual"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-bottom"
-      })));
+      })), "*/}");
     }
   }]);
 
@@ -1752,6 +1758,14 @@ function (_React$Component) {
   _createClass(ProductShowDetailSecond, [{
     key: "render",
     value: function render() {
+      var photo;
+
+      if (this.props.photoUrls) {
+        photo = this.props.photoUrls[1];
+      } else {
+        photo = "https://aesop-dev.s3-us-west-1.amazonaws.com/Exfoliate-Facial-Exfoliant-2-again.png";
+      }
+
       var _this$props$product = this.props.product,
           how_to_use = _this$props$product.how_to_use,
           dosage = _this$props$product.dosage,
@@ -1765,7 +1779,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "second-wrap-image"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: photoUrls[1],
+        src: photo,
         alt: "Second-Photo"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "second-detail-wrap-main"
