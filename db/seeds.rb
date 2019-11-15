@@ -353,23 +353,23 @@ resurrection_aromatique_hand_balm.photos.attach(io: resurrection_aromatique_hand
 
 
 
-reverence_aromatique_hand_wash =  Product.create!(
-    name: "Reverence Aromatique Hand Wash",
-    category: "bodyandhand",
-    sub_category: "Hand",
-    description: "An unorthodox aromatic blend with botanical extracts and finely milled Pumice, to gently cleanse, exfoliate, and leave the hands smooth, purified, and refreshed.",
-    size: "16.9 fl oz",
-    price: 39.00,
-    key_ingredients: "Vetiver Root, Petitgrain, Bergamot Rind",
-    how_to_use: "Dispense into damp hands, lather, then rinse thoroughly.",
-    dosage: "Single pump",
-    texture: "Opaque, fine-grain gel",
-    aroma: "Woody, earthy, smoky",
-    skin_feel: "Thoroughly cleansed, polished, supple"
-)
+# reverence_aromatique_hand_wash =  Product.create!(
+#     name: "Reverence Aromatique Hand Wash",
+#     category: "bodyandhand",
+#     sub_category: "Hand",
+#     description: "An unorthodox aromatic blend with botanical extracts and finely milled Pumice, to gently cleanse, exfoliate, and leave the hands smooth, purified, and refreshed.",
+#     size: "16.9 fl oz",
+#     price: 39.00,
+#     key_ingredients: "Vetiver Root, Petitgrain, Bergamot Rind",
+#     how_to_use: "Dispense into damp hands, lather, then rinse thoroughly.",
+#     dosage: "Single pump",
+#     texture: "Opaque, fine-grain gel",
+#     aroma: "Woody, earthy, smoky",
+#     skin_feel: "Thoroughly cleansed, polished, supple"
+# )
 
-reverence_aromatique_hand_wash_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Hand-Wash.png");
-reverence_aromatique_hand_wash.photos.attach(io: reverence_aromatique_hand_wash_attachment, filename: "Hand-Wash.png");
+# reverence_aromatique_hand_wash_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Hand-Wash.png");
+# reverence_aromatique_hand_wash.photos.attach(io: reverence_aromatique_hand_wash_attachment, filename: "Hand-Wash.png");
 
 
 # # //////////////////////////////////// Hair
