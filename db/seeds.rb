@@ -89,26 +89,26 @@ in_two_minds_facial_cleanser.photos.attach(io: in_two_minds_facial_cleanser_atta
 
 
 
-amazing_face_cleanser =  Product.create!(
-    name: "Amazing Face Cleanser",
-    category: "Skin",
-    sub_category: "Cleanse",
-    description: "A non-drying daily cleanser enhanced with purifying Mandarin Rind to effectively cleanse the skin without disturbing its natural balance.",
-    size: "3.4 fl oz",
-    price: 35.00,
-    key_ingredients: "Mandarin Rind, Ylang Ylang, Lavender Oil",
-    how_to_use: "Morning and evening, pour into clean hands and lather. Massage over face and neck, then rinse thoroughly with warm water.",
-    dosage: "Half a teaspoon",
-    texture: "Clear, low foaming gel",
-    aroma: "Citrus, floral, fresh",
-    suited_to: "Oily, combination and open-pored skin, for those in warm and humid climates",
-    skin_feel: "Refreshed, balanced and scrupulously clean",
-    skin_type: "Dry",
-    skin_concern: "Sensitive"
-)
+# amazing_face_cleanser =  Product.create!(
+#     name: "Amazing Face Cleanser",
+#     category: "Skin",
+#     sub_category: "Cleanse",
+#     description: "A non-drying daily cleanser enhanced with purifying Mandarin Rind to effectively cleanse the skin without disturbing its natural balance.",
+#     size: "3.4 fl oz",
+#     price: 35.00,
+#     key_ingredients: "Mandarin Rind, Ylang Ylang, Lavender Oil",
+#     how_to_use: "Morning and evening, pour into clean hands and lather. Massage over face and neck, then rinse thoroughly with warm water.",
+#     dosage: "Half a teaspoon",
+#     texture: "Clear, low foaming gel",
+#     aroma: "Citrus, floral, fresh",
+#     suited_to: "Oily, combination and open-pored skin, for those in warm and humid climates",
+#     skin_feel: "Refreshed, balanced and scrupulously clean",
+#     skin_type: "Dry",
+#     skin_concern: "Sensitive"
+# )
 
-amazing_face_cleanser_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/https://aesop-dev.s3-us-west-1.amazonaws.com/cleanse-amazing-face-cleanser-again.png");
-amazing_face_cleanser.photos.attach(io: amazing_face_cleanser_attachment, filename: "cleanse-amazing-face-cleanser-again.png");
+# amazing_face_cleanser_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/https://aesop-dev.s3-us-west-1.amazonaws.com/cleanse-amazing-face-cleanser-again.png");
+# amazing_face_cleanser.photos.attach(io: amazing_face_cleanser_attachment, filename: "cleanse-amazing-face-cleanser-again.png");
 
 
 immediate_moisture_facial_hydrosol =  Product.create!(
