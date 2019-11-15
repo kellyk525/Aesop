@@ -215,3 +215,37 @@
         transform: translateX(0px);
     }
 }
+
+
+
+.accomp {
+    margin-top: 70px;
+    margin-bottom: 70px;
+
+    .main-t {
+        display: inline-block;
+    }
+
+    .products-contain {
+        background:#FFFEF2;
+
+
+
+    }
+}
+
+.accompany-image {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.accomp-container {
+    overflow: auto;
+    white-space: nowrap;
+    background:#FFFEF2;
+    // background: red;
+    
+}
+

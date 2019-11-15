@@ -13,7 +13,9 @@ class ProductShowDetailSecond extends React.Component {
         return (
             <div className="second-wrap" >
                 <div className="second-wrap-comp">
-                    <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Second.png" alt="Second-Photo"/>
+                    <div className="second-wrap-image">
+                        <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Second.png" alt="Second-Photo"/>
+                    </div>
                     <div className="second-detail-wrap-main" >
                         <div className="second-detail" >
                             <div className="second-detail-first" >

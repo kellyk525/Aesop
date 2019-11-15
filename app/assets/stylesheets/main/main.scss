@@ -22,6 +22,7 @@
     // background-repeat: no-repeat;
     // background-position: center;
     // background-size: cover;
+
     -webkit-animation: fadein 3s;
        -moz-animation: fadein 3s; /* Firefox < 16 */
         -ms-animation: fadein 3s; /* Internet Explorer */
@@ -150,16 +151,22 @@
 
 
 .main-products-second {
-    display: block;
+    display: flex;
     width: 100%;
     height: 800px;
-    background-color: #FFFEF2 !important;
+    background-color: red !important;
     border-bottom: 2px solid rgba(0, 0, 0, 0.041);
+    flex-direction: row;
+
+    .second-text {
+        flex-grow: 30;
+    }
     
 }
 
 .main-products-contain-second {
     padding-top: 50px;
+    flex-grow: 70;
     
     img {
         width: 100%;
@@ -269,11 +276,13 @@
 
 
 
+
 .slide-container {
     overflow: auto;
     white-space: nowrap;
+    background:#FFFEF2;
+    // background: red;
+    
 }
-
-
 
 

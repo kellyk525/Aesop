@@ -44,15 +44,15 @@ class ProductShow extends React.Component {
                 <div>
                     <ProductShowDetailSecond product={this.props.product} />
                 </div>
-                <div className="products" >
+                <div className="products accomp" >
                     <div className="products-contain">
-                        <div className="products-image slide-container">
+                        <div className="accompany-image accomp-container">
                             <div className="main-index-item">
                                 <div className="product-item-photo">
                                     <div className="photo-contain-first">
                                         <div className="sub" >
                                             <h2>Accompany With</h2>
-                                            <p>
+                                            <p className="main-t" >
                                                 Cleansing skin of daily grime, sweat and other impurities forms the foundation of an intelligent skin care regimen.
                                             </p>
                                         </div>

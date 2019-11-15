@@ -60,6 +60,9 @@ gentle_facial_cleansing_milk = Product.create!(
 
 gentle_facial_cleansing_milk_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Cleanse-Gentle-again.png");
 gentle_facial_cleansing_milk.photos.attach(io: gentle_facial_cleansing_milk_attachment, filename: "Cleanse-Gentle-again.png");
+gentle_facial_cleansing_milk_attachment_second = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Cleanse-Gentle-again.png");
+gentle_facial_cleansing_milk.photos.attach(io: gentle_facial_cleansing_milk_attachment_second, filename: "Cleanse-Gentle-again.png");
+
 
 
 

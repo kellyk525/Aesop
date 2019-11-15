@@ -40,8 +40,13 @@ class AesopProductIndex extends React.Component {
                 </div>
 
                 <div className="main-products-second" >
+                    <div className="second-text">
+                            <div>
+                                Store Locator
+                            </div>
+                    </div>
                     <div className="main-products-contain-second">
-                        <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-main-second-test.png" alt=""/>
+                        <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/main-two-again.png" alt=""/>
                     </div>
                 </div>
                 <div className="main-products" >
@@ -73,9 +78,9 @@ class AesopProductIndex extends React.Component {
                                 <ul>
                                     <li><a href="/">Contact Us</a></li>
                                     <li><a href="/">FAQs</a></li>
-                                    <li><a href="/"></a></li>
-                                    <li><a href="/"></a></li>
-                                    <li><a href="/"></a></li>
+                                    <li><a href="/">Delivery and Returns</a></li>
+                                    <li><a href="/">Terms and Conditions</a></li>
+                                    <li><a href="/">Track your order</a></li>
 
                                 </ul>
                             </div>
@@ -83,18 +88,18 @@ class AesopProductIndex extends React.Component {
                         <div className="about">
                             <div>
                                 <ul>
-                                    <li><a href="/"></a></li>
-                                    <li><a href="/"></a></li>
-                                    <li><a href="/"></a></li>
-                                    <li><a href="/"></a></li>
-                                    <li><a href="/"></a></li>
+                                    <li><a href="/">Our Story</a></li>
+                                    <li><a href="/">Careers</a></li>
+                                    <li><a href="/">Press</a></li>
+                                    <li><a href="/">Corporate Gifts</a></li>
+                                    <li><a href="/">Facial appointments</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div className="social">
                             <div>
                                 <ul>
-                                    <li><a href="/"></a></li>
+                                    <li><a href="/">Int</a></li>
                                     <li><a href="/"></a></li>
                                     <li><a href="/"></a></li>
                                 </ul>
