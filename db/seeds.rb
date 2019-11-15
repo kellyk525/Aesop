@@ -89,26 +89,26 @@ in_two_minds_facial_cleanser.photos.attach(io: in_two_minds_facial_cleanser_atta
 
 
 
-# amazing_face_cleanser =  Product.create!(
-#     name: "Amazing Face Cleanser",
-#     category: "Skin",
-#     sub_category: "Cleanse",
-#     description: "A non-drying daily cleanser enhanced with purifying Mandarin Rind to effectively cleanse the skin without disturbing its natural balance.",
-#     size: "3.4 fl oz",
-#     price: 35.00,
-#     key_ingredients: "Mandarin Rind, Ylang Ylang, Lavender Oil",
-#     how_to_use: "Morning and evening, pour into clean hands and lather. Massage over face and neck, then rinse thoroughly with warm water.",
-#     dosage: "Half a teaspoon",
-#     texture: "Clear, low foaming gel",
-#     aroma: "Citrus, floral, fresh",
-#     suited_to: "Oily, combination and open-pored skin, for those in warm and humid climates",
-#     skin_feel: "Refreshed, balanced and scrupulously clean",
-#     skin_type: "Dry",
-#     skin_concern: "Sensitive"
-# )
+amazing_face_cleanser =  Product.create!(
+    name: "Amazing Face Cleanser",
+    category: "Skin",
+    sub_category: "Cleanse",
+    description: "A non-drying daily cleanser enhanced with purifying Mandarin Rind to effectively cleanse the skin without disturbing its natural balance.",
+    size: "3.4 fl oz",
+    price: 35.00,
+    key_ingredients: "Mandarin Rind, Ylang Ylang, Lavender Oil",
+    how_to_use: "Morning and evening, pour into clean hands and lather. Massage over face and neck, then rinse thoroughly with warm water.",
+    dosage: "Half a teaspoon",
+    texture: "Clear, low foaming gel",
+    aroma: "Citrus, floral, fresh",
+    suited_to: "Oily, combination and open-pored skin, for those in warm and humid climates",
+    skin_feel: "Refreshed, balanced and scrupulously clean",
+    skin_type: "Dry",
+    skin_concern: "Sensitive"
+)
 
-# amazing_face_cleanser_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/https://aesop-dev.s3-us-west-1.amazonaws.com/cleanse-amazing-face-cleanser-again.png");
-# amazing_face_cleanser.photos.attach(io: amazing_face_cleanser_attachment, filename: "cleanse-amazing-face-cleanser-again.png");
+amazing_face_cleanser_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/https://aesop-dev.s3-us-west-1.amazonaws.com/cleanse-amazing-face-cleanser-again.png");
+amazing_face_cleanser.photos.attach(io: amazing_face_cleanser_attachment, filename: "cleanse-amazing-face-cleanser-again.png");
 
 
 immediate_moisture_facial_hydrosol =  Product.create!(
@@ -248,7 +248,7 @@ purifying_facial_exfoliant_paste_attachment = open("https://aesop-dev.s3-us-west
 purifying_facial_exfoliant_paste.photos.attach(io: purifying_facial_exfoliant_paste_attachment, filename: "Exfoliate-Facial-Exfoliant-again.png");
 
 
-#//////////////// Body
+# #//////////////// Body
 
 
 rind_concentrate_body_balm =  Product.create!(
@@ -295,23 +295,23 @@ geranium_leaf_body_balm.photos.attach(io: geranium_leaf_body_balm_attachment, fi
 
 
 
-# a_rose_by_any_other_name_body_cleanser =  Product.create!(
-#     name: "A Rose By Any Other Name Body Cleanser",
-#     category: "bodyandhand",
-#     sub_category: "Body",
-#     description: "An aromatic formulation that cleanses gently yet thoroughly, enhanced with hydrating Rose Petal oil and other skin-softening botanical extracts.",
-#     size: "6.8 fl oz",
-#     price: 27.00,
-#     key_ingredients: "Rose Petal, Cardamom, Black Pepper",
-#     how_to_use: "Dispense into hands or onto a sea sponge. Massage onto soaked skin from neck to toe, then rinse thoroughly.",
-#     dosage: "As needed",
-#     texture: "Clear, low-foaming gel",
-#     aroma: "Floral, spicy, warm",
-#     skin_feel: "Warmed, cleansed, fresh"
-# )
+# # a_rose_by_any_other_name_body_cleanser =  Product.create!(
+# #     name: "A Rose By Any Other Name Body Cleanser",
+# #     category: "bodyandhand",
+# #     sub_category: "Body",
+# #     description: "An aromatic formulation that cleanses gently yet thoroughly, enhanced with hydrating Rose Petal oil and other skin-softening botanical extracts.",
+# #     size: "6.8 fl oz",
+# #     price: 27.00,
+# #     key_ingredients: "Rose Petal, Cardamom, Black Pepper",
+# #     how_to_use: "Dispense into hands or onto a sea sponge. Massage onto soaked skin from neck to toe, then rinse thoroughly.",
+# #     dosage: "As needed",
+# #     texture: "Clear, low-foaming gel",
+# #     aroma: "Floral, spicy, warm",
+# #     skin_feel: "Warmed, cleansed, fresh"
+# # )
 
-# a_rose_by_any_other_name_body_cleanser_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Body-Rose.png");
-# a_rose_by_any_other_name_body_cleanser.photos.attach(io: a_rose_by_any_other_name_body_cleanser_attachment, filename: "Body-Rose.png");
+# # a_rose_by_any_other_name_body_cleanser_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Body-Rose.png");
+# # a_rose_by_any_other_name_body_cleanser.photos.attach(io: a_rose_by_any_other_name_body_cleanser_attachment, filename: "Body-Rose.png");
 
 
 resurrection_aromatique_hand_balm_red =  Product.create!(
@@ -353,23 +353,23 @@ resurrection_aromatique_hand_balm.photos.attach(io: resurrection_aromatique_hand
 
 
 
-# reverence_aromatique_hand_wash =  Product.create!(
-#     name: "Reverence Aromatique Hand Wash",
-#     category: "bodyandhand",
-#     sub_category: "Hand",
-#     description: "An unorthodox aromatic blend with botanical extracts and finely milled Pumice, to gently cleanse, exfoliate, and leave the hands smooth, purified, and refreshed.",
-#     size: "16.9 fl oz",
-#     price: 39.00,
-#     key_ingredients: "Vetiver Root, Petitgrain, Bergamot Rind",
-#     how_to_use: "Dispense into damp hands, lather, then rinse thoroughly.",
-#     dosage: "Single pump",
-#     texture: "Opaque, fine-grain gel",
-#     aroma: "Woody, earthy, smoky",
-#     skin_feel: "Thoroughly cleansed, polished, supple"
-# )
+reverence_aromatique_hand_wash =  Product.create!(
+    name: "Reverence Aromatique Hand Wash",
+    category: "bodyandhand",
+    sub_category: "Hand",
+    description: "An unorthodox aromatic blend with botanical extracts and finely milled Pumice, to gently cleanse, exfoliate, and leave the hands smooth, purified, and refreshed.",
+    size: "16.9 fl oz",
+    price: 39.00,
+    key_ingredients: "Vetiver Root, Petitgrain, Bergamot Rind",
+    how_to_use: "Dispense into damp hands, lather, then rinse thoroughly.",
+    dosage: "Single pump",
+    texture: "Opaque, fine-grain gel",
+    aroma: "Woody, earthy, smoky",
+    skin_feel: "Thoroughly cleansed, polished, supple"
+)
 
-# reverence_aromatique_hand_wash_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Hand-Wash.png");
-# reverence_aromatique_hand_wash.photos.attach(io: reverence_aromatique_hand_wash_attachment, filename: "Hand-Wash.png");
+reverence_aromatique_hand_wash_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Hand-Wash.png");
+reverence_aromatique_hand_wash.photos.attach(io: reverence_aromatique_hand_wash_attachment, filename: "Hand-Wash.png");
 
 
 # # //////////////////////////////////// Hair
