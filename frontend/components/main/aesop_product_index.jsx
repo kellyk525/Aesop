@@ -24,6 +24,20 @@ class AesopProductIndex extends React.Component {
                 <div className="main-products-second" >
                     <div className="main-products-contain-second">
                         <img className="top-image" src="https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-main-second-test.png" alt="" />
+                        <div className="main-text">
+                            <div className="main-text-first" >Aesop</div>
+                            <div className="main-text-second" >
+                                <h2>Begin at the beginning</h2>
+                                <div>
+                                    Cleansing is a vital starting point to better skin. An effective yet gentle cleanser purifies the skin and readies it for toning and hydration.
+                                </div>
+                                <div>
+                                    <p>Explore Skin Products</p>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
                 <div className="main-products" >
@@ -39,14 +53,28 @@ class AesopProductIndex extends React.Component {
                     </div>
                 </div>
 
-                <div className="main-products-second" >
+                <div className="main-products-third" >
                     <div className="second-text">
-                            <div>
-                                Store Locator
+                            <div  className="second-text-contain">
+                                <div className="contain-again">
+                                    <p className="contain-first"></p>
+                                    <p>Store Locator</p>
+                                    <p className="contain-third" >In each store, trained consultants will be pleased to host you.</p>
+                                    <div>
+                                        <p>Find a nearby Store</p>
+                                    </div>
+                                </div>
                             </div>
                     </div>
-                    <div className="main-products-contain-second">
-                        <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/main-two-again.png" alt=""/>
+                    <div className="main-products-contain-third">
+                        <div className="main-products-image-third">
+                            <div className="image">
+                                <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/main-two-again.png" alt="" />
+                            </div>
+                        </div>
+                        <div className="main-third-text">
+                            <p>Aesop Tokyo</p>
+                        </div>
                     </div>
                 </div>
                 <div className="main-products" >

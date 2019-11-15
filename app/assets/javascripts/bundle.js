@@ -643,7 +643,13 @@ function (_React$Component) {
         className: "top-image",
         src: "https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-main-second-test.png",
         alt: ""
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-text-first"
+      }, "Aesop"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-text-second"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Begin at the beginning"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Cleansing is a vital starting point to better skin. An effective yet gentle cleanser purifies the skin and readies it for toning and hydration."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Explore Skin Products")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products-contain"
@@ -655,15 +661,29 @@ function (_React$Component) {
           key: product.id
         });
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main-products-second"
+        className: "main-products-third"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "second-text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Store Locator")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main-products-contain-second"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second-text-contain"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "contain-again"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "contain-first"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Store Locator"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "contain-third"
+      }, "In each store, trained consultants will be pleased to host you."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Find a nearby Store"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-products-contain-third"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-products-image-third"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "image"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://aesop-dev.s3-us-west-1.amazonaws.com/main-two-again.png",
         alt: ""
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-third-text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Aesop Tokyo")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products-contain"
