@@ -11,7 +11,7 @@ const Header = (props) => {
                 <div className="header-user-auth" >
                     <button onClick={() => props.openModal("login")} className="signin-button">Login</button>
                     <p>or</p>
-                    <button onClick={() => props.openModal("signup")} className="register-button" >Register</button>
+                    <button onClick={() => props.openModal("signup")} className="register-button register" >Register</button>
                 </div>
             </div>
         );

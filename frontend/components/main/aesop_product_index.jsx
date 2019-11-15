@@ -23,17 +23,11 @@ class AesopProductIndex extends React.Component {
             <div>
                 <div className="main-products-second" >
                     <div className="main-products-contain-second">
-                        <img className="top-image" src="https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-main-second-test.png" alt="" />
-                        <div className="main-text">
-                            <div className="main-text-first" >Aesop</div>
-                            <div className="main-text-second" >
+                        <img className="top-image" src="https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-gurney.png" alt="" />
+                        <div>
+                            <div></div>
+                            <div>
                                 <h2>Begin at the beginning</h2>
-                                <div>
-                                    Cleansing is a vital starting point to better skin. An effective yet gentle cleanser purifies the skin and readies it for toning and hydration.
-                                </div>
-                                <div>
-                                    <p>Explore Skin Products</p>
-                                </div>
                             </div>
 
                         </div>
@@ -42,7 +36,7 @@ class AesopProductIndex extends React.Component {
                 </div>
                 <div className="main-products" >
                     <div className="main-products-contain">
-                        <p>
+                        <p className="inside">
                             Of Replenishing Character
                         </p>
                         <div className="main-skin-product-image slide-container">
@@ -83,7 +77,7 @@ class AesopProductIndex extends React.Component {
                             Of Replenishing Character
                         </p>
                         <div className="main-skin-product-image slide-container">
-                            {skinProducts.map((product) => {
+                            {bodyProducts.map((product) => {
                                 return <AesopProductIndexItem product={product} key={product.id} />
                             })}
                         </div>
@@ -97,11 +91,16 @@ class AesopProductIndex extends React.Component {
                 <div className="footer">
                         <div className="email">
                             <p>I would like to receive communications about Aesop products, services, stores, events and matters of cultural interest.</p>
-                            <label>
-                                <input type="text"/>
-                            </label>
+                            <div className="em-input">
+                                <label>
+                                    <input type="text"/>
+                                </label>
+                            </div>
                         </div>
                         <div className="contact">
+                            <div>
+                                <p>Contact Us</p>
+                            </div>
                             <div>
                                 <ul>
                                     <li><a href="/">Contact Us</a></li>
@@ -115,6 +114,9 @@ class AesopProductIndex extends React.Component {
                         </div>
                         <div className="about">
                             <div>
+                                <p>About</p>
+                            </div>
+                            <div>
                                 <ul>
                                     <li><a href="/">Our Story</a></li>
                                     <li><a href="/">Careers</a></li>
@@ -126,15 +128,21 @@ class AesopProductIndex extends React.Component {
                         </div>
                         <div className="social">
                             <div>
+                                <p>Social</p>
+                            </div>
+                            <div>
                                 <ul>
-                                    <li><a href="/">Int</a></li>
-                                    <li><a href="/"></a></li>
-                                    <li><a href="/"></a></li>
+                                    <li><a href="/">Instagram</a></li>
+                                    <li><a href="/">Twitter</a></li>
+                                    <li><a href="/">LinkedIn</a></li>
                                 </ul>
                             </div>
                         </div>
 
+                </div>
+                <div className="footer-actual">
                     <div className="footer-bottom"></div>
+
                 </div>
             </div>
         )

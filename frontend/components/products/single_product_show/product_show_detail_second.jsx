@@ -9,12 +9,12 @@ class ProductShowDetailSecond extends React.Component {
 
     render() {
 
-        const {how_to_use, dosage, texture, aroma} = this.props.product
+        const {how_to_use, dosage, texture, aroma, photoUrls} = this.props.product
         return (
             <div className="second-wrap" >
                 <div className="second-wrap-comp">
                     <div className="second-wrap-image">
-                        <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Second.png" alt="Second-Photo"/>
+                        <img src={photoUrls[1]} alt="Second-Photo"/>
                     </div>
                     <div className="second-detail-wrap-main" >
                         <div className="second-detail" >

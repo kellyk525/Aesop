@@ -52,9 +52,17 @@ class ProductShow extends React.Component {
                                     <div className="photo-contain-first">
                                         <div className="sub" >
                                             <h2>Accompany With</h2>
-                                            <p className="main-t" >
-                                                Cleansing skin of daily grime, sweat and other impurities forms the foundation of an intelligent skin care regimen.
-                                            </p>
+                                            <div className="main-t" >
+                                                 <p>
+                                                    Cleansing skin of daily grime,
+                                                    <br/>
+                                                    sweat and other impurities
+                                                    <br/>
+                                                     forms the foundation of an
+                                                     <br/> intelligent skin care regimen.
+                                                 </p>
+                                            
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -65,8 +73,62 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
                 </div>
+
                 <div className="footer">
+                    <div className="email">
+                        <p>I would like to receive communications about Aesop products, services, stores, events and matters of cultural interest.</p>
+                        <div className="em-input">
+                            <label>
+                                <input type="text" />
+                            </label>
+                        </div>
+                    </div>
+                    <div className="contact">
+                        <div>
+                            <p>Contact Us</p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a href="/">Contact Us</a></li>
+                                <li><a href="/">FAQs</a></li>
+                                <li><a href="/">Delivery and Returns</a></li>
+                                <li><a href="/">Terms and Conditions</a></li>
+                                <li><a href="/">Track your order</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="about">
+                        <div>
+                            <p>About</p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a href="/">Our Story</a></li>
+                                <li><a href="/">Careers</a></li>
+                                <li><a href="/">Press</a></li>
+                                <li><a href="/">Corporate Gifts</a></li>
+                                <li><a href="/">Facial appointments</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="social">
+                        <div>
+                            <p>Social</p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a href="/">Instagram</a></li>
+                                <li><a href="/">Twitter</a></li>
+                                <li><a href="/">LinkedIn</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div className="footer-actual">
                     <div className="footer-bottom"></div>
+
                 </div>
             </div>
         )

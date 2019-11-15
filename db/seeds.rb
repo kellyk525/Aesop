@@ -60,8 +60,8 @@ gentle_facial_cleansing_milk = Product.create!(
 
 gentle_facial_cleansing_milk_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Cleanse-Gentle-again.png");
 gentle_facial_cleansing_milk.photos.attach(io: gentle_facial_cleansing_milk_attachment, filename: "Cleanse-Gentle-again.png");
-gentle_facial_cleansing_milk_attachment_second = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Cleanse-Gentle-again.png");
-gentle_facial_cleansing_milk.photos.attach(io: gentle_facial_cleansing_milk_attachment_second, filename: "Cleanse-Gentle-again.png");
+gentle_facial_cleansing_milk_attachment_second = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Exfoliate-Facial-Exfoliant-2-again.png");
+gentle_facial_cleansing_milk.photos.attach(io: gentle_facial_cleansing_milk_attachment_second, filename: "Exfoliate-Facial-Exfoliant-2-again.png");
 
 
 
@@ -266,8 +266,8 @@ rind_concentrate_body_balm =  Product.create!(
     skin_feel: "Swiftly absorbed, lightly hydrated"
 )
 
-rind_concentrate_body_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Treat-Control-again.png");
-rind_concentrate_body_balm.photos.attach(io: rind_concentrate_body_balm_attachment, filename: "Treat-Control-again.png");
+rind_concentrate_body_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Body-Concentrate-again.png");
+rind_concentrate_body_balm.photos.attach(io: rind_concentrate_body_balm_attachment, filename: "Body-Concentrate-again.png");
 # rind_concentrate_body_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Body-Concentrate-again.png");
 # rind_concentrate_body_balm.photos.attach(io: rind_concentrate_body_balm_attachment, filename: "Body-Concentrate-again.png");
 
@@ -288,8 +288,8 @@ geranium_leaf_body_balm =  Product.create!(
     skin_feel: "Supple, soft, hydrated"
 )
 
-geranium_leaf_body_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Treat-Control-again.png");
-geranium_leaf_body_balm.photos.attach(io: geranium_leaf_body_balm_attachment, filename: "Treat-Control-again.png");
+geranium_leaf_body_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Body-Balm-again.png");
+geranium_leaf_body_balm.photos.attach(io: geranium_leaf_body_balm_attachment, filename: "Body-Balm-again.png");
 # geranium_leaf_body_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Body-Balm-again.png");
 # geranium_leaf_body_balm.photos.attach(io: geranium_leaf_body_balm_attachment, filename: "Body-Balm-again.png");
 
@@ -314,42 +314,42 @@ geranium_leaf_body_balm.photos.attach(io: geranium_leaf_body_balm_attachment, fi
 # a_rose_by_any_other_name_body_cleanser.photos.attach(io: a_rose_by_any_other_name_body_cleanser_attachment, filename: "Body-Rose.png");
 
 
-# resurrection_aromatique_hand_balm_red =  Product.create!(
-#     name: "Resurrection Aromatique Hand Balm",
-#     category: "bodyandhand",
-#     sub_category: "Hand",
-#     description: "A blend of fragrant botanicals and skin-softening emollients that delivers rich hydration to labour-wearied hands and cuticles.",
-#     size: "2.6 oz",
-#     price: 30.00,
-#     key_ingredients: "Mandarin Rind, Rosemary Leaf, Cedar Atlas",
-#     how_to_use: "Apply to clean hands as often as desired, paying close attention to cuticles.",
-#     dosage: "Half teaspoon",
-#     texture: "Medium-weight cream",
-#     aroma: "Citrus, woody, herbaceous",
-#     skin_feel: "Nourished, supple, with a grease-less finish"
-# )
+resurrection_aromatique_hand_balm_red =  Product.create!(
+    name: "Resurrection Aromatique Hand Balm",
+    category: "bodyandhand",
+    sub_category: "Hand",
+    description: "A blend of fragrant botanicals and skin-softening emollients that delivers rich hydration to labour-wearied hands and cuticles.",
+    size: "2.6 oz",
+    price: 30.00,
+    key_ingredients: "Mandarin Rind, Rosemary Leaf, Cedar Atlas",
+    how_to_use: "Apply to clean hands as often as desired, paying close attention to cuticles.",
+    dosage: "Half teaspoon",
+    texture: "Medium-weight cream",
+    aroma: "Citrus, woody, herbaceous",
+    skin_feel: "Nourished, supple, with a grease-less finish"
+)
 
-# resurrection_aromatique_hand_balm_red_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Hand-Balm.png");
-# resurrection_aromatique_hand_balm_red.photos.attach(io: resurrection_aromatique_hand_balm_red_attachment, filename: "Hand-Balm.png");
+resurrection_aromatique_hand_balm_red_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Hand-Balm-again.png");
+resurrection_aromatique_hand_balm_red.photos.attach(io: resurrection_aromatique_hand_balm_red_attachment, filename: "Hand-Balm-again.png");
 
 
-# resurrection_aromatique_hand_balm =  Product.create!(
-#     name: "Reverence Aromatique Hand Balm",
-#     category: "bodyandhand",
-#     sub_category: "Hand",
-#     description: "A rich, skin-softening balm containing carefully selected emollient ingredients, including Potassium Lactate, to soften the skin and provide sustained hydration.",
-#     size: "2.6 oz",
-#     price: 30.00,
-#     key_ingredients: "Bergamot Rind, Vetiver Root, Petitgrain",
-#     how_to_use: "Apply to clean hands as often as desired, paying close attention to cuticles.",
-#     dosage: "Half teaspoon",
-#     texture: "Concentrated cream",
-#     aroma: "Woody, earthy, smoky",
-#     skin_feel: "Exceptionally soft with a greaseless finish"
-# )
+resurrection_aromatique_hand_balm =  Product.create!(
+    name: "Reverence Aromatique Hand Balm",
+    category: "bodyandhand",
+    sub_category: "Hand",
+    description: "A rich, skin-softening balm containing carefully selected emollient ingredients, including Potassium Lactate, to soften the skin and provide sustained hydration.",
+    size: "2.6 oz",
+    price: 30.00,
+    key_ingredients: "Bergamot Rind, Vetiver Root, Petitgrain",
+    how_to_use: "Apply to clean hands as often as desired, paying close attention to cuticles.",
+    dosage: "Half teaspoon",
+    texture: "Concentrated cream",
+    aroma: "Woody, earthy, smoky",
+    skin_feel: "Exceptionally soft with a greaseless finish"
+)
 
-# resurrection_aromatique_hand_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Hand-Blue.png");
-# resurrection_aromatique_hand_balm.photos.attach(io: resurrection_aromatique_hand_balm_attachment, filename: "Hand-Blue.png");
+resurrection_aromatique_hand_balm_attachment = open("https://aesop-dev.s3-us-west-1.amazonaws.com/Hand-Blue-again.png");
+resurrection_aromatique_hand_balm.photos.attach(io: resurrection_aromatique_hand_balm_attachment, filename: "Hand-Blue-again.png");
 
 
 

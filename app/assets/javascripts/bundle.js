@@ -462,7 +462,7 @@ var Header = function Header(props) {
     onClick: function onClick() {
       return props.openModal("signup");
     },
-    className: "register-button"
+    className: "register-button register"
   }, "Register")));
   var signout = props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: props.logout,
@@ -641,19 +641,15 @@ function (_React$Component) {
         className: "main-products-contain-second"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "top-image",
-        src: "https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-main-second-test.png",
+        src: "https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-gurney.png",
         alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main-text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main-text-first"
-      }, "Aesop"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main-text-second"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Begin at the beginning"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Cleansing is a vital starting point to better skin. An effective yet gentle cleanser purifies the skin and readies it for toning and hydration."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Explore Skin Products")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Begin at the beginning"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products-contain"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Of Replenishing Character"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "inside"
+      }, "Of Replenishing Character"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-skin-product-image slide-container"
       }, skinProducts.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -689,7 +685,7 @@ function (_React$Component) {
         className: "main-products-contain"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Of Replenishing Character"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-skin-product-image slide-container"
-      }, skinProducts.map(function (product) {
+      }, bodyProducts.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_aesop_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           key: product.id
@@ -702,11 +698,13 @@ function (_React$Component) {
         className: "footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "email"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "I would like to receive communications about Aesop products, services, stores, events and matters of cultural interest."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "I would like to receive communications about Aesop products, services, stores, events and matters of cultural interest."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "em-input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "contact"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Contact Us")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
       }, "Contact Us")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
@@ -718,7 +716,7 @@ function (_React$Component) {
         href: "/"
       }, "Track your order"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "about"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
       }, "Our Story")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
@@ -730,13 +728,15 @@ function (_React$Component) {
         href: "/"
       }, "Facial appointments"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "social"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Social")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
-      }, "Int")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "Instagram")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "Twitter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "LinkedIn")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer-actual"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-bottom"
       })));
     }
@@ -1259,6 +1259,46 @@ function (_React$Component) {
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "email"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "I would like to receive communications about Aesop products, services, stores, events and matters of cultural interest."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "em-input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "contact"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Contact Us")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Contact Us")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "FAQs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Delivery and Returns")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Terms and Conditions")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Track your order"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "about"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Our Story")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Careers")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Press")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Corporate Gifts")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Facial appointments"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "social"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Social")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Instagram")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Twitter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "LinkedIn")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer-actual"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-bottom"
       })));
     }
@@ -1484,15 +1524,55 @@ function (_React$Component) {
         className: "photo-contain-first"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sub"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Accompany With"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Accompany With"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-t"
-      }, "Cleansing skin of daily grime, sweat and other impurities forms the foundation of an intelligent skin care regimen."))))), this.props.skinProducts.map(function (product) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cleansing skin of daily grime,", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "sweat and other impurities", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "forms the foundation of an", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " intelligent skin care regimen.")))))), this.props.skinProducts.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_show_skin_products_index_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
           product: product,
           key: product.id
         });
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "email"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "I would like to receive communications about Aesop products, services, stores, events and matters of cultural interest."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "em-input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "contact"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Contact Us")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Contact Us")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "FAQs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Delivery and Returns")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Terms and Conditions")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Track your order"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "about"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Our Story")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Careers")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Press")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Corporate Gifts")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Facial appointments"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "social"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Social")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Instagram")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Twitter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "LinkedIn")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer-actual"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-bottom"
       })));
@@ -1676,7 +1756,8 @@ function (_React$Component) {
           how_to_use = _this$props$product.how_to_use,
           dosage = _this$props$product.dosage,
           texture = _this$props$product.texture,
-          aroma = _this$props$product.aroma;
+          aroma = _this$props$product.aroma,
+          photoUrls = _this$props$product.photoUrls;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "second-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1684,7 +1765,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "second-wrap-image"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://aesop-dev.s3-us-west-1.amazonaws.com/Second.png",
+        src: photoUrls[1],
         alt: "Second-Photo"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "second-detail-wrap-main"
@@ -1751,7 +1832,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allBodyProducts", function() { return allBodyProducts; });
 var allBodyProducts = function allBodyProducts(state) {
   return Object.values(state.entities.products).filter(function (product) {
-    return product.category === "Body";
+    return product.category === "bodyandhand";
   });
 };
 

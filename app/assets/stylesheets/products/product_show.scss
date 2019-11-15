@@ -209,10 +209,10 @@
 
 @keyframes image {
     0%{
-        transform: translateX(30px);
+        transform: translateY(-30px);
     }
     100% {
-        transform: translateX(0px);
+        transform: translateY(0px);
     }
 }
 
@@ -249,3 +249,18 @@
     
 }
 
+
+.main-t {
+    width: 80%;
+    margin: 0 auto;
+    // overflow-wrap: break-word;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    height: 200px;
+    // p {
+    //     width: 100%;
+    //     height: 200px;
+        
+    // }
+}
