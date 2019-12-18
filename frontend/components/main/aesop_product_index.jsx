@@ -145,6 +145,7 @@ class AesopProductIndex extends React.Component {
 
                 </div>
             </div>
+
         )
     }
     
@@ -159,11 +160,14 @@ export default AesopProductIndex;
 // }
 
 
-        // skinProducts.forEach((product) => {
-        //     if (!categoryAll.includes(product.category)) {
-        //         categoryAll.push(product.category)
-        //     }
-        // })
+// skinProducts.forEach((product) => {
+//     if (!categoryAll.includes(product.category)) {
+//         categoryAll.push(product.category)
+//     }
+// })
 
 //  className="main-splash"
 //  className="splash-1"
+
+
+

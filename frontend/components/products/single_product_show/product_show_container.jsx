@@ -1,7 +1,5 @@
 
 
-
-
 import {connect} from 'react-redux';
 import ProductShow from './product_show';
 import { fetchProduct, fetchProducts } from '../../../actions/product_actions';
