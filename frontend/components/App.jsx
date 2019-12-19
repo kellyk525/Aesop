@@ -6,6 +6,7 @@ import Modal from "./modal/modal";
 import Side from "./modal/side";
 import ToolbarContainer from './toolbar/toolbar_container';
 import SkinProductsIndexContainer from './products/product_show/skin_products_index_container';
+import BodyProductsIndexContainer from './products/product_show/body_products_index_container';
 import ProductShowContainer from './products/single_product_show/product_show_container';
 
 // Toolabar holds the drawerToggleButton
@@ -23,6 +24,7 @@ const App = () => (
         <Switch>
             <Route exact path={"/"} component={ Home } />
             <Route exact path={"/products/skin"} component={ SkinProductsIndexContainer } />
+            <Route exact path={"/products/body"} component={ BodyProductsIndexContainer } />
             <Route exact path={"/products/:productName~:productId"} component={ProductShowContainer} />
             <Redirect to="/" />
         </Switch>

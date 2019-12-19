@@ -1,79 +1,72 @@
-
 import React from 'react';
-import ProductShowDetail from './product_show_detail';
-import ProductShowDetailSecond from './product_show_detail_second';
-import SkinProductsIndexItem from '../product_show/product_index_item';
-import {Link} from 'react-router-dom';
- 
-class ProductShow extends React.Component {
+import ProductIndexItem from './product_index_item';
+import { Link } from 'react-router-dom';
 
+class BodyProductsIndex extends React.Component {
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
-        this.props.fetchProduct(this.props.match.params.productId);
         this.props.fetchProducts();
     }
 
     render() {
-        if (!this.props.product) {
-            return null;
-        }
+        const { bodyProducts } = this.props;
+    
+        const body = bodyProducts.filter((product) => product.sub_category === "Body");
+        const hand = bodyProducts.filter((product) => product.sub_category === "Hand");
 
-        const { photoUrls, size } = this.props.product
-        
-
-        return (
-            <div className="wrap">
-                <div className="show-picture-description-wrap">
-                    <div className="logo-image-wrap">
-
-                        <Link to="/" className="logo-main">
-                            <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
-                        </Link>
-                        <div className="image-and-detail" >
-                            <img className="show-image" src={photoUrls[0]} alt="Photo"/>
-                            <p>{size}</p>
-                        </div>
-                    </div>
-                    <div className="detail">
-                        <ProductShowDetail product={this.props.product} />
-                    </div>
+        return(
+            <div className="all-products" >
+                <div className="products-header" id="hello">
+                    <Link to="/" className="logo-main">
+                        <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
+                    </Link>
+                    <p>Body</p>
                 </div>
-                <div>
-                    <ProductShowDetailSecond product={this.props.product} />
-                </div>
-                <div className="products accomp" >
+                <div className="products" >
                     <div className="products-contain">
-                        <div className="accompany-image accomp-container">
+                        <div className="products-image">
                             <div className="main-index-item">
                                 <div className="product-item-photo">
                                     <div className="photo-contain-first">
                                         <div className="sub" >
-                                            <h2>Accompany With</h2>
-                                            <div className="main-t" >
-                                                 <p>
-                                                    Cleansing skin of daily grime,
-                                                    <br/>
-                                                    sweat and other impurities
-                                                    <br/>
-                                                     forms the foundation of an
-                                                     <br/> intelligent skin care regimen.
-                                                 </p>
-                                            
-                                            </div>
+                                            <h2>Hand</h2>
+                                            <p>
+                                                Modest instruments to which we owe our daily comforts, the hands deserve care befitting their unflinching service. Accordingly, consider richly aromatic cleansers and balms that hydrate, nourish and soften.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {this.props.skinProducts.map((product) => {
-                                return <SkinProductsIndexItem product={product} key={product.id} />
+                            {hand.map((product) => {
+                                return <ProductIndexItem product={product} key={product.id} />
                             })}
                         </div>
                     </div>
                 </div>
-
+                <div className="products" >
+                    <div className="products-contain">
+                        <div className="products-image">
+                            <div className="main-index-item">
+                                <div className="product-item-photo">
+                                    <div className="photo-contain-first">
+                                        <div className="sub">
+                                            <h2>Body</h2>
+                                            <p>
+                                                Body cleansers, hydrators and elegant treatment oils enriched with skin-nourishing botanical ingredients ensure clean, soft and smooth skin throughout the seasons.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {body.map((product) => {
+                                return <ProductIndexItem product={product} key={product.id} />
+                            })}
+                        </div>
+                    </div>
+                </div>
                 <div className="footer">
                     <div className="email">
                         <p>I would like to receive communications about Aesop products, services, stores, events and matters of cultural interest.</p>
@@ -130,11 +123,9 @@ class ProductShow extends React.Component {
                     <div className="footer-bottom"></div>
 
                 </div>
-
- */}
             </div>
         )
     }
 }
 
-export default ProductShow;
+export default BodyProductsIndex;

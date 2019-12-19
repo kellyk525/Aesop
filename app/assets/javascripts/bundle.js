@@ -367,7 +367,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal_side__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modal/side */ "./frontend/components/modal/side.jsx");
 /* harmony import */ var _toolbar_toolbar_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./toolbar/toolbar_container */ "./frontend/components/toolbar/toolbar_container.jsx");
 /* harmony import */ var _products_product_show_skin_products_index_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./products/product_show/skin_products_index_container */ "./frontend/components/products/product_show/skin_products_index_container.jsx");
-/* harmony import */ var _products_single_product_show_product_show_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./products/single_product_show/product_show_container */ "./frontend/components/products/single_product_show/product_show_container.jsx");
+/* harmony import */ var _products_product_show_body_products_index_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./products/product_show/body_products_index_container */ "./frontend/components/products/product_show/body_products_index_container.jsx");
+/* harmony import */ var _products_single_product_show_product_show_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./products/single_product_show/product_show_container */ "./frontend/components/products/single_product_show/product_show_container.jsx");
+
 
 
 
@@ -395,8 +397,12 @@ var App = function App() {
     component: _products_product_show_skin_products_index_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
+    path: "/products/body",
+    component: _products_product_show_body_products_index_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
     path: "/products/:productName~:productId",
-    component: _products_single_product_show_product_show_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _products_single_product_show_product_show_container__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
     to: "/"
   })));
@@ -1103,6 +1109,286 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/products/product_show/body_products_index.jsx":
+/*!***************************************************************************!*\
+  !*** ./frontend/components/products/product_show/body_products_index.jsx ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _product_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_index_item */ "./frontend/components/products/product_show/product_index_item.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var BodyProductsIndex =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(BodyProductsIndex, _React$Component);
+
+  function BodyProductsIndex(props) {
+    _classCallCheck(this, BodyProductsIndex);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(BodyProductsIndex).call(this, props));
+  }
+
+  _createClass(BodyProductsIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchProducts();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var bodyProducts = this.props.bodyProducts;
+      var body = bodyProducts.filter(function (product) {
+        return product.sub_category === "Body";
+      });
+      var hand = bodyProducts.filter(function (product) {
+        return product.sub_category === "Hand";
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "all-products"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "products-header",
+        id: "hello"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/",
+        className: "logo-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png",
+        alt: "Logo"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Body")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "products"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "products-contain"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "products-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-index-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-item-photo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photo-contain-first"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sub"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hand"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Modest instruments to which we owe our daily comforts, the hands deserve care befitting their unflinching service. Accordingly, consider richly aromatic cleansers and balms that hydrate, nourish and soften."))))), hand.map(function (product) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          product: product,
+          key: product.id
+        });
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "products"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "products-contain"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "products-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-index-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-item-photo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photo-contain-first"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sub"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Body"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Body cleansers, hydrators and elegant treatment oils enriched with skin-nourishing botanical ingredients ensure clean, soft and smooth skin throughout the seasons."))))), body.map(function (product) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          product: product,
+          key: product.id
+        });
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "email"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "I would like to receive communications about Aesop products, services, stores, events and matters of cultural interest."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "em-input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "contact"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Contact Us")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Contact Us")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "FAQs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Delivery and Returns")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Terms and Conditions")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Track your order"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "about"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Our Story")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Careers")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Press")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Corporate Gifts")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Facial appointments"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "social"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Social")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Instagram")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Twitter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "LinkedIn")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer-actual"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer-bottom"
+      })));
+    }
+  }]);
+
+  return BodyProductsIndex;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (BodyProductsIndex);
+
+/***/ }),
+
+/***/ "./frontend/components/products/product_show/body_products_index_container.jsx":
+/*!*************************************************************************************!*\
+  !*** ./frontend/components/products/product_show/body_products_index_container.jsx ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _body_products_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./body_products_index */ "./frontend/components/products/product_show/body_products_index.jsx");
+/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _selectors_body_selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../selectors/body_selector */ "./frontend/components/selectors/body_selector.js");
+
+
+
+
+
+var mSTP = function mSTP(state) {
+  return {
+    bodyProducts: Object(_selectors_body_selector__WEBPACK_IMPORTED_MODULE_3__["allBodyProducts"])(state),
+    mainCategory: "Body"
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchProducts: function fetchProducts() {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_body_products_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/products/product_show/product_index_item.jsx":
+/*!**************************************************************************!*\
+  !*** ./frontend/components/products/product_show/product_index_item.jsx ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var ProductIndexItem =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ProductIndexItem, _React$Component);
+
+  function ProductIndexItem(props) {
+    _classCallCheck(this, ProductIndexItem);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ProductIndexItem).call(this, props));
+  }
+
+  _createClass(ProductIndexItem, [{
+    key: "render",
+    value: function render() {
+      var _this$props$product = this.props.product,
+          name = _this$props$product.name,
+          size = _this$props$product.size,
+          price = _this$props$product.price,
+          photoUrls = _this$props$product.photoUrls,
+          id = _this$props$product.id;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-index-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/products/".concat(name, "~").concat(id),
+        className: "link-product"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-item-photo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-contain"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: photoUrls[0],
+        alt: "Photo"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, size, "/", price)))))));
+    }
+  }]);
+
+  return ProductIndexItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ProductIndexItem);
+
+/***/ }),
+
 /***/ "./frontend/components/products/product_show/skin_products_index.jsx":
 /*!***************************************************************************!*\
   !*** ./frontend/components/products/product_show/skin_products_index.jsx ***!
@@ -1114,7 +1400,7 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _skin_products_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skin_products_index_item */ "./frontend/components/products/product_show/skin_products_index_item.jsx");
+/* harmony import */ var _product_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_index_item */ "./frontend/components/products/product_show/product_index_item.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1157,7 +1443,17 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var skinProducts = this.props.skinProducts;
+      var skinProducts = this.props.skinProducts; // console.log(this.props.products);
+      // let allProducts = this.props.products;
+      // let categoryArr = [];
+      // allProducts.forEach((product) => {
+      //     if (!categoryArr.includes(product.sub_category)) {
+      //         categoryArr.push(product.sub_category);
+      //         console.log(product.sub_category);
+      //     } 
+      // })
+      // console.log(categoryArr);
+
       var cleanse = skinProducts.filter(function (product) {
         return product.sub_category === "Cleanse";
       });
@@ -1173,7 +1469,8 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-products"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "products-header"
+        className: "products-header",
+        id: "hello"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/",
         className: "logo-main"
@@ -1195,7 +1492,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Cleanse"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cleansing skin of daily grime, sweat and other impurities forms the foundation of an intelligent skin care regimen."))))), cleanse.map(function (product) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skin_products_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           key: product.id
         });
@@ -1214,7 +1511,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hydrate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Essential for skin\u2019s optimal health and appearance, hydrating replenishes moisture, nourishes, soothes and sustains skin."))))), hydrate.map(function (product) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skin_products_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           key: product.id
         });
@@ -1233,7 +1530,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Treat and Masque"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Formulated to complement any skin care regimen, high-potency treatments hydrate deeply, rejuvenate and fortify skin."))))), treat.map(function (product) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skin_products_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           key: product.id
         });
@@ -1252,7 +1549,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Exfoliate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Effective exfoliation liberates skin of grime, excess oil and dead skin cells to reveal soft, fresh and smooth skin."))))), exfoliate.map(function (product) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skin_products_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           key: product.id
         });
@@ -1348,84 +1645,6 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/products/product_show/skin_products_index_item.jsx":
-/*!********************************************************************************!*\
-  !*** ./frontend/components/products/product_show/skin_products_index_item.jsx ***!
-  \********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var SkinProductsIndexItem =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(SkinProductsIndexItem, _React$Component);
-
-  function SkinProductsIndexItem(props) {
-    _classCallCheck(this, SkinProductsIndexItem);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(SkinProductsIndexItem).call(this, props));
-  }
-
-  _createClass(SkinProductsIndexItem, [{
-    key: "render",
-    value: function render() {
-      var _this$props$product = this.props.product,
-          name = _this$props$product.name,
-          size = _this$props$product.size,
-          price = _this$props$product.price,
-          photoUrls = _this$props$product.photoUrls,
-          id = _this$props$product.id;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "product-index-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/products/".concat(name, "~").concat(id),
-        className: "link-product"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "product-item-photo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "product-contain"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: photoUrls[0],
-        alt: "Photo"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, size, "/", price)))))));
-    }
-  }]);
-
-  return SkinProductsIndexItem;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (SkinProductsIndexItem);
-
-/***/ }),
-
 /***/ "./frontend/components/products/single_product_show/product_show.jsx":
 /*!***************************************************************************!*\
   !*** ./frontend/components/products/single_product_show/product_show.jsx ***!
@@ -1439,7 +1658,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _product_show_detail__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_show_detail */ "./frontend/components/products/single_product_show/product_show_detail.jsx");
 /* harmony import */ var _product_show_detail_second__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product_show_detail_second */ "./frontend/components/products/single_product_show/product_show_detail_second.jsx");
-/* harmony import */ var _product_show_skin_products_index_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../product_show/skin_products_index_item */ "./frontend/components/products/product_show/skin_products_index_item.jsx");
+/* harmony import */ var _product_show_product_index_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../product_show/product_index_item */ "./frontend/components/products/product_show/product_index_item.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1533,7 +1752,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Accompany With"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-t"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cleansing skin of daily grime,", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "sweat and other impurities", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "forms the foundation of an", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " intelligent skin care regimen.")))))), this.props.skinProducts.map(function (product) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_show_skin_products_index_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_show_product_index_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
           product: product,
           key: product.id
         });
@@ -1986,7 +2205,7 @@ function (_React$Component) {
         onMouseEnter: this.handleMouseOver("Skin"),
         className: "second-line"
       }, "Skin")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], _defineProperty({
-        to: "/products/skin",
+        to: "/products/body",
         className: "first-link",
         onClick: this.props.closeSide
       }, "className", "bottom"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -52987,7 +53206,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

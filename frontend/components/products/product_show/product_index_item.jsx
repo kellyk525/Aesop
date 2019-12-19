@@ -3,7 +3,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class SkinProductsIndexItem extends React.Component {
+class ProductIndexItem extends React.Component {
 
     constructor(props) {
         super(props);
@@ -32,4 +32,4 @@ class SkinProductsIndexItem extends React.Component {
     }
 }
 
-export default SkinProductsIndexItem;
+export default ProductIndexItem;

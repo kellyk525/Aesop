@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import SkinProductsIndexItem from './skin_products_index_item';
+import ProductIndexItem from './product_index_item';
 import { Link } from 'react-router-dom';
 
 class SkinProductsIndex extends React.Component {
@@ -15,7 +15,19 @@ class SkinProductsIndex extends React.Component {
     }
 
     render() {
-        const { skinProducts } = this.props
+        const { skinProducts } = this.props;
+        // console.log(this.props.products);
+        // let allProducts = this.props.products;
+
+        // let categoryArr = [];
+        // allProducts.forEach((product) => {
+        //     if (!categoryArr.includes(product.sub_category)) {
+        //         categoryArr.push(product.sub_category);
+        //         console.log(product.sub_category);
+        //     } 
+        // })
+        // console.log(categoryArr);
+
         const cleanse = skinProducts.filter((product) => product.sub_category === "Cleanse" )
         const hydrate = skinProducts.filter((product) => product.sub_category === "Hydrate" )
         const treat = skinProducts.filter((product) => product.sub_category === "Treat" )
@@ -23,7 +35,7 @@ class SkinProductsIndex extends React.Component {
 
         return (
             <div className="all-products" >
-                <div className="products-header">
+                <div className="products-header" id="hello">
                     <Link to="/" className="logo-main">
                         <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
                     </Link>
@@ -45,7 +57,7 @@ class SkinProductsIndex extends React.Component {
                                 </div>
                             </div>
                             { cleanse.map((product) => {
-                                return <SkinProductsIndexItem product={product} key={product.id} />
+                                return <ProductIndexItem product={product} key={product.id} />
                             })}
                         </div>
                     </div>
@@ -66,7 +78,7 @@ class SkinProductsIndex extends React.Component {
                                 </div>
                             </div>
                             {hydrate.map((product) => {
-                                return <SkinProductsIndexItem product={product} key={product.id} />
+                                return <ProductIndexItem product={product} key={product.id} />
                             })}
                         </div>
                     </div>
@@ -87,7 +99,7 @@ class SkinProductsIndex extends React.Component {
                                 </div>
                             </div>
                             {treat.map((product) => {
-                                return <SkinProductsIndexItem product={product} key={product.id} />
+                                return <ProductIndexItem product={product} key={product.id} />
                             })}
                         </div>
                     </div>
@@ -109,7 +121,7 @@ class SkinProductsIndex extends React.Component {
                                 </div>
                             </div>
                             {exfoliate.map((product) => {
-                                return <SkinProductsIndexItem product={product} key={product.id} />
+                                return <ProductIndexItem product={product} key={product.id} />
                             })}
                         </div>
                     </div>
