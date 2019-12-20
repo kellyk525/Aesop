@@ -1,20 +1,15 @@
 
-
-import {connect} from 'react-redux';
-import ProductShow from './product_show';
+import { connect } from 'react-redux';
+import ProductShowDetail from './product_show_detail';
 import { fetchProduct, fetchProducts } from '../../../actions/product_actions';
 import { fetchCartItems, createCartItem } from '../../../actions/cart_actions';
-import { allSkinProducts } from '../../selectors/skin_selector';
 
 const mSTP = (state, ownProps) => {
-
+    
     return ({
-        product: state.entities.products[ownProps.match.params.productId],
-        currentUserId: state.session.id,
-        skinProducts: allSkinProducts(state)
+        product: state.entities.products[ownProps.match.params.productId]
     })
 }
-
 
 const mDTP = (dispatch) => {
     return ({
@@ -22,13 +17,8 @@ const mDTP = (dispatch) => {
         fetchProducts: () => dispatch(fetchProducts()),
         fetchCartItems: () => dispatch(fetchCartItems()),
         createCartItem: (cartItem) => dispatch(createCartItem(cartItem))
-    })    
+    })
 }
 
 
-export default connect(mSTP, mDTP)(ProductShow);
-
-
-
-
-
+export default connect(mSTP, mDTP)(ProductShowDetail);

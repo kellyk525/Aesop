@@ -3,6 +3,20 @@ import React from 'react';
 class ProductShowDetail extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            product_id: parseInt(props.product.id),
+            quantity: 1
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    handleSubmit() {
+        debugger
+        return () => {
+            this.props.createCartItem(this.state)
+                .then(console.log("hello"));
+        }
     }
 
     render() {
@@ -32,7 +46,7 @@ class ProductShowDetail extends React.Component {
                     <p>Key Ingredients</p>
                     <p>{key_ingredients}</p>
                 </div>
-                <div className="add-to-cart">
+                <div className="add-to-cart" onClick={ this.handleSubmit() }>
                     <p>Add to your cart  -  ${price}</p>
                 </div>
             </div>

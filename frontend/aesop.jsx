@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import * as sessionActions from './actions/session_actions';
 import * as productActions from './actions/product_actions';
+import * as cartActions from './actions/cart_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -27,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;
     window.fetchProducts = productActions.fetchProducts;
     window.fetchProduct = productActions.fetchProduct;
+    window.fetchCartItems = cartActions.fetchCartItems;
+    window.createCartItem = cartActions.createCartItem;
 
     window.signup = sessionActions.signup;
     window.login = sessionActions.login;

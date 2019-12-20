@@ -12,8 +12,11 @@ class ProductShow extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchProduct(this.props.match.params.productId);
         this.props.fetchProducts();
+        if (this.props.currentUser) console.log("hello")
+        if (this.props.currentUser) this.props.fetchCartItems();
     }
 
     render() {

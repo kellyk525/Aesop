@@ -30,4 +30,5 @@ class User < ApplicationRecord
         user && user.is_password?(password) ? user : nil
     end
 
+    has_many :carts
 end
