@@ -15,7 +15,7 @@ class ProductShow extends React.Component {
         debugger
         this.props.fetchProduct(this.props.match.params.productId);
         this.props.fetchProducts();
-        if (this.props.currentUser) console.log("hello")
+        if (this.props.currentUser) console.log("kelly")
         if (this.props.currentUser) this.props.fetchCartItems();
     }
 
@@ -41,7 +41,7 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
                     <div className="detail">
-                        <ProductShowDetail product={this.props.product} />
+                        <ProductShowDetail product={ this.props.product } createCartItem={ this.props.createCartItem } />
                     </div>
                 </div>
                 <div>

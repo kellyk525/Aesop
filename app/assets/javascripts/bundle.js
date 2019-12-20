@@ -589,11 +589,26 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchProducts();
+      this.props.fetchCartItems();
     }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit() {}
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello");
+      var _this$props = this.props,
+          cartItems = _this$props.cartItems,
+          products = _this$props.products;
+      debugger;
+      var item;
+
+      if (products) {
+        var itemNum = cartItems[1].product_id;
+        item = products[itemNum];
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello", this.handleSubmit(), item.name);
     }
   }]);
 
@@ -1913,7 +1928,7 @@ function (_React$Component) {
       debugger;
       this.props.fetchProduct(this.props.match.params.productId);
       this.props.fetchProducts();
-      if (this.props.currentUser) console.log("hello");
+      if (this.props.currentUser) console.log("kelly");
       if (this.props.currentUser) this.props.fetchCartItems();
     }
   }, {
@@ -1947,7 +1962,8 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, size))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "detail"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_show_detail__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        product: this.props.product
+        product: this.props.product,
+        createCartItem: this.props.createCartItem
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_show_detail_second__WEBPACK_IMPORTED_MODULE_2__["default"], {
         product: this.props.product
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2130,9 +2146,8 @@ function (_React$Component) {
     value: function handleSubmit() {
       var _this2 = this;
 
-      debugger;
       return function () {
-        _this2.props.createCartItem(_this2.state).then(console.log("hello"));
+        _this2.props.createCartItem(_this2.state).then(console.log(_this2.state));
       };
     }
   }, {

@@ -12,10 +12,9 @@ class ProductShowDetail extends React.Component {
     }
 
     handleSubmit() {
-        debugger
         return () => {
             this.props.createCartItem(this.state)
-                .then(console.log("hello"));
+                .then(console.log(this.state));
         }
     }
 
