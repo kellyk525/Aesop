@@ -6,14 +6,22 @@ import { Link } from 'react-router-dom';
 class ThirdSide extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            product_id: parseInt(props.product.id),
+            quantity: 1
+        }
+
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleSubmit(e) {
-        return (e) => {
-            e.preventDefault();
-            this.props.closeSide();
+    handleSubmit() {
+        return () => {
+            this.props.createCartItem(this.state)
+                .then(console.log("hello"))
         };
     }
+
 
     render() {
 
@@ -35,7 +43,7 @@ class ThirdSide extends React.Component {
                         <div className="third-contain-text-second" >
                             <p>{this.props.product.name}</p>
                         </div>
-                        <div className="add-to-cart">
+                        <div className="add-to-cart" onClick={ this.handleSubmit() }>
                             <p>Add to your cart  -  ${this.props.product.price}</p>
                         </div>
                     </div>

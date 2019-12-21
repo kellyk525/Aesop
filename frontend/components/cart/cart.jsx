@@ -1,5 +1,6 @@
 
 import React from 'react';
+import CartItem from './cart_item';
 
 class Cart extends React.Component {
     constructor(props) {
@@ -7,15 +8,15 @@ class Cart extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchProducts();
-        this.props.fetchCartItems();
+        this.props.fetchProducts()
+        this.props.fetchCartItems()
     }
 
     handleSubmit() {
         
-        }
-         
-    render() {
+    }
+ 
+    getCartItems() {
         const { cartItems, products } = this.props;
         debugger
         let item
@@ -23,12 +24,41 @@ class Cart extends React.Component {
             const itemNum = cartItems[1].product_id;
             item = products[itemNum];
         }
+    }
+         
+    render() {
+        let { currentUserId, cartItems, products, updateCartItem, deleteCartItem } = this.props;
+
+        let productsInCart;
+        if (currentUserId) {
+            if (cartItems.length === 0) {
+                productsInCart = (
+                    <div>Your cart is currently empty</div>
+                )
+            } else {
+                productsInCart = (
+                    cartItems.map((item) => {
+                        return (
+                            <CartItem
+                                product={ products[item.product_id] }
+                                productId={ item.productId }
+                                cartId={ item.id }
+                                key={ item.id }
+                                quantity={ item.quantity }
+                                updateCartItem={ updateCartItem }
+                                deleteCartItem={ deleteCartItem }
+                            />
+                        )
+                    })
+                )
+            }
+        }
 
         return(
             <div>
                 Hello
                 { this.handleSubmit() }
-                { item.name }
+                { productsInCart }
             </div>
         
         )
@@ -36,3 +66,14 @@ class Cart extends React.Component {
 }
 
 export default Cart;
+
+
+
+// let arr = []
+// cartItems.map((item) => {
+//     console.log("Hello")
+//     arr.push(products[item.product_id])
+// })
+
+// if (!arr[1]) return null
+// { arr[1].name }

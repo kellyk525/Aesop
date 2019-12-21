@@ -17,7 +17,10 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => ({
     fetchCartItems: () => dispatch(fetchCartItems()),
     fetchProducts: () => dispatch(fetchProducts()),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    updateCartItem: (cartItem) => dispatch(updateCartItem(cartItem)),
+    deleteCartItem: (id) => dispatch(deleteCartItem(id)),
+    deleteAllCartItems: () => dispatch(deleteAllCartItems())
 })
 
 export default connect(mSTP, mDTP)(Cart);
