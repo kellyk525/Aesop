@@ -11,10 +11,6 @@ class Cart extends React.Component {
         this.props.fetchProducts()
         this.props.fetchCartItems()
     }
-
-    handleSubmit() {
-        
-    }
  
     getCartItems() {
         const { cartItems, products } = this.props;
@@ -64,20 +60,25 @@ class Cart extends React.Component {
         })
 
         return(
-            <div>
-                { this.handleSubmit() }
+            <div className="cart">
+                <div className="cart-labels">
+                    <div>Cart</div>
+                    <div>Size</div>
+                    <div>Quantity</div>
+                    <div>X</div>
+                </div>
                 { productsInCart }
-                <div>
-                    <div>
+                <div className="cart-bottom">
+                    <div className="bottom-first">
                         <div>Complimentary shipping on all orders.</div>
                         <div>Shipping to the United States</div>
                     </div>
-                    <div>
-                        <div>
+                    <div className="bottom-second">
+                        <div className="sub-total">
                             <div>Subtotal[Tax Excl]</div>
-                            <div>${ totalPrice }</div>
-                            <div>{ totalQuantity }</div>
+                            <div>${ totalPrice }.00</div>
                         </div>
+                        <button className="checkout">Checkout</button>
                     </div>
                 </div>
             </div>

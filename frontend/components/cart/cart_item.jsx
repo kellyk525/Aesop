@@ -38,16 +38,18 @@ class CartItem extends React.Component {
         if (!product) return null;
 
         return (
-            <div>
-                <div> { product.name }</div>
+            <div className="cart-item">
+                <div className="single-item"> { product.name }</div>
                 <div> { product.size }</div>
-                <select id="quantity-in-cart" value={ quantity } onChange={ this.handleQuantity() }>
-                    { this.showQuantities() }
-                </select>
-                <div className="remove-cart-item">
-                    <button onClick={ this.handleRemoveItem() }>Remove</button>
+                <div className="update">
+                    <select id="quantity-in-cart" value={ quantity } onChange={ this.handleQuantity() }>
+                        { this.showQuantities() }
+                    </select>
+                    <div className="remove-cart-item">
+                        <button onClick={ this.handleRemoveItem() }>Remove</button>
+                    </div>
                 </div>
-                <div> ${ product.price }</div>
+                <div> ${ product.price }.00</div>
                 
             </div>
         )

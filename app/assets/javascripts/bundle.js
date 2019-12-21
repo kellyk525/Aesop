@@ -594,9 +594,6 @@ function (_React$Component) {
       this.props.fetchCartItems();
     }
   }, {
-    key: "handleSubmit",
-    value: function handleSubmit() {}
-  }, {
     key: "getCartItems",
     value: function getCartItems() {
       var _this$props = this.props,
@@ -646,7 +643,21 @@ function (_React$Component) {
         totalPrice += products[item.product_id].price * item.quantity;
         totalQuantity += item.quantity;
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.handleSubmit(), productsInCart, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Complimentary shipping on all orders."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Shipping to the United States")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Subtotal[Tax Excl]"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "$", totalPrice), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, totalQuantity)))));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-labels"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Cart"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Size"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Quantity"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "X")), productsInCart, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-bottom"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bottom-first"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Complimentary shipping on all orders."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Shipping to the United States")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bottom-second"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sub-total"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Subtotal[Tax Excl]"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "$", totalPrice, ".00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "checkout"
+      }, "Checkout"))));
     }
   }]);
 
@@ -758,7 +769,13 @@ function (_React$Component) {
           product = _this$props.product,
           quantity = _this$props.quantity;
       if (!product) return null;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", product.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "single-item"
+      }, " ", product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", product.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "quantity-in-cart",
         value: quantity,
         onChange: this.handleQuantity()
@@ -766,7 +783,7 @@ function (_React$Component) {
         className: "remove-cart-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleRemoveItem()
-      }, "Remove")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " $", product.price));
+      }, "Remove"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " $", product.price, ".00"));
     }
   }]);
 
