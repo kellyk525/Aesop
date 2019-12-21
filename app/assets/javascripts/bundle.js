@@ -3508,6 +3508,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _backdrop_backdrop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../backdrop/backdrop */ "./frontend/components/backdrop/backdrop.jsx");
 /* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.jsx");
+/* harmony import */ var _cart_cart_items_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../cart/cart_items_container */ "./frontend/components/cart/cart_items_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3531,6 +3532,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Toolbar =
 /*#__PURE__*/
 function (_React$Component) {
@@ -3543,14 +3545,23 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Toolbar).call(this, props));
     _this.state = {
-      sideDrawerOpen: false
+      sideDrawerOpen: false,
+      open: true
     };
+    _this.toggleOpen = _this.toggleOpen.bind(_assertThisInitialized(_this));
     _this.drawerToggleClickHandler = _this.drawerToggleClickHandler.bind(_assertThisInitialized(_this));
     _this.backdropClickHandler = _this.backdropClickHandler.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Toolbar, [{
+    key: "toggleOpen",
+    value: function toggleOpen() {
+      this.setState({
+        open: !this.state.open
+      });
+    }
+  }, {
     key: "drawerToggleClickHandler",
     value: function drawerToggleClickHandler() {
       this.setState(function (prevState) {
@@ -3571,19 +3582,18 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var sideDrawer;
       var backdrop;
 
       if (this.state.sideDrawerOpen) {
-        // sideDrawer = <SideDrawer />;
         backdrop = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_backdrop_backdrop__WEBPACK_IMPORTED_MODULE_1__["default"], {
           click: this.backdropClickHandler
         });
       }
 
+      var cart = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_cart_items_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
         className: "toolbar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      }, this.state.open && cart, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "toolbar-navigation"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "toolbar-navigation-items"
@@ -3605,7 +3615,10 @@ function (_React$Component) {
         }
       }, "Search"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "spacer"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, backdrop)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-open",
+        onClick: this.toggleOpen
+      }, "X")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, backdrop)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "toolbar-logo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
