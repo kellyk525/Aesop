@@ -639,7 +639,14 @@ function (_React$Component) {
         }
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello", this.handleSubmit(), productsInCart);
+      var totalPrice = 0;
+      var totalQuantity = 0;
+      cartItems.forEach(function (item) {
+        if (!products[item.product_id]) return null;
+        totalPrice += products[item.product_id].price * item.quantity;
+        totalQuantity += item.quantity;
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.handleSubmit(), productsInCart, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Complimentary shipping on all orders."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Shipping to the United States")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Subtotal[Tax Excl]"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "$", totalPrice), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, totalQuantity)))));
     }
   }]);
 
@@ -751,7 +758,7 @@ function (_React$Component) {
           product = _this$props.product,
           quantity = _this$props.quantity;
       if (!product) return null;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", product.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "quantity-in-cart",
         value: quantity,
         onChange: this.handleQuantity()
@@ -759,7 +766,7 @@ function (_React$Component) {
         className: "remove-cart-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleRemoveItem()
-      }, "Remove")));
+      }, "Remove")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " $", product.price));
     }
   }]);
 

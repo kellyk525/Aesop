@@ -25,6 +25,7 @@ class Cart extends React.Component {
             item = products[itemNum];
         }
     }
+
          
     render() {
         let { currentUserId, cartItems, products, updateCartItem, deleteCartItem } = this.props;
@@ -54,13 +55,32 @@ class Cart extends React.Component {
             }
         }
 
+        let totalPrice = 0;
+        let totalQuantity = 0;
+        cartItems.forEach((item) => {
+            if (!products[item.product_id]) return null;
+            totalPrice += products[item.product_id].price * item.quantity;
+            totalQuantity += item.quantity;
+        })
+
         return(
             <div>
-                Hello
                 { this.handleSubmit() }
                 { productsInCart }
+                <div>
+                    <div>
+                        <div>Complimentary shipping on all orders.</div>
+                        <div>Shipping to the United States</div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>Subtotal[Tax Excl]</div>
+                            <div>${ totalPrice }</div>
+                            <div>{ totalQuantity }</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        
         )
     }
 }

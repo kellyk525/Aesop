@@ -39,14 +39,16 @@ class CartItem extends React.Component {
 
         return (
             <div>
-                { product.name } <br/>
-                {/* <img className="show-image" src={ product.photoUrls[0]} alt="Photo" /> */}
+                <div> { product.name }</div>
+                <div> { product.size }</div>
                 <select id="quantity-in-cart" value={ quantity } onChange={ this.handleQuantity() }>
                     { this.showQuantities() }
                 </select>
                 <div className="remove-cart-item">
                     <button onClick={ this.handleRemoveItem() }>Remove</button>
                 </div>
+                <div> ${ product.price }</div>
+                
             </div>
         )
     }
