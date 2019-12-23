@@ -3,8 +3,6 @@
 import { connect } from 'react-redux';
 import AllProductsIndex from './all_products_index';
 import { fetchProducts } from '../../../actions/product_actions';
-import { allBodyProducts } from '../../selectors/body_selector';
-
 
 const mSTP = (state) => {
 

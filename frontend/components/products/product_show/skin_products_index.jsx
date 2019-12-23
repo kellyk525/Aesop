@@ -16,17 +16,6 @@ class SkinProductsIndex extends React.Component {
 
     render() {
         const { skinProducts } = this.props;
-        // console.log(this.props.products);
-        // let allProducts = this.props.products;
-
-        // let categoryArr = [];
-        // allProducts.forEach((product) => {
-        //     if (!categoryArr.includes(product.sub_category)) {
-        //         categoryArr.push(product.sub_category);
-        //         console.log(product.sub_category);
-        //     } 
-        // })
-        // console.log(categoryArr);
 
         const cleanse = skinProducts.filter((product) => product.sub_category === "Cleanse" )
         const hydrate = skinProducts.filter((product) => product.sub_category === "Hydrate" )
