@@ -1608,6 +1608,12 @@ function (_React$Component) {
       //     console.log(final)
       // }
 
+      if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && this.state.first) {
+        _final = products.filter(function (product) {
+          return product.sub_category === _this2.state.filter && product.skin_type === _this2.state.type;
+        });
+      }
+
       if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && !this.state.first) {
         console.log(this.state.filter);
         console.log(this.state.type);
@@ -1653,10 +1659,7 @@ function (_React$Component) {
         _final = products.filter(function (product) {
           return product.sub_category === _this2.state.filter;
         });
-      } // if (this.state.type !== "all" && this.state.filter === "all") {
-      //     final = products.filter((product) => product.skin_type === this.state.type)
-      // }
-
+      }
 
       console.log(_final);
       console.log(this.state.first);
@@ -1703,9 +1706,34 @@ function (_React$Component) {
       };
     }
   }, {
+    key: "openAll",
+    value: function openAll() {
+      var _this5 = this;
+
+      return function (e) {
+        e.preventDefault();
+
+        _this5.setState({
+          type: "all"
+        });
+
+        _this5.setState({
+          filter: "all"
+        });
+
+        _this5.setState({
+          first: false
+        });
+
+        _this5.setState({
+          open: false
+        });
+      };
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this5 = this;
+      var _this6 = this;
 
       var allSkinProducts = this.props.skinProducts;
       if (!allSkinProducts) return null;
@@ -1731,7 +1759,7 @@ function (_React$Component) {
       });
       var categories = categoryList.map(function (category, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          onClick: _this5.filter(category),
+          onClick: _this6.filter(category),
           key: category,
           className: "all-index-category"
         }, category);
@@ -1744,13 +1772,13 @@ function (_React$Component) {
       });
       var skin_categories = skinTypeList.map(function (category, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          onClick: _this5.filterType(category),
+          onClick: _this6.filterType(category),
           key: category,
           className: "all-index-category"
         }, category);
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: this.filter("all"),
+        onClick: this.openAll(),
         className: "all-index-category"
       }, "All"), categories, "Hello Two", skin_categories, "Hello Again", cleanse.map(function (product) {
         if (product) {

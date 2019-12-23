@@ -31,6 +31,10 @@ class AllProductsIndex extends React.Component {
         //     console.log(final)
         // }
 
+        if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && this.state.first) {
+            final = products.filter((product) => product.sub_category === this.state.filter && product.skin_type === this.state.type)
+        }
+
         if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && !this.state.first ) {
             console.log(this.state.filter)
             console.log(this.state.type)
@@ -56,7 +60,7 @@ class AllProductsIndex extends React.Component {
             console.log(this.state.first)
             console.log(this.state.open)
             console.log("Ku")
-            console.log(products)s
+            console.log(products)
             final = products.filter((product) => product.sub_category === this.state.filter)
         }
 
@@ -67,10 +71,6 @@ class AllProductsIndex extends React.Component {
         if (this.state.filter !== "all" && this.state.type === "all" && !this.state.open && this.state.first) {
             final = products.filter((product) => product.sub_category === this.state.filter)
         }
-
-        // if (this.state.type !== "all" && this.state.filter === "all") {
-        //     final = products.filter((product) => product.skin_type === this.state.type)
-        // }
 
         console.log(final);
         console.log(this.state.first)
@@ -98,6 +98,16 @@ class AllProductsIndex extends React.Component {
             e.preventDefault();
             this.setState({ type: field })
             this.setState({ open: !this.state.open })
+        }
+    }
+
+    openAll() {
+        return (e) => {
+            e.preventDefault();
+            this.setState({ type: "all" })
+            this.setState({ filter: "all" })
+            this.setState({ first: false })
+            this.setState({ open: false })
         }
     }
 
@@ -139,7 +149,7 @@ class AllProductsIndex extends React.Component {
         return (
             <div>
                 Hello
-                <div onClick={this.filter("all")} className="all-index-category" >All</div>
+                <div onClick={ this.openAll() } className="all-index-category" >All</div>
                 { categories }
                 Hello Two
                 { skin_categories }
