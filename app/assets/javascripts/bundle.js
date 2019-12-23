@@ -1545,6 +1545,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/cloneDeep */ "./node_modules/lodash/cloneDeep.js");
 /* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _product_show_product_index_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../product_show/product_index_item */ "./frontend/components/products/product_show/product_index_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1566,6 +1567,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var AllProductsIndex =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1578,41 +1580,86 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(AllProductsIndex).call(this, props));
     _this.state = {
-      filter: "all"
+      filter: "all",
+      type: "all",
+      first: false,
+      open: false
     };
     return _this;
   }
 
   _createClass(AllProductsIndex, [{
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.scrollTo(0, 0);
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchProducts();
     }
   }, {
-    key: "getRandomProducts",
-    value: function getRandomProducts(products, count) {
+    key: "getFilteredProducts",
+    value: function getFilteredProducts(products) {
       var _this2 = this;
 
-      var clonedProducts = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1___default()(products);
-      var _final = [];
+      var _final = products; // if (this.state.type === "Dry") {
+      //     final = products.filter((product) => product.skin_type === this.state.type )
+      //     console.log(final)
+      // }
 
-      for (var i = 0; i < count; i++) {
-        var randIndex = Math.floor(Math.random() * clonedProducts.length);
-        _final = _final.concat(clonedProducts.splice(randIndex, 1));
+      if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && !this.state.first) {
+        console.log(this.state.filter);
+        console.log(this.state.type);
+        console.log(this.state.first);
+        console.log(this.state.open);
+        console.log("Only Dry");
+        _final = products.filter(function (product) {
+          return product.skin_type === _this2.state.type;
+        });
+        console.log(_final);
       }
 
-      if (this.state.filter !== "all") {
-        _final = _final.filter(function (product) {
-          return product.category === _this2.state.filter;
+      if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && this.state.first) {
+        console.log(this.state.filter);
+        console.log(this.state.type);
+        console.log(this.state.first);
+        console.log(this.state.open);
+        console.log("Kelly");
+        _final = products.filter(function (product) {
+          return product.sub_category === _this2.state.filter && product.skin_type === _this2.state.type;
         });
       }
 
+      if (this.state.filter !== "all" && this.state.type !== "all" && !this.state.open && this.state.first) {
+        console.log(this.state.filter);
+        console.log(this.state.type);
+        console.log(this.state.first);
+        console.log(this.state.open);
+        console.log("Ku");
+        console.log(products);
+        _final = products.filter(function (product) {
+          return product.sub_category === _this2.state.filter;
+        });
+      }
+
+      if (this.state.filter === "all" && this.state.type !== "all" && this.state.open && !this.state.first) {
+        _final = products.filter(function (product) {
+          return product.skin_type === _this2.state.type;
+        });
+      } // if (this.state.type !== "all" && this.state.filter === "all") {
+      //     final = products.filter((product) => product.skin_type === this.state.type)
+      // }
+
+
       console.log(_final);
-      return _final.map(function (product, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: i
-        }, product.name);
-      });
+      console.log(this.state.first);
+      console.log(this.state.open);
+      return _final; // return final.map((product, i) => {
+      //     return (
+      //         <div key={i}>{product.name}</div>
+      //     )
+      // })
     }
   }, {
     key: "filter",
@@ -1625,53 +1672,171 @@ function (_React$Component) {
         _this3.setState({
           filter: field
         });
+
+        _this3.setState({
+          first: !_this3.state.first
+        }); // this.setState({ type: "all" })
+
+      };
+    }
+  }, {
+    key: "filterType",
+    value: function filterType(field) {
+      var _this4 = this;
+
+      return function (e) {
+        e.preventDefault();
+
+        _this4.setState({
+          type: field
+        });
+
+        _this4.setState({
+          open: !_this4.state.open
+        });
       };
     }
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
-      var allProducts = this.props.products;
-      if (!allProducts) return null;
-      var products = this.getRandomProducts(allProducts, allProducts.length);
+      var allSkinProducts = this.props.skinProducts;
+      if (!allSkinProducts) return null;
+      var products = this.getFilteredProducts(allSkinProducts);
+      var cleanse = products.filter(function (product) {
+        return product.sub_category === "Cleanse";
+      });
+      var hydrate = products.filter(function (product) {
+        return product.sub_category === "Hydrate";
+      });
+      var treat = products.filter(function (product) {
+        return product.sub_category === "Treat";
+      });
+      var exfoliate = products.filter(function (product) {
+        return product.sub_category === "Exfoliate";
+      });
+      console.log(cleanse);
       var categoryList = [];
-      allProducts.forEach(function (product) {
-        if (!categoryList.includes(product.category)) {
-          categoryList.push(product.category);
+      allSkinProducts.forEach(function (product) {
+        if (!categoryList.includes(product.sub_category)) {
+          categoryList.push(product.sub_category);
         }
       });
       var categories = categoryList.map(function (category, i) {
-        if (category === "bodyandhand") {
-          categoryList[i] = "Body";
-        }
-
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          onClick: _this4.filter(category),
+          onClick: _this5.filter(category),
           key: category,
           className: "all-index-category"
-        }, categoryList[i]);
+        }, category);
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello", products, categories);
+      var skinTypeList = [];
+      allSkinProducts.forEach(function (product) {
+        if (!skinTypeList.includes(product.skin_type)) {
+          skinTypeList.push(product.skin_type);
+        }
+      });
+      var skin_categories = skinTypeList.map(function (category, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: _this5.filterType(category),
+          key: category,
+          className: "all-index-category"
+        }, category);
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.filter("all"),
+        className: "all-index-category"
+      }, "All"), categories, "Hello Two", skin_categories, "Hello Again", cleanse.map(function (product) {
+        if (product) {
+          console.log(product.id);
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name);
+        }
+      }), hydrate.map(function (product) {
+        if (product) {
+          console.log(product.id);
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name);
+        }
+      }), treat.map(function (product) {
+        if (product) {
+          console.log(product.id);
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name);
+        }
+      }), exfoliate.map(function (product) {
+        if (product) {
+          console.log(product.id);
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name);
+        }
+      }));
     }
   }]);
 
   return AllProductsIndex;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (AllProductsIndex); // let categories = categoryArr.map((category) =>
-//     <div key={category} onClick={this.filter(category)} className="product-index-category">{category}</div>
-// )
-// console.log(this.props.products);
-// let allProducts = this.props.products;
-// let categoryArr = [];
-// allProducts.forEach((product) => {
-//     if (!categoryArr.includes(product.sub_category)) {
-//         categoryArr.push(product.sub_category);
-//         console.log(product.sub_category);
-//     } 
-// })
-// console.log(categoryArr);
+/* harmony default export */ __webpack_exports__["default"] = (AllProductsIndex); // import React from 'react';
+// import cloneDeep from 'lodash/cloneDeep'
+// class AllProductsIndex extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             filter: "all"
+//         }
+//     }
+//     componentWillUnmount() {
+//         window.scrollTo(0, 0);
+//     }
+//     componentDidMount() {
+//         this.props.fetchProducts();
+//     }
+//     getRandomProducts(products, count) {
+//         let clonedProducts = cloneDeep(products);
+//         let final = [];
+//         for (let i = 0; i < count; i++) {
+//             let randIndex = Math.floor(Math.random() * clonedProducts.length)
+//             final = final.concat(clonedProducts.splice(randIndex, 1))
+//         }
+//         if (this.state.filter !== "all") {
+//             final = final.filter((product) => product.sub_category === this.state.filter)
+//         }
+//         console.log(final);
+//         return final.map((product, i) => {
+//             return (
+//                 <div key={i}>{product.name}</div>
+//             )
+//         })
+//     }
+//     filter(field) {
+//         return (e) => {
+//             e.preventDefault();
+//             this.setState({ filter: field })
+//         }
+//     }
+//     render() {
+//         let allProducts = this.props.products;
+//         if (!allProducts) return null;
+//         let products = this.getRandomProducts(allProducts, allProducts.length);
+//         let categoryList = [];
+//         allProducts.forEach((product) => {
+//             if (!categoryList.includes(product.sub_category)) {
+//                 categoryList.push(product.sub_category)
+//             }
+//         })
+//         let categories = categoryList.map((category, i) => {
+//             if (category === "bodyandhand") {
+//                 categoryList[i] = "Body"
+//             }
+//             return (<div onClick={this.filter(category)} key={category} className="all-index-category" >{categoryList[i]}</div>)
+//         })
+//         return (
+//             <div>
+//                 Hello
+//                 {products}
+//                 {categories}
+//             </div>
+//         )
+//     }
+// }
+// export default AllProductsIndex;
 
 /***/ }),
 
@@ -1687,13 +1852,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _all_products_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./all_products_index */ "./frontend/components/products/all_product/all_products_index.jsx");
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _selectors_skin_selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../selectors/skin_selector */ "./frontend/components/selectors/skin_selector.js");
+
 
 
 
 
 var mSTP = function mSTP(state) {
   return {
-    products: Object.values(state.entities.products)
+    products: Object.values(state.entities.products),
+    skinProducts: Object(_selectors_skin_selector__WEBPACK_IMPORTED_MODULE_3__["allSkinProducts"])(state)
   };
 };
 
@@ -1964,7 +2132,9 @@ function (_React$Component) {
           price = _this$props$product.price,
           photoUrls = _this$props$product.photoUrls,
           id = _this$props$product.id;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      debugger;
+      if (!photoUrls[0]) return null;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, console.log(name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-index-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/products/".concat(name, "~").concat(id),
