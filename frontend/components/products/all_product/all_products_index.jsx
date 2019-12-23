@@ -56,12 +56,16 @@ class AllProductsIndex extends React.Component {
             console.log(this.state.first)
             console.log(this.state.open)
             console.log("Ku")
-            console.log(products)
+            console.log(products)s
             final = products.filter((product) => product.sub_category === this.state.filter)
         }
 
         if (this.state.filter === "all" && this.state.type !== "all" && this.state.open && !this.state.first) {
             final = products.filter((product) => product.skin_type === this.state.type )
+        }
+
+        if (this.state.filter !== "all" && this.state.type === "all" && !this.state.open && this.state.first) {
+            final = products.filter((product) => product.sub_category === this.state.filter)
         }
 
         // if (this.state.type !== "all" && this.state.filter === "all") {

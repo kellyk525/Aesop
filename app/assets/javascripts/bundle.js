@@ -1647,6 +1647,12 @@ function (_React$Component) {
         _final = products.filter(function (product) {
           return product.skin_type === _this2.state.type;
         });
+      }
+
+      if (this.state.filter !== "all" && this.state.type === "all" && !this.state.open && this.state.first) {
+        _final = products.filter(function (product) {
+          return product.sub_category === _this2.state.filter;
+        });
       } // if (this.state.type !== "all" && this.state.filter === "all") {
       //     final = products.filter((product) => product.skin_type === this.state.type)
       // }
