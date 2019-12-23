@@ -8,27 +8,134 @@ class SkinProductsIndex extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            filter: "all",
+            type: "all",
+            first: false,
+            open: false,
+        }
     }
 
     componentDidMount() {
         this.props.fetchProducts();
     }
 
-    render() {
-        const { skinProducts } = this.props;
 
-        const cleanse = skinProducts.filter((product) => product.sub_category === "Cleanse" )
-        const hydrate = skinProducts.filter((product) => product.sub_category === "Hydrate" )
-        const treat = skinProducts.filter((product) => product.sub_category === "Treat" )
-        const exfoliate = skinProducts.filter((product) => product.sub_category === "Exfoliate" )
+    componentWillUnmount() {
+        window.scrollTo(0, 0);
+    }
+
+    getFilteredProducts(products) {
+        let final = products;
+
+        if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && this.state.first) {
+            final = products.filter((product) => product.sub_category === this.state.filter && product.skin_type === this.state.type)
+        }
+
+        if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && !this.state.first) {
+            final = products.filter((product) => product.skin_type === this.state.type)
+        }
+
+        if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && this.state.first) {
+            final = products.filter((product) => product.sub_category === this.state.filter && product.skin_type === this.state.type)
+        }
+
+        if (this.state.filter !== "all" && this.state.type !== "all" && !this.state.open && this.state.first) {
+            final = products.filter((product) => product.sub_category === this.state.filter)
+        }
+
+        if (this.state.filter === "all" && this.state.type !== "all" && this.state.open && !this.state.first) {
+            final = products.filter((product) => product.skin_type === this.state.type)
+        }
+
+        if (this.state.filter !== "all" && this.state.type === "all" && !this.state.open && this.state.first) {
+            final = products.filter((product) => product.sub_category === this.state.filter)
+        }
+
+        console.log(final);
+        console.log(this.state.first)
+        console.log(this.state.open)
+        return final;
+
+    }
+
+    filter(field) {
+        return (e) => {
+            e.preventDefault();
+            this.setState({ filter: field })
+            this.setState({ first: !this.state.first })
+        }
+    }
+
+    filterType(field) {
+        return (e) => {
+            e.preventDefault();
+            this.setState({ type: field })
+            this.setState({ open: !this.state.open })
+        }
+    }
+
+    openAll() {
+        return (e) => {
+            e.preventDefault();
+            this.setState({ type: "all" })
+            this.setState({ filter: "all" })
+            this.setState({ first: false })
+            this.setState({ open: false })
+        }
+    }
+
+    render() {
+        let allSkinProducts = this.props.skinProducts;
+
+        if (!allSkinProducts) return null;
+
+        let products = this.getFilteredProducts(allSkinProducts);
+
+
+        let cleanse = products.filter((product) => product.sub_category === "Cleanse")
+        let hydrate = products.filter((product) => product.sub_category === "Hydrate")
+        let treat = products.filter((product) => product.sub_category === "Treat")
+        let exfoliate = products.filter((product) => product.sub_category === "Exfoliate")
+
+
+        let categoryList = [];
+        allSkinProducts.forEach((product) => {
+            if (!categoryList.includes(product.sub_category)) {
+                categoryList.push(product.sub_category)
+            }
+        })
+
+        let categories = categoryList.map((category, i) => {
+            return (<div onClick={this.filter(category)} key={category} className="all-index-category" >{category}</div>)
+        })
+
+        let skinTypeList = [];
+        allSkinProducts.forEach((product) => {
+            if (!skinTypeList.includes(product.skin_type)) {
+                skinTypeList.push(product.skin_type)
+            }
+        })
+
+        let skin_categories = skinTypeList.map((category, i) => {
+            return (<div onClick={this.filterType(category)} key={category} className="all-index-category" >{category}</div>)
+        })
+
 
         return (
             <div className="all-products" >
+
                 <div className="products-header" id="hello">
                     <Link to="/" className="logo-main">
                         <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
                     </Link>
                     <p>Skin</p>
+                    <div onClick={this.openAll()} className="all-index-category" >All</div>
+                    Sub Category -----
+                    { categories }
+                    Skin Type -------
+                    { skin_categories }
                 </div>
                 <div className="products" >
                     <div className="products-contain">

@@ -2166,9 +2166,7 @@ function (_React$Component) {
           price = _this$props$product.price,
           photoUrls = _this$props$product.photoUrls,
           id = _this$props$product.id;
-      debugger;
-      if (!photoUrls[0]) return null;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, console.log(name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-index-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/products/".concat(name, "~").concat(id),
@@ -2234,9 +2232,18 @@ function (_React$Component) {
   _inherits(SkinProductsIndex, _React$Component);
 
   function SkinProductsIndex(props) {
+    var _this;
+
     _classCallCheck(this, SkinProductsIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SkinProductsIndex).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SkinProductsIndex).call(this, props));
+    _this.state = {
+      filter: "all",
+      type: "all",
+      first: false,
+      open: false
+    };
+    return _this;
   }
 
   _createClass(SkinProductsIndex, [{
@@ -2245,20 +2252,162 @@ function (_React$Component) {
       this.props.fetchProducts();
     }
   }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.scrollTo(0, 0);
+    }
+  }, {
+    key: "getFilteredProducts",
+    value: function getFilteredProducts(products) {
+      var _this2 = this;
+
+      var _final = products;
+
+      if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && this.state.first) {
+        _final = products.filter(function (product) {
+          return product.sub_category === _this2.state.filter && product.skin_type === _this2.state.type;
+        });
+      }
+
+      if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && !this.state.first) {
+        _final = products.filter(function (product) {
+          return product.skin_type === _this2.state.type;
+        });
+      }
+
+      if (this.state.filter !== "all" && this.state.type !== "all" && this.state.open && this.state.first) {
+        _final = products.filter(function (product) {
+          return product.sub_category === _this2.state.filter && product.skin_type === _this2.state.type;
+        });
+      }
+
+      if (this.state.filter !== "all" && this.state.type !== "all" && !this.state.open && this.state.first) {
+        _final = products.filter(function (product) {
+          return product.sub_category === _this2.state.filter;
+        });
+      }
+
+      if (this.state.filter === "all" && this.state.type !== "all" && this.state.open && !this.state.first) {
+        _final = products.filter(function (product) {
+          return product.skin_type === _this2.state.type;
+        });
+      }
+
+      if (this.state.filter !== "all" && this.state.type === "all" && !this.state.open && this.state.first) {
+        _final = products.filter(function (product) {
+          return product.sub_category === _this2.state.filter;
+        });
+      }
+
+      console.log(_final);
+      console.log(this.state.first);
+      console.log(this.state.open);
+      return _final;
+    }
+  }, {
+    key: "filter",
+    value: function filter(field) {
+      var _this3 = this;
+
+      return function (e) {
+        e.preventDefault();
+
+        _this3.setState({
+          filter: field
+        });
+
+        _this3.setState({
+          first: !_this3.state.first
+        });
+      };
+    }
+  }, {
+    key: "filterType",
+    value: function filterType(field) {
+      var _this4 = this;
+
+      return function (e) {
+        e.preventDefault();
+
+        _this4.setState({
+          type: field
+        });
+
+        _this4.setState({
+          open: !_this4.state.open
+        });
+      };
+    }
+  }, {
+    key: "openAll",
+    value: function openAll() {
+      var _this5 = this;
+
+      return function (e) {
+        e.preventDefault();
+
+        _this5.setState({
+          type: "all"
+        });
+
+        _this5.setState({
+          filter: "all"
+        });
+
+        _this5.setState({
+          first: false
+        });
+
+        _this5.setState({
+          open: false
+        });
+      };
+    }
+  }, {
     key: "render",
     value: function render() {
-      var skinProducts = this.props.skinProducts;
-      var cleanse = skinProducts.filter(function (product) {
+      var _this6 = this;
+
+      var allSkinProducts = this.props.skinProducts;
+      if (!allSkinProducts) return null;
+      var products = this.getFilteredProducts(allSkinProducts);
+      var cleanse = products.filter(function (product) {
         return product.sub_category === "Cleanse";
       });
-      var hydrate = skinProducts.filter(function (product) {
+      var hydrate = products.filter(function (product) {
         return product.sub_category === "Hydrate";
       });
-      var treat = skinProducts.filter(function (product) {
+      var treat = products.filter(function (product) {
         return product.sub_category === "Treat";
       });
-      var exfoliate = skinProducts.filter(function (product) {
+      var exfoliate = products.filter(function (product) {
         return product.sub_category === "Exfoliate";
+      });
+      var categoryList = [];
+      allSkinProducts.forEach(function (product) {
+        if (!categoryList.includes(product.sub_category)) {
+          categoryList.push(product.sub_category);
+        }
+      });
+      var categories = categoryList.map(function (category, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: _this6.filter(category),
+          key: category,
+          className: "all-index-category"
+        }, category);
+      });
+      var skinTypeList = [];
+      allSkinProducts.forEach(function (product) {
+        if (!skinTypeList.includes(product.skin_type)) {
+          skinTypeList.push(product.skin_type);
+        }
+      });
+      var skin_categories = skinTypeList.map(function (category, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: _this6.filterType(category),
+          key: category,
+          className: "all-index-category"
+        }, category);
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-products"
@@ -2271,7 +2420,10 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png",
         alt: "Logo"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Skin")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Skin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.openAll(),
+        className: "all-index-category"
+      }, "All"), "Sub Category -----", categories, "Skin Type -------", skin_categories), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "products"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "products-contain"
