@@ -33,6 +33,7 @@ class Toolbar extends React.Component  {
         this.seState({ sideDrawerOpen: false })
     }
 
+
     render () {
         let backdrop;
         if (this.state.sideDrawerOpen) {
@@ -50,7 +51,7 @@ class Toolbar extends React.Component  {
                             <li onClick={() => this.props.openSide("first")} >Shop</li>
                             <li onClick={() => this.props.openSide("first")}>Read</li>
                             <li onClick={() => this.props.openSide("first")}>Stores</li>
-                            <li onClick={() => this.props.openSide("first")}>Search</li>
+                            <li onClick={() => this.props.openSide("search")}>Search</li>
                         </ul>
                     </div>
                     <div className="spacer" ></div>

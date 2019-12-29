@@ -2,6 +2,8 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { closeSide } from "../../actions/side_actions";
+import { openSide } from "../../actions/side_actions";
+import { fetchProducts } from "../../actions/product_actions";
 import SideFormContainer from '../session_form/side_form_container';
 import SecondSideFormContainer from '../session_form/second_side_form_container';
 import ThirdSideFormContainer from '../session_form/third_side_form_container';
@@ -15,9 +17,13 @@ class Side extends React.Component {
         this.setState({ hoveredProduct: product })
     }
 
+    componentDidMount() {
+        this.props.fetchProducts()
+    }
+
     render() {
     
-        const { side, closeSide } = this.props
+        const { side, closeSide, openSide } = this.props
         if (!side) {
             return null;
         }
@@ -38,11 +44,14 @@ class Side extends React.Component {
                 nextComponent = <SecondSideFormContainer />;
                 thirdComponent = <ThirdSideFormContainer />;
                 break;
+            case 'search':
+                component = <SideFormContainer products={ this.props.products } openSide={ openSide } />;
+                break;
             default:
                 return null;
         }
         return (
-            <div className="outsideModal" onClick={closeSide}>
+            <div className="outsideModal" onClick={ closeSide }>
                 {component}
                 {nextComponent}
                 {thirdComponent}
@@ -54,13 +63,16 @@ class Side extends React.Component {
 
 const mSTP = (state) => {
     return ({
-        side: state.ui.side
+        side: state.ui.side,
+        products: Object.values(state.entities.products)
     });
 };
 
 const mDTP = (dispatch) => {
     return ({
-        closeSide: () => dispatch(closeSide())
+        closeSide: () => dispatch(closeSide()),
+        fetchProducts: () => dispatch(fetchProducts()),
+        openSide: (side) => dispatch(openSide(side))
     });
 };
 

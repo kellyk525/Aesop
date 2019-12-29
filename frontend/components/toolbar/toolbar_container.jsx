@@ -19,7 +19,7 @@ const mSTP = state => ({
 
 const mDTP = (dispatch) => (
     {
-        openSide: (side) => dispatch(openSide(side))
+        openSide: (side) => dispatch(openSide(side)),
     }
 );
 
