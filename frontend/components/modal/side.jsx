@@ -1,12 +1,13 @@
 
 import React from 'react';
 import { connect } from "react-redux";
-import { closeSide } from "../../actions/side_actions";
+import { closeSide, hoverProduct } from "../../actions/side_actions";
 import { openSide } from "../../actions/side_actions";
 import { fetchProducts } from "../../actions/product_actions";
 import SideFormContainer from '../session_form/side_form_container';
 import SecondSideFormContainer from '../session_form/second_side_form_container';
 import ThirdSideFormContainer from '../session_form/third_side_form_container';
+import SecondResultContainer from '../session_form/second_result_container';
 
 class Side extends React.Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class Side extends React.Component {
 
     render() {
     
-        const { side, closeSide, openSide } = this.props
+        const { side, closeSide, openSide, hoverProduct } = this.props
         if (!side) {
             return null;
         }
@@ -44,8 +45,12 @@ class Side extends React.Component {
                 nextComponent = <SecondSideFormContainer />;
                 thirdComponent = <ThirdSideFormContainer />;
                 break;
-            case 'search':
-                component = <SideFormContainer products={ this.props.products } openSide={ openSide } />;
+                case 'search':
+                    component = <SideFormContainer products={ this.props.products } openSide={ openSide } />;
+                break;
+            case 'result':
+                component = <SideFormContainer products={this.props.products} openSide={openSide} />;
+                nextComponent = <SecondResultContainer />;
                 break;
             default:
                 return null;

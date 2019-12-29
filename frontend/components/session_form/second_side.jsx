@@ -1,7 +1,6 @@
 
 
 import React from 'react';
-import { openSide } from '../../actions/side_actions';
 import { Link } from 'react-router-dom';
 
 class SecondSide extends React.Component {
@@ -53,7 +52,6 @@ class SecondSide extends React.Component {
                             )
                         })}
                     </ul>
-
                 </div>
             </div>
         )

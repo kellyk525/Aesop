@@ -23,7 +23,7 @@ class SearchProducts extends React.Component {
     }
 
     render() {
-        const { products } = this.props;
+        const { products, hoverProduct, openSide } = this.props;
 
         let filteredProducts = products.filter(
             (product) => {
@@ -53,7 +53,7 @@ class SearchProducts extends React.Component {
             filtered = (
                 filteredProducts.map((product) => {
                     return (
-                        <SearchProductItem product={product} key={product.id}/>
+                        <SearchProductItem product={product} key={product.id} hoverProduct={hoverProduct} openSide={openSide} />
                     )
                 })
             )

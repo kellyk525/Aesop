@@ -1,30 +1,26 @@
 
-
 import { connect } from 'react-redux';
-import React from 'react';
 import { openSide, closeSide, hoverProduct } from '../../actions/side_actions';
 import { fetchProducts } from '../../actions/product_actions';
-import SecondSide from './second_side';
-import { filterProductsByCategory } from '../selectors/selectors';
+import { createCartItem } from '../../actions/cart_actions';
+import ResultSide from './result_side';
 
 
 const mSTP = (state) => {
 
     return ({
-        products: filterProductsByCategory(state, state.ui.sideCategory),
         product: state.entities.products[state.ui.sideProduct]
     });
 };
 
-// state.ui.sideCategory
 
 const mDTP = dispatch => {
     return ({
         fetchProducts: () => dispatch(fetchProducts()),
         closeSide: () => dispatch(closeSide()),
-        openSide: (side) => dispatch(openSide(side)),
-        hoverProduct: (productId) => dispatch(hoverProduct(productId))
+        hoverProduct: (productId) => dispatch(hoverProduct(productId)),
+        createCartItem: (cartItem) => dispatch(createCartItem(cartItem))
     });
 };
 
-export default connect(mSTP, mDTP)(SecondSide);
+export default connect(mSTP, mDTP)(ResultSide);
