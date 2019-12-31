@@ -9,6 +9,10 @@ class ProductIndexItem extends React.Component {
         super(props);
     }
 
+    componentWillUnmount() {
+        this.forceUpdate()
+    }
+
     render() {
         const { name, size, price, photoUrls, id } = this.props.product
 

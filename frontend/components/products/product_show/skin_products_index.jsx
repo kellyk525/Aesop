@@ -14,6 +14,7 @@ class SkinProductsIndex extends React.Component {
             type: "all",
             first: false,
             open: false,
+            filter: false
         }
     }
 
@@ -21,9 +22,15 @@ class SkinProductsIndex extends React.Component {
         this.props.fetchProducts();
     }
 
-
     componentWillUnmount() {
         window.scrollTo(0, 0);
+    }
+
+    toggleOpen() {
+        return (e) => {
+            e.preventDefault();
+            this.setState({ filter: !this.state.filter });
+        }
     }
 
     getFilteredProducts(products) {
@@ -122,6 +129,19 @@ class SkinProductsIndex extends React.Component {
             return (<div onClick={this.filterType(category)} key={category} className="all-index-category" >{category}</div>)
         })
 
+        let filterCategories = (
+            <div className="filter-cat" >
+                <div className="sub" >
+                    <p>Sub Category</p>
+                    {categories}
+                </div>
+                <div className="sub">
+                    <p>Skin Type</p>
+                    { skin_categories }
+                </div>
+                <div onClick={this.openAll()} className="all-index-category" >All Skin</div>
+            </div>
+        )
 
         return (
             <div className="all-products" >
@@ -130,12 +150,13 @@ class SkinProductsIndex extends React.Component {
                     <Link to="/" className="logo-main">
                         <img src="https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png" alt="Logo" />
                     </Link>
-                    <p>Skin</p>
-                    <div onClick={this.openAll()} className="all-index-category" >All</div>
-                    Sub Category -----
-                    { categories }
-                    Skin Type -------
-                    { skin_categories }
+                </div>
+                <div className="filter-start">
+                    <div className="filter-show">
+                        <p>Skin</p>
+                        <div onClick={ this.toggleOpen() } >Filter By</div>
+                    </div>
+                    { this.state.filter && filterCategories }
                 </div>
                 <div className="products" >
                     <div className="products-contain">

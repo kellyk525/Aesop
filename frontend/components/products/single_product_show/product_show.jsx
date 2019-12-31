@@ -4,6 +4,8 @@ import ProductShowDetail from './product_show_detail';
 import ProductShowDetailSecond from './product_show_detail_second';
 import SkinProductsIndexItem from '../product_show/product_index_item';
 import {Link} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+
  
 class ProductShow extends React.Component {
 
@@ -11,20 +13,20 @@ class ProductShow extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        debugger
+    componentDidMount() {   
         this.props.fetchProduct(this.props.match.params.productId);
         this.props.fetchProducts();
         if (this.props.currentUser) console.log("kelly")
         if (this.props.currentUser) this.props.fetchCartItems();
+        console.log(this.props.match.params.productId)
     }
 
     render() {
         if (!this.props.product) {
             return null;
         }
-
-        const { photoUrls, size } = this.props.product
+        const { photoUrls, size } = this.props.product;
+        const { currentUserId, openModal } = this.props;
         
 
         return (
@@ -41,11 +43,11 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
                     <div className="detail">
-                        <ProductShowDetail product={ this.props.product } createCartItem={ this.props.createCartItem } />
+                        <ProductShowDetail product={ this.props.product } createCartItem={ this.props.createCartItem } currentUserId={ currentUserId } openModal={ openModal } />
                     </div>
                 </div>
                 <div>
-                    <ProductShowDetailSecond product={this.props.product} />
+                    <ProductShowDetailSecond product={ this.props.product } />
                 </div>
                 <div className="products accomp" >
                     <div className="products-contain">
@@ -133,11 +135,9 @@ class ProductShow extends React.Component {
                     <div className="footer-bottom"></div>
 
                 </div>
-
- */}
             </div>
         )
     }
 }
 
-export default ProductShow;
+export default withRouter(ProductShow);

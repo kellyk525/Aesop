@@ -67,3 +67,19 @@
         }
     }
 }
+
+
+.quantity-added-to-basket {
+    position: absolute;
+    display: none;
+    left: 84px;
+    border: 1px solid gray;
+    background-color: gray;
+    color: white;
+    padding-top: 3px;
+    height: 35px;
+    font-size: 14px;
+    width: 160px;
+    text-align: center;
+    border-radius: 5px;
+}

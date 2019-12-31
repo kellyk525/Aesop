@@ -5,22 +5,56 @@ class ProductShowDetail extends React.Component {
         super(props);
 
         this.state = {
-            product_id: parseInt(props.product.id),
+            product_id: null,
             quantity: 1
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.product.id !== this.props.product.id) {
+            console.log("Hello this is Kelly")
+            this.setState({ product_id: parseInt(nextProps.product.id), quantity: 1 }, () => {
+                console.log(this.state.product_id)
+            })
+        }
+    }
+    componentDidUpdate(prevProps) {
+        // prevProps is the current props
+        // this.props will be the new props
+    }
+
+    componentDidMount() {
+        this.setState({ product_id: parseInt(this.props.product.id), quantity: 1 }, () => {
+            console.log(this.state.product_id)
+        })
+        // Only hits it once the first time it mounts
+    }
+
+
+
+    addedToCart() {
+        let newEl = document.getElementsByClassName("quantity-added-to-basket");
+        newEl[0].style.display = "block";
+        setTimeout(() => newEl[0].style.display = "none", 2000)
+    }
+
     handleSubmit() {
+        
         return () => {
             this.props.createCartItem(this.state)
                 .then(console.log(this.state));
+            this.addedToCart();
         }
     }
 
     render() {
 
         const { name, description, category, sub_category, skin_feel, aroma, key_ingredients, price }  = this.props.product
+        const { currentUserId, openModal } = this.props;
+        
+        console.log("Hello current User")
+        console.log(currentUserId)
         return (
             <div>
                 <div className="first-detail-wrap">
@@ -45,9 +79,10 @@ class ProductShowDetail extends React.Component {
                     <p>Key Ingredients</p>
                     <p>{key_ingredients}</p>
                 </div>
-                <div className="add-to-cart" onClick={ this.handleSubmit() }>
+                <div className="add-to-cart" onClick={ currentUserId ? this.handleSubmit() : () => openModal("login") }>
                     <p>Add to your cart  -  ${price}</p>
                 </div>
+                <div className="quantity-added-to-basket"> Items added to basket</div>
             </div>
         )
     }

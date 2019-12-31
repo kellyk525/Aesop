@@ -22,8 +22,22 @@ class ThirdSide extends React.Component {
         };
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.product.id !== this.props.product.id) {
+            console.log("Hello this is Kelly")
+            this.setState({ product_id: parseInt(this.props.product.id), quantity: 1 }, () => {
+                console.log(this.state.product_id)
+            })
+        }
+    }
+
 
     render() {
+
+        const { openModal, currentUserId } = this.props;
+
+        console.log("THis is kellyyy")
+        console.log(currentUserId);
 
         return (
             <div className="third-drawer" onClick={e => e.stopPropagation()} >
@@ -43,7 +57,7 @@ class ThirdSide extends React.Component {
                         <div className="third-contain-text-second" >
                             <p>{this.props.product.name}</p>
                         </div>
-                        <div className="add-to-cart" onClick={ this.handleSubmit() }>
+                        <div className="add-to-cart" onClick={ currentUserId ? this.handleSubmit() : () => openModal("login") }>
                             <p>Add to your cart  -  ${this.props.product.price}</p>
                         </div>
                     </div>

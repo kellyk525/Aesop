@@ -11,7 +11,7 @@ class Toolbar extends React.Component  {
         super(props);
         this.state = {
             sideDrawerOpen: false,
-            open: true
+            open: false
         }
 
         this.toggleOpen = this.toggleOpen.bind(this);
