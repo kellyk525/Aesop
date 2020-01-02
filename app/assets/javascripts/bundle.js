@@ -3480,6 +3480,7 @@ function (_React$Component) {
           products = _this$props.products,
           hoverProduct = _this$props.hoverProduct,
           openSide = _this$props.openSide;
+      debugger;
       var filteredProducts = products.filter(function (product) {
         if (product.category.toLowerCase().indexOf(_this3.state.search.toLowerCase()) !== -1) {
           return true;
@@ -3523,7 +3524,7 @@ function (_React$Component) {
         value: this.state.search,
         onChange: this.updateSearch(),
         className: "search-input"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.state.open && filtered));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, filtered));
     }
   }]);
 
@@ -4065,12 +4066,12 @@ function (_React$Component) {
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "second-drawer",
+        className: "third-drawer",
         onClick: function onClick(e) {
           return e.stopPropagation();
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "third-drawer-contain"
+        className: "result-drawer-contain"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "x-button",
         onClick: this.props.closeSide

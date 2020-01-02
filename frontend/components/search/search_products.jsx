@@ -26,6 +26,7 @@ class SearchProducts extends React.Component {
 
     render() {
         const { products, hoverProduct, openSide } = this.props;
+        debugger
 
         let filteredProducts = products.filter(
             (product) => {
@@ -65,7 +66,7 @@ class SearchProducts extends React.Component {
             <div className="first-search">
                 <input type="text" value={ this.state.search } onChange={ this.updateSearch() } className="search-input" />
                 <ul>
-                    { this.state.open && filtered }
+                    { filtered }
                 </ul>
             </div>
         )

@@ -48,8 +48,8 @@ class ResultSide extends React.Component {
 
 
         return (
-            <div className="second-drawer" onClick={e => e.stopPropagation()} >
-                <div className="third-drawer-contain" >
+            <div className="third-drawer" onClick={e => e.stopPropagation()} >
+                <div className="result-drawer-contain" >
                     <button className="x-button" onClick={this.props.closeSide}>X</button>
                     <div className="third-contain-main">
                         <div className="third-contain-image">

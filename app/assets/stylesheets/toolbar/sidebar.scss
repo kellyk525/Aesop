@@ -244,23 +244,6 @@
 //////////////////////////////
 
 
-// .first-drawer {
-//   display: block;
-//   background: #907D6C;
-//     position: relative;
-//     overflow: hidden;
-//   width: 33.33%;
-//   height: 100%;
-//   z-index: 3000;
-// //   position: absolute;
-// //   left: 0px;
-
-//   .first-drawer-contain {
-//       display: block;
-//     background: #907D6C;
-//   }
-// }
-
 .first-drawer {
     text-align: center;
     width: 33.33%;
@@ -275,44 +258,6 @@
     animation: contain 0.7s ease-in;
     background-color: #FFFEF2;
 }
-
-// @keyframes contain {
-//     0%{
-//         transform: translateX(-500px);
-//     }
-//     100% {
-//         transform: translateX(0px);
-//     }
-// }
-
-// .second-drawer {
-//     text-align: center;
-//     width: 33.33%;
-//     height: 1000px;
-
-// }
-
-// .second-drawer-contain {
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     left: 33.33%;
-//     width: 33.33%;
-//     height: 100%;
-//     border: 0;
-//     border-radius: 0.1em;
-//     animation: second 0.7s ease-in;
-//     background-color: rgba(42, 71, 165, 0.671);
-// }
-
-// @keyframes second {
-//     0%{
-//         transform: translateX(-500px);
-//     }
-//     100% {
-//         transform: translateX(0px);
-//     }
-// }
 
 
 .third-drawer {
@@ -332,6 +277,60 @@
     border-radius: 0.1em;
     animation: second 0.7s ease-in;
     background-color: rgba(52, 165, 42, 0.671);
+}
+
+.result-drawer-contain {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 33.33%;
+    width: 33.33%;
+    height: 100%;
+    border: 0;
+    border-radius: 0.1em;
+    animation: second 0.7s ease-in;
+    background-color: #FFFEF2;
+    border-left: 1px solid #c4c4c0;
+    // border-right: 1px solid #c4c4c0;
+    z-index: 400;
+
+
+    .third-contain-main {
+        display: flex;
+        flex-direction: column;
+        // background-color: orange;
+        height: 100%;
+        font-family: Open Sans;
+        font-size: 14px;
+        
+        .third-contain-image {
+            height: 75%;
+            // background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            .third-contain-image-center {
+                width: 400px;
+                height: 400px;
+                // background-color: pink;
+                z-index: 200;
+
+                img {
+                    max-width: 390px;
+                    height: 390px;
+                    // border: 1px solid black;
+                    
+                }
+            }
+        }
+        .add-to-cart {
+            width: 100%;
+            height: 8%;
+        
+        }
+
+    }
 }
 
 // @keyframes second {
@@ -369,44 +368,5 @@
     }
 }
 
-
-
-
-// .second-drawer {
-//   display: block;
-//   background: #907D6C;
-//   width: 33.33%;
-//   height: 100%;
-//   z-index: 4000;
-//   position: absolute;
-//   left: 600px;
-// }
-
-// .third-drawer {
-//   display: block;
-//   background: #907D6C;
-//   width: 33.33%;
-//   height: 100%;
-//   z-index: 5000;
-//   position: absolute;
-//   left: 1200px;
-// }
-
-// For the sliding in of letters!!
-
-// .first-drawer {
-//     text-align: center;
-//     margin-top: 20%;
-//     width: 33.33%;
-//     height: 100%;
-//     background-color: brown;
-// }
-
-// .first-drawer-contain {
-//     display: block;
-//     border: 0;
-//     border-radius: 0.1em;
-//     animation: slideMe 0.7s ease-in;
-// }
 
 

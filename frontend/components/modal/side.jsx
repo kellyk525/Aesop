@@ -45,7 +45,7 @@ class Side extends React.Component {
                 nextComponent = <SecondSideFormContainer />;
                 thirdComponent = <ThirdSideFormContainer />;
                 break;
-                case 'search':
+            case 'search':
                     component = <SideFormContainer products={ this.props.products } openSide={ openSide } />;
                 break;
             case 'result':
