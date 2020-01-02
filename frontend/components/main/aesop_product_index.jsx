@@ -20,7 +20,7 @@ class AesopProductIndex extends React.Component {
         let categoryAll = []
     
         return (
-            <div>
+            <div className="all-main">
                 <div className="main-products-second" >
                     <div className="main-products-contain-second">
                         <img className="top-image" src="https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-gurney.png" alt="" />

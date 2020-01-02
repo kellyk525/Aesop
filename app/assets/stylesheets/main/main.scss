@@ -1,5 +1,4 @@
 
-
 .main-splash {
     background: rgb(100,74,50);
     background: linear-gradient(98deg, rgba(100,74,50,1) 0%, rgba(122,97,75,1) 50%, rgba(147,131,116,1) 100%);
@@ -20,29 +19,29 @@
 
 .main-products-second {
 
-    -webkit-animation: fadein 3s;
-       -moz-animation: fadein 3s; /* Firefox < 16 */
-        -ms-animation: fadein 3s; /* Internet Explorer */
-         -o-animation: fadein 3s; /* Opera < 12.1 */
-            animation: fadein 3s;
+    -webkit-animation: fadein 3.3s;
+       -moz-animation: fadein 3.3s; /* Firefox < 16 */
+        -ms-animation: fadein 3.3s; /* Internet Explorer */
+         -o-animation: fadein 3.3s; /* Opera < 12.1 */
+            animation: fadein 3.3s;
 }
 
 // FIX THE LOADING PART // FADING TAKES TOO LONG
 
 @keyframes fadein {
-    from { opacity: 0.8; }
+    from { opacity: 0.7; }
     to   { opacity: 1; }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-    from { opacity: 0.8; }
+    from { opacity: 0.7; }
     to   { opacity: 1; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-    from { opacity: 0.8; }
+    from { opacity: 0.7; }
     to   { opacity: 1; }
 }
 
@@ -512,4 +511,8 @@
             color: #666666;
         }
     }
+}
+
+.all-main {
+    background: black;
 }

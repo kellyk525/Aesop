@@ -1193,7 +1193,9 @@ function (_React$Component) {
           skinProducts = _this$props.skinProducts,
           bodyProducts = _this$props.bodyProducts;
       var categoryAll = [];
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "all-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products-second"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-products-contain-second"
