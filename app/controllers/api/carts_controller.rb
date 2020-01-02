@@ -50,7 +50,6 @@ class Api::CartsController < ApplicationController
     end
 
     def destroy_all
-        debugger
         @cart_items = Cart.where(user_id: current_user.id)
 
         @cart_items.destroy_all

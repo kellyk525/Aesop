@@ -25,7 +25,7 @@ class Cart extends React.Component {
         debugger
         return (e) => {
             e.preventDefault();
-            // this.props.deleteAllCartItems(this.props.checkoutItems)
+            this.props.deleteAllCartItems(this.props.checkoutItems)
             //     .then(console.log("Checkout"))
             this.props.openModal("checkout");
         }

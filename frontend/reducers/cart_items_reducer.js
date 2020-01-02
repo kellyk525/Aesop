@@ -25,8 +25,9 @@ export default (state = {}, action) => {
         case DELETE_ALL_CART_ITEMS:
             return {};
         case REMOVE_CART_ITEM:
-            newState = merge({}. state);
-            delete newState[action.cartItemId.id]
+            newState = merge({}, state);
+            delete newState[action.cartItemId.id];
+            return newState;
         default:
             return state;
     }

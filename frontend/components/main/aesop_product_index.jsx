@@ -152,21 +152,5 @@ class AesopProductIndex extends React.Component {
 
 export default AesopProductIndex;
 
-// {
-//     categoryAll.map((category) => {
-//         return <div>{category}</div>
-//     })
-// }
-
-
-// skinProducts.forEach((product) => {
-//     if (!categoryAll.includes(product.category)) {
-//         categoryAll.push(product.category)
-//     }
-// })
-
-//  className="main-splash"
-//  className="splash-1"
-
 
 

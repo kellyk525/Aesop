@@ -625,8 +625,10 @@ function (_React$Component) {
 
       debugger;
       return function (e) {
-        e.preventDefault(); // this.props.deleteAllCartItems(this.props.checkoutItems)
-        //     .then(console.log("Checkout"))
+        e.preventDefault();
+
+        _this.props.deleteAllCartItems(_this.props.checkoutItems); //     .then(console.log("Checkout"))
+
 
         _this.props.openModal("checkout");
       };
@@ -1305,18 +1307,7 @@ function (_React$Component) {
   return AesopProductIndex;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (AesopProductIndex); // {
-//     categoryAll.map((category) => {
-//         return <div>{category}</div>
-//     })
-// }
-// skinProducts.forEach((product) => {
-//     if (!categoryAll.includes(product.category)) {
-//         categoryAll.push(product.category)
-//     }
-// })
-//  className="main-splash"
-//  className="splash-1"
+/* harmony default export */ __webpack_exports__["default"] = (AesopProductIndex);
 
 /***/ }),
 
@@ -5141,8 +5132,9 @@ __webpack_require__.r(__webpack_exports__);
       return {};
 
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_CART_ITEM"]:
-      newState = Object(lodash__WEBPACK_IMPORTED_MODULE_2__["merge"])({}.state);
+      newState = Object(lodash__WEBPACK_IMPORTED_MODULE_2__["merge"])({}, state);
       delete newState[action.cartItemId.id];
+      return newState;
 
     default:
       return state;
