@@ -7,7 +7,8 @@ class SearchProducts extends React.Component {
         super(props);
 
         this.state = {
-            search: ''
+            search: '',
+            open: false
         }
 
     }
@@ -15,6 +16,7 @@ class SearchProducts extends React.Component {
     updateSearch() {
         return (e) => {
             this.setState({ search: e.target.value }, () => console.log("hello"))
+            this.setState({ open: !this.state.open })
         }
     }
 
@@ -60,10 +62,10 @@ class SearchProducts extends React.Component {
         }
 
         return (
-            <div>
-                <input type="text" value={ this.state.search } onChange={ this.updateSearch() } />
+            <div className="first-search">
+                <input type="text" value={ this.state.search } onChange={ this.updateSearch() } className="search-input" />
                 <ul>
-                    { filtered }
+                    { this.state.open && filtered }
                 </ul>
             </div>
         )

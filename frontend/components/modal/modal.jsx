@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import Checkout from '../cart/checkout';
 
 class Modal extends React.Component {
     constructor(props) {
@@ -22,6 +23,9 @@ class Modal extends React.Component {
                 break;
             case 'signup':
                 component = <SignupFormContainer />;
+                break;
+            case 'checkout':
+                component = <Checkout />;
                 break;
             default:
                 return null;

@@ -22,9 +22,9 @@ class SearchProductItem extends React.Component {
             <div>
                 <Link to={`/products/${product.name}~${product.id}`}>
                     <li onMouseEnter={this.handleMouseEnter(product.id)}>
-                        <p>
+                        <span className="search-item" >
                             { product.name }
-                        </p>
+                        </span>
                     </li>
                 </Link>
             </div>

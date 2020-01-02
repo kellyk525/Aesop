@@ -9,6 +9,7 @@ export default (state = {}, action) => {
     Object.freeze(state);
     let newState;
 
+    debugger
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             if (!action.currentUser.carts) {

@@ -14,11 +14,20 @@ class Cart extends React.Component {
  
     getCartItems() {
         const { cartItems, products } = this.props;
-        debugger
         let item
         if (products) {
             const itemNum = cartItems[1].product_id;
             item = products[itemNum];
+        }
+    }
+
+    handleCheckout() {
+        debugger
+        return (e) => {
+            e.preventDefault();
+            // this.props.deleteAllCartItems(this.props.checkoutItems)
+            //     .then(console.log("Checkout"))
+            this.props.openModal("checkout");
         }
     }
 
@@ -78,7 +87,7 @@ class Cart extends React.Component {
                             <div>Subtotal[Tax Excl]</div>
                             <div>${ totalPrice }.00</div>
                         </div>
-                        <button className="checkout">Checkout</button>
+                        <button onClick={ this.handleCheckout() } className="checkout">Checkout</button>
                     </div>
                 </div>
             </div>

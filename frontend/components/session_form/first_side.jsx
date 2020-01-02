@@ -45,7 +45,7 @@ class FirstSide extends React.Component {
             <div className="first-drawer" onClick={e => e.stopPropagation()} >
                 <div className="first-drawer-contain" >
                     <div className="toolbar-navigation-items" >
-                        <ul>
+                        <ul className="first-nav-list">
                             <li onClick={() => this.props.openSide("first")} >Shop</li>
                             <li onClick={() => this.props.openSide("first")}>Read</li>
                             <li onClick={() => this.props.openSide("first")}>Stores</li>
