@@ -3716,6 +3716,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-drawer-contain"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "first-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "toolbar-navigation-items"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "first-nav-list"
@@ -3735,7 +3737,7 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this3.props.openSide("search");
         }
-      }, "Search"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Search")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-drawer-detail"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-drawer-detail-image"
@@ -3746,12 +3748,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://aesop-dev.s3-us-west-1.amazonaws.com/Logo-second.png",
         alt: "Logo"
-      }))), main)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button",
-        className: "slide-in"
-      }, "Slide In")));
+      }))), main)));
     }
   }]);
 

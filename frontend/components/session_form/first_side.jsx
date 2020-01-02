@@ -44,13 +44,15 @@ class FirstSide extends React.Component {
         return (
             <div className="first-drawer" onClick={e => e.stopPropagation()} >
                 <div className="first-drawer-contain" >
-                    <div className="toolbar-navigation-items" >
-                        <ul className="first-nav-list">
-                            <li onClick={() => this.props.openSide("first")} >Shop</li>
-                            <li onClick={() => this.props.openSide("first")}>Read</li>
-                            <li onClick={() => this.props.openSide("first")}>Stores</li>
-                            <li onClick={() => this.props.openSide("search")}>Search</li>
-                        </ul>
+                    <div className="first-nav">
+                        <div className="toolbar-navigation-items" >
+                            <ul className="first-nav-list">
+                                <li onClick={() => this.props.openSide("first")} >Shop</li>
+                                <li onClick={() => this.props.openSide("first")}>Read</li>
+                                <li onClick={() => this.props.openSide("first")}>Stores</li>
+                                <li onClick={() => this.props.openSide("search")}>Search</li>
+                            </ul>
+                        </div>
                     </div>
                     <div className="first-drawer-detail">
                         <div className="first-drawer-detail-image" >
@@ -61,9 +63,9 @@ class FirstSide extends React.Component {
                         { main }
                     </div>
                 </div>
-                <div className="container">
+                {/* <div className="container">
                     <button type="button" className="slide-in">Slide In</button>
-                </div>
+                </div> */}
             </div>
         )
     }
