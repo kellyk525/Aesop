@@ -35,11 +35,11 @@ class Cart extends React.Component {
     render() {
         let { currentUserId, cartItems, products, updateCartItem, deleteCartItem } = this.props;
 
-        let productsInCart = <div>Your cart is currently empty</div>;
+        let productsInCart = <div className="empty-cart" >Your cart is currently empty</div>;
         if (currentUserId) {
             if (cartItems.length === 0) {
                 productsInCart = (
-                    <div>Your cart is currently empty</div>
+                    <div className="empty-cart" >Your cart is currently empty</div>
                 )
             } else {
                 productsInCart = (

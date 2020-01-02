@@ -642,11 +642,15 @@ function (_React$Component) {
           products = _this$props2.products,
           updateCartItem = _this$props2.updateCartItem,
           deleteCartItem = _this$props2.deleteCartItem;
-      var productsInCart = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Your cart is currently empty");
+      var productsInCart = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "empty-cart"
+      }, "Your cart is currently empty");
 
       if (currentUserId) {
         if (cartItems.length === 0) {
-          productsInCart = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Your cart is currently empty");
+          productsInCart = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "empty-cart"
+          }, "Your cart is currently empty");
         } else {
           productsInCart = cartItems.map(function (item) {
             return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
