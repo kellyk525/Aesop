@@ -25,7 +25,6 @@ class AesopProductIndex extends React.Component {
                     <div className="main-products-contain-second">
                         <img className="top-image" src="https://aesop-dev.s3-us-west-1.amazonaws.com/aesop-gurney.png" alt="" />
                         <div>
-                            <div></div>
                             <div>
                                 <h2>Begin at the beginning</h2>
                             </div>

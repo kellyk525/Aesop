@@ -174,15 +174,15 @@
     h2 {
         line-height: 100px;
         position: absolute;
-        bottom: 100px;
-        left: 20px;
+        bottom: 70px;
+        left: 100px;
         white-space: nowrap;
         overflow: hidden;
         width: 30rem;
-        animation: type 6s steps(140, end); 
-        font-size: 60px;
+        animation: type 2.9s steps(220, end); 
+        font-size: 46px;
         font-family: Sacramento;
-        font-weight: 400;
+        font-weight: 300;
         color: rgb(226, 223, 223);
     }
 
