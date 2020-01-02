@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CartItem extends React.Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class CartItem extends React.Component {
 
     showQuantities() {
         let final = [];
-        for (let i = 1; i < 10; i++) {
+        for (let i = 1; i < 15; i++) {
             final.push(<option value={`${i}`} key={i} >{i}</option>)
         }
         return final;
@@ -39,17 +40,23 @@ class CartItem extends React.Component {
 
         return (
             <div className="cart-item">
-                <div className="single-item"> { product.name }</div>
-                <div> { product.size }</div>
-                <div className="update">
-                    <select id="quantity-in-cart" value={ quantity } onChange={ this.handleQuantity() }>
-                        { this.showQuantities() }
-                    </select>
-                    <div className="remove-cart-item">
-                        <button onClick={ this.handleRemoveItem() }>Remove</button>
-                    </div>
+                <div className="single-item">
+                    <Link to={`/products/${product.name}~${product.id}`} onClick={ this.props.toggleOpen } >
+                        { product.name }
+                    </Link>
                 </div>
-                <div> ${ product.price }.00</div>
+                <p> { product.size }</p>
+                <div className="cart-item-last">
+                    <div className="update">
+                        <select id="quantity-in-cart" value={ quantity } onChange={ this.handleQuantity() }>
+                            { this.showQuantities() }
+                        </select>
+                        <div className="remove-cart-item">
+                            <button onClick={ this.handleRemoveItem() }>Remove</button>
+                        </div>
+                    </div>
+                    <div> ${ product.price }.00</div>
+                </div>
                 
             </div>
         )

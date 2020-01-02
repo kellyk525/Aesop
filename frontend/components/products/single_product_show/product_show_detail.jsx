@@ -31,8 +31,6 @@ class ProductShowDetail extends React.Component {
         // Only hits it once the first time it mounts
     }
 
-
-
     addedToCart() {
         let newEl = document.getElementsByClassName("quantity-added-to-basket");
         newEl[0].style.display = "block";

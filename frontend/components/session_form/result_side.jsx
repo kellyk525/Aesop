@@ -15,27 +15,47 @@ class ResultSide extends React.Component {
 
     }
 
-    handleSubmit(e) {
-        return (e) => {
-            e.preventDefault();
-            this.props.closeSide;
-        };
+    addedToCart() {
+        let newEl = document.getElementsByClassName("quantity-added-to-basket");
+        newEl[0].style.display = "block";
+        setTimeout(() => newEl[0].style.display = "none", 2000)
     }
 
     handleCart() {
+
         return () => {
             this.props.createCartItem(this.state)
                 .then(console.log("Item in Cart"))
+            // this.props.closeSide();
+            this.addedToCart();
         };
+    }
+
+    handleLogin() {
+        return (e) => {
+            e.preventDefault();
+            this.props.closeSide();
+            this.props.openModal("login");
+        }
     }
 
     componentDidMount() {
         this.props.fetchProducts();
     }
 
+    componentDidUpdate(prevProps) {
+        debugger
+        if (prevProps.product.id !== this.props.product.id) {
+            console.log("Hello this is Kelly")
+            this.setState({ product_id: parseInt(this.props.product.id), quantity: 1 }, () => {
+                console.log(this.state.product_id)
+            })
+        }
+    }
+
     render() {
 
-        const { product } = this.props;
+        const { product, currentUserId } = this.props;
 
         if (!product) return null;
 
@@ -66,7 +86,7 @@ class ResultSide extends React.Component {
                         <div className="third-contain-text-second" >
                             <p>{product.name}</p>
                         </div>
-                        <div className="add-to-cart" onClick={this.handleCart()}>
+                        <div className="add-to-cart" onClick={ currentUserId ? this.handleCart() : this.handleLogin() }>
                             <p>Add to your cart  -  ${product.price}</p>
                         </div>
                     </div>

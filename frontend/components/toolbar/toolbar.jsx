@@ -33,14 +33,27 @@ class Toolbar extends React.Component  {
         this.seState({ sideDrawerOpen: false })
     }
 
+    componentDidMount() {
+        this.props.fetchCartItems();
+    }
+
 
     render () {
+        const { cartItems } = this.props;
+
+        let quantity
+        if (cartItems.length === 0) {
+            quantity = <div className="cart-open-none" onClick={this.toggleOpen}></div>
+        } else {
+            quantity = <div className="cart-open" onClick={this.toggleOpen}><span>{cartItems.length}</span></div>
+        }
+
         let backdrop;
         if (this.state.sideDrawerOpen) {
             backdrop = <Backdrop click={ this.backdropClickHandler } />;
         }
 
-        let cart = <CartContainer />
+        let cart = <CartContainer toggleOpen={this.toggleOpen} />
 
         return (
             <header className="toolbar">
@@ -55,9 +68,9 @@ class Toolbar extends React.Component  {
                         </ul>
                     </div>
                     <div className="spacer" ></div>
-                    <div>
+                    <div className="toolbar-right" >
                         <HeaderContainer />
-                        <div className="cart-open" onClick={ this.toggleOpen }>X</div>
+                        { quantity }
                     </div>
                     <div>
                         { backdrop }

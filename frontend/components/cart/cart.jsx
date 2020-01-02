@@ -53,6 +53,7 @@ class Cart extends React.Component {
                                 quantity={ item.quantity }
                                 updateCartItem={ updateCartItem }
                                 deleteCartItem={ deleteCartItem }
+                                toggleOpen={ this.props.toggleOpen }
                             />
                         )
                     })
@@ -71,10 +72,12 @@ class Cart extends React.Component {
         return(
             <div className="cart">
                 <div className="cart-labels">
-                    <div>Cart</div>
-                    <div>Size</div>
-                    <div>Quantity</div>
-                    <div>X</div>
+                    <div className="cart-label-first">Cart</div>
+                    <p>Size</p>
+                    <div className="cart-label-last">
+                        <div>Quantity</div>
+                        <div className="x-cart" onClick={this.props.toggleOpen} >X</div>
+                    </div>
                 </div>
                 { productsInCart }
                 <div className="cart-bottom">
@@ -84,8 +87,8 @@ class Cart extends React.Component {
                     </div>
                     <div className="bottom-second">
                         <div className="sub-total">
-                            <div>Subtotal[Tax Excl]</div>
-                            <div>${ totalPrice }.00</div>
+                            <div className="text-sub">Subtotal [Tax Excl.]</div>
+                            <div className="total-price" >${ totalPrice }.00</div>
                         </div>
                         <button onClick={ this.handleCheckout() } className="checkout">Checkout</button>
                     </div>

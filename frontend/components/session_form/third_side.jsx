@@ -15,11 +15,28 @@ class ThirdSide extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+
+    addedToCart() {
+        let newEl = document.getElementsByClassName("quantity-added-to-basket");
+        newEl[0].style.display = "block";
+        setTimeout(() => newEl[0].style.display = "none", 2000)
+    }
+
     handleSubmit() {
         return () => {
             this.props.createCartItem(this.state)
                 .then(console.log("hello"))
+            this.props.closeSide();
+            this.addedToCart();
         };
+    }
+
+    handleLogin() {
+        return (e) => {
+            e.preventDefault();
+            this.props.closeSide();
+            this.props.openModal("login");
+        }
     }
 
     componentDidUpdate(prevProps) {
@@ -57,7 +74,7 @@ class ThirdSide extends React.Component {
                         <div className="third-contain-text-second" >
                             <p>{this.props.product.name}</p>
                         </div>
-                        <div className="add-to-cart" onClick={ currentUserId ? this.handleSubmit() : () => openModal("login") }>
+                        <div className="add-to-cart" onClick={ currentUserId ? this.handleSubmit() : this.handleLogin() }>
                             <p>Add to your cart  -  ${this.props.product.price}</p>
                         </div>
                     </div>

@@ -20,6 +20,7 @@
     padding: 0 1.5rem;
     font-size: 14px;
     background-color: #FFFEF2;
+    height: 80px;
 }
 
 .toolbar-logo {
@@ -112,5 +113,50 @@
     
 }
 
+.toolbar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+.cart-open {
+    width: 24px;
+    height: 24px;
+    background: rgb(57, 56, 56);
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    
+    span {
+        align-self: center;
+        font-size: 12px;
+        font-family: Assistant;
+        font-weight: 300;
+        // margin: 0px auto;
+    }
+}
 
+.cart-open:hover {
+    width: 26px;
+    height: 26px;
+    // background: rgb(99, 97, 97);
+}
+
+.cart-open-none {
+    width: 8px;
+    height: 8px;
+    background: rgb(57, 56, 56);
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.cart-open-none:hover {
+    width: 10px;
+    height: 10px;
+}
