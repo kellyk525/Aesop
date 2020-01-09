@@ -8,22 +8,22 @@ Aesop-Kelly is an E-commerce website that allows users to browse through and sho
 * React
 * Redux
 
-### Functionality
+# Functionality
 
-# User Authentication (Login / Sign Up)
+### User Authentication (Login / Sign Up)
 
-# Product Index
+### Product Index
 
-# Individual Product Details
+### Individual Product Details
 
-# Nested Sidebar
+### Nested Sidebar
 
-# Shopping Cart
+### Shopping Cart
 
-### Bonus Features
+# Bonus Features
 
-# Search Bar
+### Search Bar
 
-# Product Filter
+### Product Filter
 
 
