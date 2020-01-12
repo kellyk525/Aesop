@@ -16,10 +16,6 @@ Aesop-Kelly is an E-commerce website that allows users to browse through and sho
 
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-seven.gif)
 
-### Filter and Product Index
-
-![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/filter.gif)
-
 ### Individual Product Details
 
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-six.gif)
@@ -32,9 +28,15 @@ Aesop-Kelly is an E-commerce website that allows users to browse through and sho
 
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-two-new.gif)
 
+### Filter and Product Index
+
+![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/filter.gif)
+
 # Bonus Features
 
 ### Search Bar
+
+Integrated advanced Search based on product name, main category, subcategory, texture, and aroma. Results are updated based on user's input.
 
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-five.gif)
 
