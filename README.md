@@ -1,24 +1,29 @@
-# README
+# Background
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aesop-Kelly is an E-commerce website that allows users to browse through and shop Aesop products. Users are also able to find additional information regarding the brand's history, location, and much more. 
 
-Things you may want to cover:
+# Technologies Used
+* Ruby on Rails
+* PostgreSQL
+* React
+* Redux
 
-* Ruby version
+# Functionality
 
-* System dependencies
+### User Authentication (Login / Sign Up)
 
-* Configuration
+### Product Index
 
-* Database creation
+### Individual Product Details
 
-* Database initialization
+### Nested Sidebar
 
-* How to run the test suite
+### Shopping Cart
 
-* Services (job queues, cache servers, search engines, etc.)
+# Bonus Features
 
-* Deployment instructions
+### Search Bar
 
-* ...
+### Product Filter
+
+
