@@ -27,8 +27,6 @@ Aesop-Kelly is an E-commerce website that allows users to browse through and sho
 ### Product Filter
 
 
-
-![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-one.gif)
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-two.gif)
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-three.gif)
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-four.gif)
