@@ -26,6 +26,8 @@ Aesop-Kelly is an E-commerce website that allows users to browse through and sho
 
 ### Shopping Cart
 
+Implemented CRUD feature with dropdown shopping cart and checkout system, which are accessible from every page. Logged in users are able to add items to their shopping cart, update the quantities of each item, and remove items. For the dropdown functionality, I managed React state to only render the shopping chart when the user clicks on the cart button located in the navigation bar. I integrated DOM manipulation and pop-up modals to ensure consistent flow of UI and improve communication with user. 
+
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-two-new.gif)
 
 ### Filter and Product Index
