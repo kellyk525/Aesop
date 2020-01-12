@@ -204,19 +204,27 @@
     // }
 }
 
-.quantity-added-to-basket {
+
+.for-item-added {
+    position: relative;
+}
+
+.quantity-added-to-cart {
     position: absolute;
     display: none;
-    left: 84px;
+    right: 0%;
+    top: -3%;
     border: 1px solid gray;
-    background-color: gray;
+    background-color: rgb(26, 26, 26);
     color: white;
-    padding-top: 3px;
+    padding: 9px 14px;
+    line-height: 30px;
     height: 35px;
-    font-size: 14px;
+    font-size: 13px;
     width: 160px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 3px;
+    letter-spacing: 1px;
 }
 
 .empty-cart {

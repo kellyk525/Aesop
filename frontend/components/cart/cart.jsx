@@ -22,12 +22,13 @@ class Cart extends React.Component {
     }
 
     handleCheckout() {
-        debugger
         return (e) => {
             e.preventDefault();
-            this.props.deleteAllCartItems(this.props.checkoutItems)
-            //     .then(console.log("Checkout"))
-            this.props.openModal("checkout");
+            if (this.props.currentUserId) {
+                this.props.deleteAllCartItems(this.props.checkoutItems)
+                //     .then(console.log("Checkout"))
+                this.props.openModal("checkout");
+            }
         }
     }
 

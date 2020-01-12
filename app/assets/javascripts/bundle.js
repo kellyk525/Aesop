@@ -623,14 +623,15 @@ function (_React$Component) {
     value: function handleCheckout() {
       var _this = this;
 
-      debugger;
       return function (e) {
         e.preventDefault();
 
-        _this.props.deleteAllCartItems(_this.props.checkoutItems); //     .then(console.log("Checkout"))
+        if (_this.props.currentUserId) {
+          _this.props.deleteAllCartItems(_this.props.checkoutItems); //     .then(console.log("Checkout"))
 
 
-        _this.props.openModal("checkout");
+          _this.props.openModal("checkout");
+        }
       };
     }
   }, {
@@ -958,7 +959,7 @@ function (_React$Component) {
         onClick: function onClick(e) {
           return e.stopPropagation();
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Thank You For Your Purchase"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Please Visit My Other Projects"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Thank You For Your Purchase"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Please Visit My Recent Projects!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/kellyk525/Aesop",
         target: "_blank"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -971,17 +972,17 @@ function (_React$Component) {
         id: "footer-icon",
         className: "fab fa-linkedin"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://github.com/kellyk525/Aesop",
+        href: "https://angel.co/kelly-ku",
         target: "_blank"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         id: "footer-icon",
-        className: "fab fa-github"
+        className: "fab fa-angellist"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://www.linkedin.com/in/kelly-ku-642b49130/",
+        href: "http://kelly-ku.com",
         target: "_blank"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         id: "footer-icon",
-        className: "fab fa-linkedin"
+        className: "fas fa-id-badge"
       }))));
     }
   }]);
@@ -3101,7 +3102,7 @@ function (_React$Component) {
   }, {
     key: "addedToCart",
     value: function addedToCart() {
-      var newEl = document.getElementsByClassName("quantity-added-to-basket");
+      var newEl = document.getElementsByClassName("quantity-added-to-cart");
       newEl[0].style.display = "block";
       setTimeout(function () {
         return newEl[0].style.display = "none";
@@ -3135,7 +3136,9 @@ function (_React$Component) {
           openModal = _this$props.openModal;
       console.log("Hello current User");
       console.log(currentUserId);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "for-item-added"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-detail-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-detail"
@@ -3155,8 +3158,8 @@ function (_React$Component) {
           return openModal("login");
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Add to your cart  -  $", price)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "quantity-added-to-basket"
-      }, " Items added to basket"));
+        className: "quantity-added-to-cart"
+      }, " Item added to cart"));
     }
   }]);
 
@@ -3479,9 +3482,11 @@ function (_React$Component) {
           return console.log("hello");
         });
 
-        _this2.setState({
-          open: !_this2.state.open
-        });
+        if (!_this2.state.open) {
+          _this2.setState({
+            open: !_this2.state.open
+          });
+        }
       };
     }
   }, {
@@ -3498,8 +3503,11 @@ function (_React$Component) {
           products = _this$props.products,
           hoverProduct = _this$props.hoverProduct,
           openSide = _this$props.openSide;
-      debugger;
       var filteredProducts = products.filter(function (product) {
+        if (_this3.state.search.length === 0) {
+          return false;
+        }
+
         if (product.category.toLowerCase().indexOf(_this3.state.search.toLowerCase()) !== -1) {
           return true;
         }
@@ -3542,7 +3550,7 @@ function (_React$Component) {
         value: this.state.search,
         onChange: this.updateSearch(),
         className: "search-input"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, filtered));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.state.open && filtered));
     }
   }]);
 

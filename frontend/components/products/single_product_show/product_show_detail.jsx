@@ -32,7 +32,7 @@ class ProductShowDetail extends React.Component {
     }
 
     addedToCart() {
-        let newEl = document.getElementsByClassName("quantity-added-to-basket");
+        let newEl = document.getElementsByClassName("quantity-added-to-cart");
         newEl[0].style.display = "block";
         setTimeout(() => newEl[0].style.display = "none", 2000)
     }
@@ -54,7 +54,7 @@ class ProductShowDetail extends React.Component {
         console.log("Hello current User")
         console.log(currentUserId)
         return (
-            <div>
+            <div className="for-item-added">
                 <div className="first-detail-wrap">
                     <div className="first-detail">
                         <p>{category}</p>
@@ -80,7 +80,7 @@ class ProductShowDetail extends React.Component {
                 <div className="add-to-cart" onClick={ currentUserId ? this.handleSubmit() : () => openModal("login") }>
                     <p>Add to your cart  -  ${price}</p>
                 </div>
-                <div className="quantity-added-to-basket"> Items added to basket</div>
+                <div className="quantity-added-to-cart"> Item added to cart</div>
             </div>
         )
     }

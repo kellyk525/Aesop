@@ -16,7 +16,10 @@ class SearchProducts extends React.Component {
     updateSearch() {
         return (e) => {
             this.setState({ search: e.target.value }, () => console.log("hello"))
-            this.setState({ open: !this.state.open })
+
+            if (!this.state.open) {
+                this.setState({ open: !this.state.open })
+            }
         }
     }
 
@@ -26,10 +29,11 @@ class SearchProducts extends React.Component {
 
     render() {
         const { products, hoverProduct, openSide } = this.props;
-        debugger
 
-        let filteredProducts = products.filter(
-            (product) => {
+        let filteredProducts = products.filter((product) => {
+                if (this.state.search.length === 0) {
+                    return false;
+                }
                 if (product.category.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
                     return true;
                 }
@@ -66,7 +70,7 @@ class SearchProducts extends React.Component {
             <div className="first-search">
                 <input type="text" value={ this.state.search } onChange={ this.updateSearch() } className="search-input" />
                 <ul>
-                    { filtered }
+                    { this.state.open && filtered }
                 </ul>
             </div>
         )
