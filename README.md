@@ -18,19 +18,24 @@ Aesop-Kelly is an E-commerce website that allows users to browse through and sho
 
 ### Nested Sidebar
 
+![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-three.gif)
+
 ### Shopping Cart
+
+![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-seven.gif)
 
 # Bonus Features
 
 ### Search Bar
 
+![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-two-new.gif)
+
 ### Product Filter
 
+![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/filter.gif)
 
-![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-two-new.gif)
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-three.gif)
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-four.gif)
-![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/filter.gif)
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-five.gif)
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-six.gif)
 ![](https://github.com/kellyk525/Aesop/blob/master/app/assets/images/gif-seven.gif)
